@@ -4,9 +4,12 @@ using UnityEngine;
 
 static public class Globals
 {
-    static public Vector3 ClampToScreen(Vector3 pos)
+    public static Vector3 ClampToScreen(Vector3 pos)
     {
-        return pos;
+        pos = Camera.main.WorldToViewportPoint(pos);
+        pos.x = Mathf.Clamp01(pos.x);
+        pos.y = Mathf.Clamp01(pos.y);
+        return Camera.main.ViewportToWorldPoint(pos);
     }
 
     // http://stackoverflow.com/questions/31374628/fast-way-of-finding-most-and-least-significant-bit-set-in-a-64-bit-integer

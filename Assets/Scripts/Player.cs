@@ -6,20 +6,16 @@ public class Player : MonoBehaviour
     const int WeaponCount = 4;
 
     public GameObject[] bulletPrefabs = new GameObject[WeaponCount];
-    public float speed = 35;
-    public float rotateSpeed = 6;
+    public float speed = 2.2f;
+
     public float[] maxShotsPerSecond = new float[WeaponCount] { 4, 4, 4, 4 };
+    float[] timeElapsed = new float[WeaponCount] { 0, 0, 0, 0 };
 
-    Rigidbody2D rb;
-
-    float shotDelay = 0.25f;
-    float timeElapsed = 0;
     public enum WeaponType { A, B, X, Y }
     WeaponType activeWeapon = WeaponType.A;
     public WeaponType ActiveWeapon { get { return activeWeapon; } }
 
-
-    Vector3 cannonOffset = new Vector3(0.5f, -0.1f, 0);
+    Animator anim;
 
     ParticleSystem explosion;
     bool isDead = false;
@@ -32,8 +28,8 @@ public class Player : MonoBehaviour
 
 	void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         explosion = transform.Find("explosion").GetComponent<ParticleSystem>();
+        anim = GetComponent<Animator>();
     }
 
     void OnValidate()
@@ -56,36 +52,45 @@ public class Player : MonoBehaviour
         if (isDead)
             return;
 
-        timeElapsed += Time.deltaTime;
+        for (uint i = 0; i < WeaponCount; ++i)
+            timeElapsed[i] += Time.deltaTime;
 
         ulong switchMask = (ulong)((Input.GetButton("A") ? 1 : 0) + (Input.GetButton("B") ? 2 : 0) + (Input.GetButton("X") ? 4 : 0) + (Input.GetButton("Y") ? 8 : 0));
 
         if (switchMask > 0)
             activeWeapon = (WeaponType)Globals.BitScanForward(switchMask);
 
-        Debug.Log(activeWeapon);
-
-        if (Input.GetAxis("RightTrigger") > 0 && timeElapsed >= shotDelay)
+        if (Input.GetAxis("RightTrigger") > 0 && timeElapsed[(int)activeWeapon] >=  1.0f / maxShotsPerSecond[(int)activeWeapon])
         {
-            timeElapsed = 0;
+            timeElapsed[(int)activeWeapon] = 0;
 
-            GameObject ent = (GameObject)GameObject.Instantiate(bulletPrefabs[(int)activeWeapon], transform.position + cannonOffset, Quaternion.identity);
-
-            cannonOffset.x *= -1;
+            if (bulletPrefabs[(int)activeWeapon] != null)
+            {
+                GameObject ent = (GameObject)Instantiate(bulletPrefabs[(int)activeWeapon], transform.position, transform.rotation);
+            }
+            else
+                Debug.Log("The bullet prefab for weapon " + activeWeapon + " is missing and/or null!");
         }
 
         Vector3 offset = new Vector3(Input.GetAxis("LeftJoyX"), -Input.GetAxis("LeftJoyY"), 0);
+        Vector3 tilt = new Vector3(Input.GetAxis("RightJoyX"), -Input.GetAxis("RightJoyY"), 0);
 
         Vector3 pos = Globals.ClampToScreen(transform.position);
 
         if (transform.position == pos)
-        {
-            rb.AddForce(offset, ForceMode2D.Force);
-        }
+            transform.position += offset * speed * Time.deltaTime;
         else
-        {
-            rb.AddForce(Vector3.Normalize(-transform.position), ForceMode2D.Force);
-        }
+            transform.position = pos;
+
+        float bank = offset.x;
+        bank = Mathf.Abs(bank) < Mathf.Abs(tilt.x) ? tilt.x : (Mathf.Abs(bank) - Mathf.Abs(tilt.x)) * Mathf.Sign(bank);
+        bank += 1;
+        bank /= 2;
+
+        anim.Play("PlayerShip", -1, bank);
+
+        if (tilt.magnitude > 0)
+            transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(-tilt.x, tilt.y) * Mathf.Rad2Deg, Vector3.forward);
     }
 
     void OnTriggerEnter(Collider col)
@@ -97,8 +102,6 @@ public class Player : MonoBehaviour
             return;
 
         isDead = true;
-
-        rb.velocity = Vector3.zero;
 
         GetComponent<SpriteRenderer>().enabled = false;
 
