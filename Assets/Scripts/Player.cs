@@ -3,19 +3,27 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    const int WeaponCount = 4;
 
+    public GameObject[] bulletPrefabs = new GameObject[WeaponCount];
     public float speed = 35;
     public float rotateSpeed = 6;
+    public float[] maxShotsPerSecond = new float[WeaponCount] { 4, 4, 4, 4 };
 
     Rigidbody2D rb;
 
     float shotDelay = 0.25f;
     float timeElapsed = 0;
+    public enum WeaponType { A, B, X, Y }
+    WeaponType activeWeapon = WeaponType.A;
+    public WeaponType ActiveWeapon { get { return activeWeapon; } }
+
+
     Vector3 cannonOffset = new Vector3(0.5f, -0.1f, 0);
 
     ParticleSystem explosion;
     bool isDead = false;
+    public bool IsDead { get { return isDead; } }
 
     public bool Died
     {
@@ -27,28 +35,46 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         explosion = transform.Find("explosion").GetComponent<ParticleSystem>();
     }
-	
-	void Update()
+
+    void OnValidate()
+    {
+        if (bulletPrefabs.Length != WeaponCount)
+        {
+            Debug.LogWarning("Don't change bulletPrefabs array size!");
+            System.Array.Resize<GameObject>(ref bulletPrefabs, WeaponCount);
+        }
+
+        if (maxShotsPerSecond.Length != WeaponCount)
+        {
+            Debug.LogWarning("Don't change maxShotsPerSecond array size!");
+            System.Array.Resize<float>(ref maxShotsPerSecond, WeaponCount);
+        }
+    }
+
+    void Update()
     {
         if (isDead)
             return;
 
         timeElapsed += Time.deltaTime;
 
-        Debug.Log(Input.GetButton("Start"));
+        ulong switchMask = (ulong)((Input.GetButton("A") ? 1 : 0) + (Input.GetButton("B") ? 2 : 0) + (Input.GetButton("X") ? 4 : 0) + (Input.GetButton("Y") ? 8 : 0));
 
-        if (false && timeElapsed >= shotDelay)
+        if (switchMask > 0)
+            activeWeapon = (WeaponType)Globals.BitScanForward(switchMask);
+
+        Debug.Log(activeWeapon);
+
+        if (Input.GetAxis("RightTrigger") > 0 && timeElapsed >= shotDelay)
         {
             timeElapsed = 0;
 
-            GameObject ent = (GameObject)GameObject.Instantiate(bulletPrefab, transform.position + cannonOffset, Quaternion.identity);
+            GameObject ent = (GameObject)GameObject.Instantiate(bulletPrefabs[(int)activeWeapon], transform.position + cannonOffset, Quaternion.identity);
 
             cannonOffset.x *= -1;
         }
 
-        Vector3 offset = Vector3.zero;
-
-        // get joystick
+        Vector3 offset = new Vector3(Input.GetAxis("LeftJoyX"), -Input.GetAxis("LeftJoyY"), 0);
 
         Vector3 pos = Globals.ClampToScreen(transform.position);
 
@@ -60,8 +86,6 @@ public class Player : MonoBehaviour
         {
             rb.AddForce(Vector3.Normalize(-transform.position), ForceMode2D.Force);
         }
-
-        //transform.position = pos;
     }
 
     void OnTriggerEnter(Collider col)
