@@ -35,7 +35,9 @@ public class Player : MonoBehaviour
 
         timeElapsed += Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Space) && timeElapsed >= shotDelay)
+        Debug.Log(Input.GetButton("Start"));
+
+        if (false && timeElapsed >= shotDelay)
         {
             timeElapsed = 0;
 
@@ -46,14 +48,7 @@ public class Player : MonoBehaviour
 
         Vector3 offset = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.W))
-            offset.y += speed * Time.deltaTime;
-        if (Input.GetKey(KeyCode.A))
-            offset.x -= speed * Time.deltaTime;
-        if (Input.GetKey(KeyCode.S))
-            offset.y -= speed * Time.deltaTime;
-        if (Input.GetKey(KeyCode.D))
-            offset.x += speed * Time.deltaTime;
+        // get joystick
 
         Vector3 pos = Globals.ClampToScreen(transform.position);
 
