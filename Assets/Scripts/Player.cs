@@ -73,7 +73,7 @@ public class Player : MonoBehaviour
         }
 
         Vector3 offset = new Vector3(Input.GetAxis("LeftJoyX"), -Input.GetAxis("LeftJoyY"), 0);
-        Vector3 tilt = new Vector3(Input.GetAxis("RightJoyX"), -Input.GetAxis("RightJoyY"), 0);
+        Vector3 turn = new Vector3(Input.GetAxis("RightJoyX"), -Input.GetAxis("RightJoyY"), 0);
 
         Vector3 pos = Globals.ClampToScreen(transform.position);
 
@@ -82,15 +82,15 @@ public class Player : MonoBehaviour
         else
             transform.position = pos;
 
-        float bank = offset.x;
-        bank = Mathf.Abs(bank) < Mathf.Abs(tilt.x) ? tilt.x : (Mathf.Abs(bank) - Mathf.Abs(tilt.x)) * Mathf.Sign(bank);
-        bank += 1;
-        bank /= 2;
+        Quaternion rot = transform.rotation;
+        if (turn.magnitude > 0)
+            rot = Quaternion.AngleAxis(Mathf.Atan2(-turn.x, turn.y) * Mathf.Rad2Deg, Vector3.forward);
+        
+        transform.rotation = rot;
 
+        offset.x *= -1;
+        float bank = (-(rot * offset).x + 1) / 2;
         anim.Play("PlayerShip", -1, bank);
-
-        if (tilt.magnitude > 0)
-            transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(-tilt.x, tilt.y) * Mathf.Rad2Deg, Vector3.forward);
     }
 
     void OnTriggerEnter(Collider col)
