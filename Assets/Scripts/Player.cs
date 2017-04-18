@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
         if (Input.GetAxis("RightTrigger") > 0 && timeElapsed[(int)activeWeapon] >=  1.0f / maxShotsPerSecond[(int)activeWeapon])
         {
             timeElapsed[(int)activeWeapon] = 0;
-
+            Audio.PlayOneShot(playerShoot);
             if (bulletPrefabs[(int)activeWeapon] != null)
             {
                 GameObject ent = (GameObject)Instantiate(bulletPrefabs[(int)activeWeapon], transform.position, transform.rotation);

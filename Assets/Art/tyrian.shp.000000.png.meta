@@ -1,9 +1,177 @@
 fileFormatVersion: 2
 guid: 58bc5a41695b3ed40b476c7a081f021d
-timeCreated: 1492265330
+timeCreated: 1492484169
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: tyrian.shp.000000_0
+    21300002: tyrian.shp.000000_1
+    21300004: tyrian.shp.000000_2
+    21300006: tyrian.shp.000000_3
+    21300008: tyrian.shp.000000_4
+    21300010: tyrian.shp.000000_5
+    21300012: tyrian.shp.000000_6
+    21300014: tyrian.shp.000000_7
+    21300016: tyrian.shp.000000_8
+    21300018: tyrian.shp.000000_9
+    21300020: tyrian.shp.000000_10
+    21300022: tyrian.shp.000000_11
+    21300024: tyrian.shp.000000_12
+    21300026: tyrian.shp.000000_13
+    21300028: tyrian.shp.000000_14
+    21300030: tyrian.shp.000000_15
+    21300032: tyrian.shp.000000_16
+    21300034: tyrian.shp.000000_17
+    21300036: tyrian.shp.000000_18
+    21300038: tyrian.shp.000000_19
+    21300040: tyrian.shp.000000_20
+    21300042: tyrian.shp.000000_21
+    21300044: tyrian.shp.000000_22
+    21300046: tyrian.shp.000000_23
+    21300048: tyrian.shp.000000_24
+    21300050: tyrian.shp.000000_25
+    21300052: tyrian.shp.000000_26
+    21300054: tyrian.shp.000000_27
+    21300056: tyrian.shp.000000_28
+    21300058: tyrian.shp.000000_29
+    21300060: tyrian.shp.000000_30
+    21300062: tyrian.shp.000000_31
+    21300064: tyrian.shp.000000_32
+    21300066: tyrian.shp.000000_33
+    21300068: tyrian.shp.000000_34
+    21300070: tyrian.shp.000000_35
+    21300072: tyrian.shp.000000_36
+    21300074: tyrian.shp.000000_37
+    21300076: tyrian.shp.000000_38
+    21300078: tyrian.shp.000000_39
+    21300080: tyrian.shp.000000_40
+    21300082: tyrian.shp.000000_41
+    21300084: tyrian.shp.000000_42
+    21300086: tyrian.shp.000000_43
+    21300088: tyrian.shp.000000_44
+    21300090: tyrian.shp.000000_45
+    21300092: tyrian.shp.000000_46
+    21300094: tyrian.shp.000000_47
+    21300096: tyrian.shp.000000_48
+    21300098: tyrian.shp.000000_49
+    21300100: tyrian.shp.000000_50
+    21300102: tyrian.shp.000000_51
+    21300104: tyrian.shp.000000_52
+    21300106: tyrian.shp.000000_53
+    21300108: tyrian.shp.000000_54
+    21300110: tyrian.shp.000000_55
+    21300112: tyrian.shp.000000_56
+    21300114: tyrian.shp.000000_57
+    21300116: tyrian.shp.000000_58
+    21300118: tyrian.shp.000000_59
+    21300120: tyrian.shp.000000_60
+    21300122: tyrian.shp.000000_61
+    21300124: tyrian.shp.000000_62
+    21300126: tyrian.shp.000000_63
+    21300128: tyrian.shp.000000_64
+    21300130: tyrian.shp.000000_65
+    21300132: tyrian.shp.000000_66
+    21300134: tyrian.shp.000000_67
+    21300136: tyrian.shp.000000_68
+    21300138: tyrian.shp.000000_69
+    21300140: tyrian.shp.000000_70
+    21300142: tyrian.shp.000000_71
+    21300144: tyrian.shp.000000_72
+    21300146: tyrian.shp.000000_73
+    21300148: tyrian.shp.000000_74
+    21300150: tyrian.shp.000000_75
+    21300152: tyrian.shp.000000_76
+    21300154: tyrian.shp.000000_77
+    21300156: tyrian.shp.000000_78
+    21300158: tyrian.shp.000000_79
+    21300160: tyrian.shp.000000_80
+    21300162: tyrian.shp.000000_81
+    21300164: tyrian.shp.000000_82
+    21300166: tyrian.shp.000000_83
+    21300168: tyrian.shp.000000_84
+    21300170: tyrian.shp.000000_85
+    21300172: tyrian.shp.000000_86
+    21300174: tyrian.shp.000000_87
+    21300176: tyrian.shp.000000_88
+    21300178: tyrian.shp.000000_89
+    21300180: tyrian.shp.000000_90
+    21300182: tyrian.shp.000000_91
+    21300184: tyrian.shp.000000_92
+    21300186: tyrian.shp.000000_93
+    21300188: tyrian.shp.000000_94
+    21300190: tyrian.shp.000000_95
+    21300192: tyrian.shp.000000_96
+    21300194: tyrian.shp.000000_97
+    21300196: tyrian.shp.000000_98
+    21300198: tyrian.shp.000000_99
+    21300200: tyrian.shp.000000_100
+    21300202: tyrian.shp.000000_101
+    21300204: tyrian.shp.000000_102
+    21300206: tyrian.shp.000000_103
+    21300208: tyrian.shp.000000_104
+    21300210: tyrian.shp.000000_105
+    21300212: tyrian.shp.000000_106
+    21300214: tyrian.shp.000000_107
+    21300216: tyrian.shp.000000_108
+    21300218: tyrian.shp.000000_109
+    21300220: tyrian.shp.000000_110
+    21300222: tyrian.shp.000000_111
+    21300224: tyrian.shp.000000_112
+    21300226: tyrian.shp.000000_113
+    21300228: tyrian.shp.000000_114
+    21300230: tyrian.shp.000000_115
+    21300232: tyrian.shp.000000_116
+    21300234: tyrian.shp.000000_117
+    21300236: tyrian.shp.000000_118
+    21300238: tyrian.shp.000000_119
+    21300240: tyrian.shp.000000_120
+    21300242: tyrian.shp.000000_121
+    21300244: tyrian.shp.000000_122
+    21300246: tyrian.shp.000000_123
+    21300248: tyrian.shp.000000_124
+    21300250: tyrian.shp.000000_125
+    21300252: tyrian.shp.000000_126
+    21300254: tyrian.shp.000000_127
+    21300256: tyrian.shp.000000_128
+    21300258: tyrian.shp.000000_129
+    21300260: tyrian.shp.000000_130
+    21300262: tyrian.shp.000000_131
+    21300264: tyrian.shp.000000_132
+    21300266: tyrian.shp.000000_133
+    21300268: tyrian.shp.000000_134
+    21300270: tyrian.shp.000000_135
+    21300272: tyrian.shp.000000_136
+    21300274: tyrian.shp.000000_137
+    21300276: tyrian.shp.000000_138
+    21300278: tyrian.shp.000000_139
+    21300280: tyrian.shp.000000_140
+    21300282: tyrian.shp.000000_141
+    21300284: tyrian.shp.000000_142
+    21300286: tyrian.shp.000000_143
+    21300288: tyrian.shp.000000_144
+    21300290: tyrian.shp.000000_145
+    21300292: tyrian.shp.000000_146
+    21300294: tyrian.shp.000000_147
+    21300296: tyrian.shp.000000_148
+    21300298: tyrian.shp.000000_149
+    21300300: tyrian.shp.000000_150
+    21300302: tyrian.shp.000000_151
+    21300304: tyrian.shp.000000_152
+    21300306: tyrian.shp.000000_153
+    21300308: tyrian.shp.000000_154
+    21300310: tyrian.shp.000000_155
+    21300312: tyrian.shp.000000_156
+    21300314: tyrian.shp.000000_157
+    21300316: tyrian.shp.000000_158
+    21300318: tyrian.shp.000000_159
+    21300320: tyrian.shp.000000_160
+    21300322: tyrian.shp.000000_161
+    21300324: tyrian.shp.000000_162
+    21300326: tyrian.shp.000000_163
+    21300328: tyrian.shp.000000_164
+    21300330: tyrian.shp.000000_165
+    21300332: tyrian.shp.000000_166
+    21300334: tyrian.shp.000000_167
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -92,7 +260,2191 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: tyrian.shp.000000_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 216
+        width: 11
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 211
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_2
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 219
+        width: 11
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 211
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_4
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 210
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_5
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 214
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_6
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 212
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_7
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 211
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_8
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 211
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 212
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_10
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 212
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_11
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 212
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_12
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 213
+        width: 36
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_13
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 212
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_14
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 211
+        width: 11
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_15
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 199
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_16
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 198
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_17
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 197
+        width: 5
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_18
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 197
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_19
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 197
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_20
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 197
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_21
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 197
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_22
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 197
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_23
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 197
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_24
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 171
+        width: 24
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_25
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 200
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_26
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 183
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_27
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 196
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_28
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 196
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_29
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 196
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_30
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 196
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_31
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 196
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_32
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 196
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_33
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 196
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 188
+        width: 11
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_35
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 190
+        width: 11
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_36
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 183
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_37
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 191
+        width: 11
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_38
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 183
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_39
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 182
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_40
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 186
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_41
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 186
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_42
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 183
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_43
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 183
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_44
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 154
+        width: 12
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_45
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 184
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_46
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 185
+        width: 36
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_47
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 183
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_48
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 184
+        width: 11
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_49
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 183
+        width: 11
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_50
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 171
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_51
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 171
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_52
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 171
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_53
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 169
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_54
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 154
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_55
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 171
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_56
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 172
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_57
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 155
+        width: 12
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_58
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 155
+        width: 7
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_59
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 168
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_60
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 171
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_61
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 170
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_62
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 155
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_63
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 154
+        width: 10
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_64
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 154
+        width: 10
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_65
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 154
+        width: 8
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 98
+        width: 108
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_67
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 154
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_68
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 129
+        width: 27
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_69
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 155
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_70
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 154
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_71
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 141
+        width: 11
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_72
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 127
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_73
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 127
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_74
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 142
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_75
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 145
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_76
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 143
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_77
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 143
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_78
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 143
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_79
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 127
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_80
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 112
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_81
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 128
+        width: 30
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_82
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 129
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_83
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 113
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_84
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 113
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_85
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 114
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_86
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 112
+        width: 34
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_87
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 114
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_88
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 106
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_89
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 101
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_90
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 73
+        width: 23
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_91
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 100
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_92
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 100
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_93
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 101
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_94
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 106
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_95
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 100
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_96
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 101
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_97
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 72
+        width: 12
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_98
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 85
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_99
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 86
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_100
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 86
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_101
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 87
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_102
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 86
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_103
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 87
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_104
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 86
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_105
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 87
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_106
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 88
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_107
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 89
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_108
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 73
+        width: 11
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_109
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 17
+        width: 53
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_110
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 87
+        width: 24
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_111
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 84
+        width: 4
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 20
+        width: 12
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_113
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 19
+        width: 36
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_114
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 70
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_115
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 70
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_116
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 73
+        width: 36
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_117
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 71
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_118
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 71
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_119
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 71
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_120
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 70
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_121
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 58
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_122
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 58
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_123
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 58
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_124
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 58
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_125
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 57
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_126
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 57
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_127
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 56
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_128
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 61
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_129
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 60
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_130
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 60
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_131
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 45
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_132
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 44
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_133
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 44
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_134
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 42
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_135
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 44
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_136
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 43
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_137
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 31
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_138
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 28
+        width: 11
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_139
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 46
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_140
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 47
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_141
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 31
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_142
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 31
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_143
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 28
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_144
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 29
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_145
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 29
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_146
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 17
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_147
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 28
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_148
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 28
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_149
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 15
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_150
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 15
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_151
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 15
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_152
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 15
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_153
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 15
+        width: 35
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_154
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 22
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_155
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 2
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_156
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 18
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_157
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_158
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 0
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_159
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_160
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_161
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 36
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_162
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 0
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_163
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 35
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_164
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 0
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_165
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 0
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_166
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 0
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.000000_167
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 4
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
