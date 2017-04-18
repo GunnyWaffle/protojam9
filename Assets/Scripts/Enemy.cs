@@ -27,12 +27,15 @@ public class Enemy : MonoBehaviour {
     public EnemySpawner.EnemyType type;
     private Rigidbody2D myRB2d;
 
+    private Vector3 currentTargetLocation;
+
     // Use this for initialization
     void Start () {
         myRB2d = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>().gameObject;
         lastShotTime = timeBetweenShots;
         audioSource = GetComponent<AudioSource>();
+        GenerateTargetLocation();
     }
 
     // Update is called once per frame
@@ -45,14 +48,36 @@ public class Enemy : MonoBehaviour {
             transform.rotation = Quaternion.Euler(0, 0, angle + 270);
 
             // Follow the player
-            myRB2d.velocity = dir.normalized * speed * Time.deltaTime;
-
-            if (lastShotTime <= 0.0f)
+            switch (type)
             {
-                EnemyBullet ent = Instantiate(bullet, transform.position, transform.rotation);
-                lastShotTime = timeBetweenShots;
+                case EnemySpawner.EnemyType.Blue:
+                    if ((transform.position - currentTargetLocation).magnitude < 0.02f)
+                    {
+                        FireBullet();
+                        GenerateTargetLocation();
+                    }
+                    dir = currentTargetLocation - transform.position;
+                    break;
+                case EnemySpawner.EnemyType.Green:
+                    if (lastShotTime <= 0.0f)
+                        FireBullet();
+
+                    if ((transform.position - currentTargetLocation).magnitude < 0.02f)
+                        GenerateTargetLocation();
+
+                    dir = currentTargetLocation - transform.position;
+                    break;
+                case EnemySpawner.EnemyType.Red:
+                    if (lastShotTime <= 0.0f)
+                        FireBullet();
+                    break;
+                case EnemySpawner.EnemyType.Yellow:
+                    if (lastShotTime <= 0.0f)
+                        FireBullet();
+                    break;
             }
 
+            myRB2d.velocity = dir.normalized * speed * Time.deltaTime;
             lastShotTime -= Time.deltaTime;
         }
     }
@@ -72,5 +97,20 @@ public class Enemy : MonoBehaviour {
             audioSource.PlayOneShot(playerExplosion);
             collision.gameObject.GetComponent<Player>().KillPlayer();
         }
+    }
+
+    private void FireBullet()
+    {
+        EnemyBullet ent = Instantiate(bullet, transform.position, transform.rotation);
+        audioSource.PlayOneShot(enemyShoot);
+        lastShotTime = timeBetweenShots;
+    }
+
+    private void GenerateTargetLocation()
+    {
+        float randomXPos = Random.Range(0.05f, 0.95f);
+        float randomYPos = Random.Range(0.05f, 0.95f);
+        currentTargetLocation = Camera.main.ViewportToWorldPoint(new Vector3(randomXPos, randomYPos, 0.0f));
+        currentTargetLocation.z = 0.0f;
     }
 }
