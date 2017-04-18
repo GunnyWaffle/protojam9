@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
 
+    public static EnemySpawner instance;
+
     public List<Enemy> typesOfEnemies = new List<Enemy>();
     public int numEnemiesOnScreen;
     public float spawnTimer;
@@ -27,6 +29,13 @@ public class EnemySpawner : MonoBehaviour {
 
     private void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+            Destroy(gameObject);
+
         myCamera = GetComponent<Camera>();
     }
     private void Update()
@@ -113,5 +122,10 @@ public class EnemySpawner : MonoBehaviour {
         Enemy newEnemy = Instantiate(enemy, spawnLocation, Quaternion.Euler(0, 180, 0));
         // May need to init the enemy
         enemiesOnScreen++;
+    }
+
+    public void KilledEnemy(EnemyType type)
+    {
+        enemiesOnScreen--;
     }
 }

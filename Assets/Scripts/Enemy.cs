@@ -36,11 +36,11 @@ public class Enemy : MonoBehaviour {
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle + 270);
 
-            if (dir.magnitude > orbit_radius_X)
-            {
+            //if (dir.magnitude > orbit_radius_X)
+            //{
                 myRB2d.velocity = dir.normalized * speed * Time.deltaTime;
-            }
-            else
+            //}
+            /*else
             {
 
                 //Enemy movement
@@ -54,7 +54,13 @@ public class Enemy : MonoBehaviour {
                 {
                     //bullet.SetActive(true);
                 }
-            }
+            }*/
         }
+    }
+
+    public void DestroyShip()
+    {
+        EnemySpawner.instance.KilledEnemy(type);
+        Destroy(gameObject);
     }
 }
