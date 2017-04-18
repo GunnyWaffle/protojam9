@@ -225,6 +225,30 @@ Prefab:
       propertyPath: playerShoot
       value: 
       objectReference: {fileID: 8300000, guid: 563a3933569cf204abacf86b01e22862, type: 3}
+    - target: {fileID: 114711610294463050, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
+        type: 2}
+      propertyPath: bulletPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1839065057235534, guid: 3d1fb2cba7e29e7489ed2d7b53181849,
+        type: 2}
+    - target: {fileID: 114711610294463050, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
+        type: 2}
+      propertyPath: bulletPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1404941314395734, guid: a53eb8de1dc64434299ef82a00a3e2bf,
+        type: 2}
+    - target: {fileID: 114711610294463050, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
+        type: 2}
+      propertyPath: bulletPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1859867677953486, guid: ca6ccd4317c41a84b8fee3162804e9f0,
+        type: 2}
+    - target: {fileID: 114711610294463050, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
+        type: 2}
+      propertyPath: bulletPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1442742376942200, guid: e20e140e3ee423440bc9e86189b514a7,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf, type: 2}
   m_IsPrefabParent: 0
