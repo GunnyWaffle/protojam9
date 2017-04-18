@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-    public GameObject player;
+    private GameObject player;
 
     //Alters orbit speed along x and y
     float orbit_period_X = 1.0f;
@@ -16,8 +16,13 @@ public class Enemy : MonoBehaviour {
     //Enemy shoot
     public GameObject bullet;
 
+    public EnemySpawner.EnemyType type;
+    private SpriteRenderer mySpriteRend;
+
     // Use this for initialization
     void Start () {
+        mySpriteRend = GetComponent<SpriteRenderer>();
+        player = FindObjectOfType<Player>().gameObject;
     }
 
     // Update is called once per frame
