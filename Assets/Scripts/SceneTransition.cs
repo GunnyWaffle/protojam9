@@ -28,7 +28,7 @@ public class SceneTransition : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
-    public void Gameover()
+    public static void Gameover()
     {
         SceneManager.LoadScene("Credits");
     }

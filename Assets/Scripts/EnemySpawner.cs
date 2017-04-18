@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour {
     public int numEnemiesOnScreen;
     public float spawnTimer;
 
+    private bool shouldSpawn = true;
     private float lastSpawn = 0.0f;
     private float minSpawnLocation = .1f;
     private float maxSpawnLocation = .9f;
@@ -40,7 +41,7 @@ public class EnemySpawner : MonoBehaviour {
     }
     private void Update()
     {
-        if (enemiesOnScreen < numEnemiesOnScreen && lastSpawn <= 0.0f)
+        if (enemiesOnScreen < numEnemiesOnScreen && lastSpawn <= 0.0f && shouldSpawn)
         {
             SpawnEnemy();
             lastSpawn = spawnTimer;
@@ -127,5 +128,10 @@ public class EnemySpawner : MonoBehaviour {
     public void KilledEnemy(EnemyType type)
     {
         enemiesOnScreen--;
+    }
+
+    public void StopSpawning()
+    {
+        shouldSpawn = false;
     }
 }
