@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
     private GameObject player;
-    private AudioSource Audio;
-    public AudioClip enemyExplosion;
-    public AudioClip enemyShoot;
 
     //Alters orbit speed along x and y
     float orbit_period_X = 1.0f;
@@ -28,7 +25,6 @@ public class Enemy : MonoBehaviour {
     void Start () {
         myRB2d = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>().gameObject;
-        Audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -57,7 +53,6 @@ public class Enemy : MonoBehaviour {
                 if (time % 2 == 0 && !bullet.activeSelf)
                 {
                     //bullet.SetActive(true);
-                    Audio.PlayOneShot(enemyShoot);
                 }
             }*/
         }
@@ -66,7 +61,6 @@ public class Enemy : MonoBehaviour {
     public void DestroyShip()
     {
         EnemySpawner.instance.KilledEnemy(type);
-        Audio.PlayOneShot(enemyExplosion);
         Destroy(gameObject);
     }
 }
