@@ -33,7 +33,7 @@ public class SceneTransition : MonoBehaviour
         SceneManager.LoadScene("Credits");
     }
 
-    public void Reset()
+    void Reset()
     {
         SceneManager.LoadScene("Main");
     }

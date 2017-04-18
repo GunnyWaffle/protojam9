@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    private int score;
+    public Text scoreText;
+
     const int WeaponCount = 4;
 
     public PlayerBullet[] bulletPrefabs = new PlayerBullet[WeaponCount];
@@ -37,6 +41,7 @@ public class Player : MonoBehaviour
         explosion = transform.Find("explosion").GetComponent<ParticleSystem>();
         anim = GetComponent<Animator>();
         Audio = GetComponent<AudioSource>();
+        PlayerPrefs.SetInt("Score", 0);
     }
 
     void OnValidate()
@@ -128,5 +133,13 @@ public class Player : MonoBehaviour
         Audio.PlayOneShot(playerExplosion);
         explosion.Play(true);
         EnemySpawner.instance.StopSpawning();
+
+        PlayerPrefs.SetInt("Score", score);
+    }
+
+    public void UpdateScore()
+    {
+        score += 1;
+        scoreText.text = "Score: " + score;    
     }
 }

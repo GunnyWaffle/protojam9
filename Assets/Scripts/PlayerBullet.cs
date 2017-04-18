@@ -28,8 +28,10 @@ public class PlayerBullet : MonoBehaviour
         if (collision.tag == "enemy")
         {
             Enemy currentEnemy = collision.gameObject.GetComponent<Enemy>();
+            Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
             if (currentEnemy.type == type)
             {
+                player.UpdateScore();
                 audioSource.PlayOneShot(enemyExplosion);
                 currentEnemy.DestroyShip();
                 Destroy(gameObject);
