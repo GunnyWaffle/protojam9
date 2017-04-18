@@ -1,9 +1,10 @@
 fileFormatVersion: 2
 guid: 4180b98471903ac4980285802f21d0b7
-timeCreated: 1492265329
+timeCreated: 1492484643
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: newsh$.shp.000000_0
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -92,7 +93,20 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: newsh$.shp.000000_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 228
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
