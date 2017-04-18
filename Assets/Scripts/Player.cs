@@ -26,10 +26,15 @@ public class Player : MonoBehaviour
         get { return isDead; }
     }
 
+    //Audio Stuff
+    AudioSource Audio;
+    public AudioClip playerExplosion;
+    public AudioClip playerShoot;
 	void Start()
     {
         explosion = transform.Find("explosion").GetComponent<ParticleSystem>();
         anim = GetComponent<Animator>();
+        Audio = GetComponent<AudioSource>();
     }
 
     void OnValidate()
@@ -67,6 +72,7 @@ public class Player : MonoBehaviour
             if (bulletPrefabs[(int)activeWeapon] != null)
             {
                 GameObject ent = (GameObject)Instantiate(bulletPrefabs[(int)activeWeapon], transform.position, transform.rotation);
+                Audio.PlayOneShot(playerShoot);
             }
             else
                 Debug.Log("The bullet prefab for weapon " + activeWeapon + " is missing and/or null!");
@@ -104,7 +110,7 @@ public class Player : MonoBehaviour
         isDead = true;
 
         GetComponent<SpriteRenderer>().enabled = false;
-
+        Audio.PlayOneShot(playerExplosion);
         explosion.Play(true);
     }
 }
