@@ -6,10 +6,14 @@ public class PlayerBullet : MonoBehaviour
 {
     public float speed;
     public EnemySpawner.EnemyType type;
+    private AudioSource audioSource;
+    public AudioClip enemyExplosion;
+
 
     void Start ()
     {
         GetComponent<Rigidbody2D>().velocity = transform.up * speed;
+        audioSource = GetComponent<AudioSource>();
     }
 	
 	void Update ()
@@ -27,6 +31,7 @@ public class PlayerBullet : MonoBehaviour
             Enemy currentEnemy = collision.gameObject.GetComponent<Enemy>();
             if (currentEnemy.type == type)
             {
+                audioSource.PlayOneShot(enemyExplosion);
                 currentEnemy.DestroyShip();
                 Destroy(gameObject);
             }
