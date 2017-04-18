@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 212053199553976036}
   - component: {fileID: 114355801983137592}
   - component: {fileID: 50949301394337858}
+  - component: {fileID: 82774009816099114}
   m_Layer: 8
   m_Name: Enemy (1)
   m_TagString: enemy
@@ -74,10 +75,89 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
   m_Offset: {x: -0.0040518045, y: -0.016206741}
   serializedVersion: 2
   m_Radius: 0.07457459
+--- !u!82 &82774009816099114
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1251685963404768}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114355801983137592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,6 +169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6d3144d3903ce4d950f2ed64f0055a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyShoot: {fileID: 8300000, guid: 9af15d4bc5cfebe4380040902cae74a0, type: 3}
+  enemyExplosion: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
+  playerExplosion: {fileID: 8300000, guid: f07ca66862ebf9947bd369728cc5861a, type: 3}
   speed: 40
   bullet: {fileID: 114793583567434806, guid: 1552503b772daf948a92a5533a4e0839, type: 2}
   timeBetweenShots: 3
@@ -123,13 +206,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1020217031
-  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300134, guid: 4c2a4e7df40ab2f42ad3c423142080e0, type: 3}
   m_Color: {r: 0.99264705, g: 0.99264705, b: 0.007298882, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
