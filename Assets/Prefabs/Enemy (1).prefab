@@ -90,7 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 14
-  bullet: {fileID: 0}
+  bullet: {fileID: 114793583567434806, guid: 1552503b772daf948a92a5533a4e0839, type: 2}
+  timeBetweenShots: 3
   type: 2
 --- !u!212 &212053199553976036
 SpriteRenderer:
@@ -121,11 +122,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1020217031
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300134, guid: 4c2a4e7df40ab2f42ad3c423142080e0, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.99264705, g: 0.99264705, b: 0.007298882, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

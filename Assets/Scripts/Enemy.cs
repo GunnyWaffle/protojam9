@@ -16,7 +16,9 @@ public class Enemy : MonoBehaviour {
     public float speed = 1.0f;
 
     //Enemy shoot
-    public GameObject bullet;
+    public EnemyBullet bullet;
+    public float timeBetweenShots;
+    private float lastShotTime;
 
     public EnemySpawner.EnemyType type;
     private Rigidbody2D myRB2d;
@@ -25,6 +27,7 @@ public class Enemy : MonoBehaviour {
     void Start () {
         myRB2d = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>().gameObject;
+        lastShotTime = timeBetweenShots;
     }
 
     // Update is called once per frame
@@ -36,25 +39,16 @@ public class Enemy : MonoBehaviour {
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle + 270);
 
-            //if (dir.magnitude > orbit_radius_X)
-            //{
-                myRB2d.velocity = dir.normalized * speed * Time.deltaTime;
-            //}
-            /*else
+            // Follow the player
+            myRB2d.velocity = dir.normalized * speed * Time.deltaTime;
+
+            if (lastShotTime <= 0.0f)
             {
+                EnemyBullet ent = Instantiate(bullet, transform.position, transform.rotation);
+                lastShotTime = timeBetweenShots;
+            }
 
-                //Enemy movement
-                float time = Time.time;
-                float x = orbit_radius_X * Mathf.Sin(time * orbit_period_X) + player.transform.position.x;
-                float y = orbit_radius_Y * Mathf.Cos(time * orbit_period_Y) + player.transform.position.y;
-                transform.position = new Vector3(x, y, 0);
-
-                //Enemy shooting
-                if (time % 2 == 0 && !bullet.activeSelf)
-                {
-                    //bullet.SetActive(true);
-                }
-            }*/
+            lastShotTime -= Time.deltaTime;
         }
     }
 
