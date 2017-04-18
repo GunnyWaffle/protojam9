@@ -63,4 +63,13 @@ public class Enemy : MonoBehaviour {
         EnemySpawner.instance.KilledEnemy(type);
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            DestroyShip();
+            collision.gameObject.GetComponent<Player>().KillPlayer();
+        }
+    }
 }

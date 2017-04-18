@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 
     ParticleSystem explosion;
     bool isDead = false;
+    public float timerAfterDeath;
     public bool IsDead { get { return isDead; } }
 
     public bool Died
@@ -55,7 +56,13 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (isDead)
+        {
+            if (timerAfterDeath <= 0.0f)
+                SceneTransition.Gameover();
+
+            timerAfterDeath -= Time.deltaTime;
             return;
+        }
 
         for (uint i = 0; i < WeaponCount; ++i)
             timeElapsed[i] += Time.deltaTime;
@@ -107,10 +114,16 @@ public class Player : MonoBehaviour
         if (isDead)
             return;
 
+        KillPlayer();
+    }
+
+    public void KillPlayer()
+    {
         isDead = true;
 
         GetComponent<SpriteRenderer>().enabled = false;
         Audio.PlayOneShot(playerExplosion);
         explosion.Play(true);
+        EnemySpawner.instance.StopSpawning();
     }
 }

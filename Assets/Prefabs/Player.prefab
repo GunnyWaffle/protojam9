@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 95939319643423286}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,6 +128,7 @@ MonoBehaviour:
   - 4
   - 4
   - 4
+  timerAfterDeath: 5
   playerExplosion: {fileID: 0}
   playerShoot: {fileID: 0}
 --- !u!198 &198830175413938760
