@@ -5,10 +5,13 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour {
 
     public float speed;
+    private AudioSource audioSource;
+    public AudioClip playerExplosion;
 
     void Start()
     {
         GetComponent<Rigidbody2D>().velocity = transform.up * speed;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -24,6 +27,7 @@ public class EnemyBullet : MonoBehaviour {
         if (collision.tag == "Player")
         {
             Player player = collision.gameObject.GetComponent<Player>();
+            audioSource.PlayOneShot(playerExplosion);
             player.KillPlayer();
             Destroy(gameObject);
         }
