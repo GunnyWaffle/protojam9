@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 
     public PlayerBullet[] bulletPrefabs = new PlayerBullet[WeaponCount];
     public float speed = 2.2f;
+    public float focusPercentage = 0.4f;
 
     public float[] maxShotsPerSecond = new float[WeaponCount] { 4, 4, 4, 4 };
     float[] timeElapsed = new float[WeaponCount] { 0, 0, 0, 0 };
@@ -90,8 +91,10 @@ public class Player : MonoBehaviour
 
         Vector3 pos = Globals.ClampToScreen(transform.position);
 
+        float speedLimiter = 1 - Input.GetAxis("LeftTrigger") * focusPercentage;
+
         if (transform.position == pos)
-            transform.position += offset * speed * Time.deltaTime;
+            transform.position += offset * speed * speedLimiter * Time.deltaTime;
         else
             transform.position = pos;
 
