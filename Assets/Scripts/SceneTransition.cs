@@ -35,6 +35,6 @@ public class SceneTransition : MonoBehaviour
 
     void Reset()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Start");
     }
 }
