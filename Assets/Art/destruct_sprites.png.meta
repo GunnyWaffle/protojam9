@@ -1,9 +1,93 @@
 fileFormatVersion: 2
 guid: b798fd6020f3a114686b3ad7f603c1fb
-timeCreated: 1492265331
+timeCreated: 1493049057
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: destruct_sprites_0
+    21300002: destruct_sprites_1
+    21300004: destruct_sprites_2
+    21300006: destruct_sprites_3
+    21300008: destruct_sprites_4
+    21300010: destruct_sprites_5
+    21300012: destruct_sprites_6
+    21300014: destruct_sprites_7
+    21300016: destruct_sprites_8
+    21300018: destruct_sprites_9
+    21300020: destruct_sprites_10
+    21300022: destruct_sprites_11
+    21300024: destruct_sprites_12
+    21300026: destruct_sprites_13
+    21300028: destruct_sprites_14
+    21300030: destruct_sprites_15
+    21300032: destruct_sprites_16
+    21300034: destruct_sprites_17
+    21300036: destruct_sprites_18
+    21300038: destruct_sprites_19
+    21300040: destruct_sprites_20
+    21300042: destruct_sprites_21
+    21300044: destruct_sprites_22
+    21300046: destruct_sprites_23
+    21300048: destruct_sprites_24
+    21300050: destruct_sprites_25
+    21300052: destruct_sprites_26
+    21300054: destruct_sprites_27
+    21300056: destruct_sprites_28
+    21300058: destruct_sprites_29
+    21300060: destruct_sprites_30
+    21300062: destruct_sprites_31
+    21300064: destruct_sprites_32
+    21300066: destruct_sprites_33
+    21300068: destruct_sprites_34
+    21300070: destruct_sprites_35
+    21300072: destruct_sprites_36
+    21300074: destruct_sprites_37
+    21300076: destruct_sprites_38
+    21300078: destruct_sprites_39
+    21300080: destruct_sprites_40
+    21300082: destruct_sprites_41
+    21300084: destruct_sprites_42
+    21300086: destruct_sprites_43
+    21300088: destruct_sprites_44
+    21300090: destruct_sprites_45
+    21300092: destruct_sprites_46
+    21300094: destruct_sprites_47
+    21300096: destruct_sprites_48
+    21300098: destruct_sprites_49
+    21300100: destruct_sprites_50
+    21300102: destruct_sprites_51
+    21300104: destruct_sprites_52
+    21300106: destruct_sprites_53
+    21300108: destruct_sprites_54
+    21300110: destruct_sprites_55
+    21300112: destruct_sprites_56
+    21300114: destruct_sprites_57
+    21300116: destruct_sprites_58
+    21300118: destruct_sprites_59
+    21300120: destruct_sprites_60
+    21300122: destruct_sprites_61
+    21300124: destruct_sprites_62
+    21300126: destruct_sprites_63
+    21300128: destruct_sprites_64
+    21300130: destruct_sprites_65
+    21300132: destruct_sprites_66
+    21300134: destruct_sprites_67
+    21300136: destruct_sprites_68
+    21300138: destruct_sprites_69
+    21300140: destruct_sprites_70
+    21300142: destruct_sprites_71
+    21300144: destruct_sprites_72
+    21300146: destruct_sprites_73
+    21300148: destruct_sprites_74
+    21300150: destruct_sprites_75
+    21300152: destruct_sprites_76
+    21300154: destruct_sprites_77
+    21300156: destruct_sprites_78
+    21300158: destruct_sprites_79
+    21300160: destruct_sprites_80
+    21300162: destruct_sprites_81
+    21300164: destruct_sprites_82
+    21300166: destruct_sprites_83
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -92,7 +176,1099 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: destruct_sprites_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 182
+        width: 84
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 196
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 196
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_3
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 196
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_4
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 210
+        width: 36
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_5
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 196
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_6
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 210
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_7
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 196
+        width: 24
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_8
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 196
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_9
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 196
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 170
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_11
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 169
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_12
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 168
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_13
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 169
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_14
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 170
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_15
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 169
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_16
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 169
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_17
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 169
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_18
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 169
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_19
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 169
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_20
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 169
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_21
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 169
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_22
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 169
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_23
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 169
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_24
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 169
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_25
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 156
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_26
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 155
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_27
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 155
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_28
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 155
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_29
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 156
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_30
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 155
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_31
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 155
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_32
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 155
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_33
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 155
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_34
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 155
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_35
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 155
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_36
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 155
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_37
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 155
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_38
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 155
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_39
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 155
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_40
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 140
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_41
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 140
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_42
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 126
+        width: 10
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_43
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 140
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_44
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 140
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_45
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 141
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_46
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 141
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_47
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 126
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_48
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 126
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_49
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 126
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_50
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 126
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_51
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 127
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_52
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 127
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 71
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_54
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 99
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_55
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 99
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_56
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 99
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_57
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 99
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_58
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 99
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_59
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 99
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_60
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 99
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_61
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 99
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_62
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 99
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 85
+        width: 180
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_64
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 74
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_65
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 75
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_66
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 75
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_67
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 75
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_68
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 75
+        width: 11
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_69
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 76
+        width: 11
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_70
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 74
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_71
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 74
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_72
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 75
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_73
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 74
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_74
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 66
+        width: 45
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_75
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 74
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_76
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 74
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_77
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 74
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_78
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 66
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_79
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 73
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_80
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 43
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_81
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 43
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_82
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 44
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: destruct_sprites_83
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 1
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

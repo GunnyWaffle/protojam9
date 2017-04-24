@@ -1,9 +1,22 @@
 fileFormatVersion: 2
 guid: d8d05d56ddde8ec47ad207a690f4cb4c
-timeCreated: 1492265331
+timeCreated: 1493050386
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: newshb.shp.000000_0
+    21300002: newshb.shp.000000_1
+    21300004: newshb.shp.000000_2
+    21300006: newshb.shp.000000_3
+    21300008: newshb.shp.000000_4
+    21300010: newshb.shp.000000_5
+    21300012: newshb.shp.000000_6
+    21300014: newshb.shp.000000_7
+    21300016: newshb.shp.000000_8
+    21300018: newshb.shp.000000_9
+    21300020: newshb.shp.000000_10
+    21300022: newshb.shp.000000_11
+    21300024: newshb.shp.000000_12
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -92,7 +105,176 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: newshb.shp.000000_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 86
+        width: 117
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: newshb.shp.000000_1
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 86
+        width: 104
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: newshb.shp.000000_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 56
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: newshb.shp.000000_3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 0
+        width: 19
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: newshb.shp.000000_4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 56
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: newshb.shp.000000_5
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 56
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: newshb.shp.000000_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 56
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: newshb.shp.000000_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 28
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: newshb.shp.000000_8
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 28
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: newshb.shp.000000_9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 28
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: newshb.shp.000000_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: newshb.shp.000000_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: newshb.shp.000000_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

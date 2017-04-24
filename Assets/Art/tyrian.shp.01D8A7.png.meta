@@ -1,9 +1,12 @@
 fileFormatVersion: 2
 guid: ffbafc7bcf1543e4997331f89c2817ad
-timeCreated: 1492265332
+timeCreated: 1493052389
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: tyrian.shp.01D8A7_0
+    21300002: tyrian.shp.01D8A7_1
+    21300004: tyrian.shp.01D8A7_2
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -92,7 +95,46 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: tyrian.shp.01D8A7_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 168
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.01D8A7_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 168
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: tyrian.shp.01D8A7_2
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 168
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
