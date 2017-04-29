@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 
     const int WeaponCount = 4;
 
-    public PlayerBullet[] bulletPrefabs = new PlayerBullet[WeaponCount];
+    public Bullet[] bulletPrefabs = new Bullet[WeaponCount];
     public float speed = 2.2f;
     public float focusPercentage = 0.4f;
 
@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
         if (bulletPrefabs.Length != WeaponCount)
         {
             Debug.LogWarning("Don't change bulletPrefabs array size!");
-            System.Array.Resize<PlayerBullet>(ref bulletPrefabs, WeaponCount);
+            System.Array.Resize<Bullet>(ref bulletPrefabs, WeaponCount);
         }
 
         if (maxShotsPerSecond.Length != WeaponCount)
@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
             Audio.PlayOneShot(playerShoot);
             if (bulletPrefabs[(int)activeWeapon] != null)
             {
-                PlayerBullet ent = Instantiate(bulletPrefabs[(int)activeWeapon], transform.position, transform.rotation);
+                Instantiate(bulletPrefabs[(int)activeWeapon], transform.position, transform.rotation);
                 Audio.PlayOneShot(playerShoot);
             }
             else

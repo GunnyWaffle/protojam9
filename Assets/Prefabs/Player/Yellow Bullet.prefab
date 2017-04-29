@@ -21,12 +21,12 @@ GameObject:
   - component: {fileID: 4549124378361418}
   - component: {fileID: 212388154974274346}
   - component: {fileID: 95206628195901436}
-  - component: {fileID: 114013527872558714}
   - component: {fileID: 70017846486857426}
   - component: {fileID: 50367574049177044}
   - component: {fileID: 82289427753241536}
+  - component: {fileID: 114841761968791986}
   m_Layer: 0
-  m_Name: X-Bullet
+  m_Name: Yellow Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,6 +76,7 @@ CapsuleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.08, y: 0.1}
   m_Direction: 0
@@ -176,7 +177,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114013527872558714
+--- !u!114 &114841761968791986
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -184,12 +185,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1859867677953486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0225d6b95e7f23d4b9f2e1e201f7440f, type: 3}
+  m_Script: {fileID: 11500000, guid: a79f8218e0d6c0645886366f71cfdeaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  playerShot: 1
   type: 0
-  enemyExplosion: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
+  explosion: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
 --- !u!212 &212388154974274346
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -220,8 +222,13 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1020217031
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300262, guid: 58bc5a41695b3ed40b476c7a081f021d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0

@@ -200,17 +200,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
   bulletPrefabs:
-  - {fileID: 114135924187675636, guid: 3d1fb2cba7e29e7489ed2d7b53181849, type: 2}
-  - {fileID: 114318258476083244, guid: a53eb8de1dc64434299ef82a00a3e2bf, type: 2}
-  - {fileID: 114013527872558714, guid: ca6ccd4317c41a84b8fee3162804e9f0, type: 2}
-  - {fileID: 114488144510979928, guid: e20e140e3ee423440bc9e86189b514a7, type: 2}
-  speed: 2.2
+  - {fileID: 114448702234317316, guid: 3d1fb2cba7e29e7489ed2d7b53181849, type: 2}
+  - {fileID: 114067818841735052, guid: a53eb8de1dc64434299ef82a00a3e2bf, type: 2}
+  - {fileID: 114841761968791986, guid: ca6ccd4317c41a84b8fee3162804e9f0, type: 2}
+  - {fileID: 114849580123167498, guid: e20e140e3ee423440bc9e86189b514a7, type: 2}
+  speed: 2.05
   focusPercentage: 0.45
   maxShotsPerSecond:
-  - 4
-  - 4
-  - 4
-  - 4
+  - 6
+  - 6
+  - 6
+  - 6
   timerAfterDeath: 5
   playerExplosion: {fileID: 8300000, guid: f07ca66862ebf9947bd369728cc5861a, type: 3}
   playerShoot: {fileID: 8300000, guid: 563a3933569cf204abacf86b01e22862, type: 3}
@@ -3254,8 +3254,8 @@ ParticleSystemRenderer:
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
-  m_MinParticleSize: 10
-  m_MaxParticleSize: 100
+  m_MinParticleSize: 0
+  m_MaxParticleSize: 0.05
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2

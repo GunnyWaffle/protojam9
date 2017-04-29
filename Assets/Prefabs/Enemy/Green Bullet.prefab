@@ -21,11 +21,11 @@ GameObject:
   - component: {fileID: 4613748524033446}
   - component: {fileID: 58217334629472602}
   - component: {fileID: 212403337296731918}
-  - component: {fileID: 114793583567434806}
   - component: {fileID: 50887274186136310}
   - component: {fileID: 82752393250881868}
+  - component: {fileID: 114957375796777518}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Green Bullet
   m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,6 +75,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: -0.0074495673, y: 0}
   serializedVersion: 2
   m_Radius: 0.040860355
@@ -158,7 +159,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114793583567434806
+--- !u!114 &114957375796777518
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -166,11 +167,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1210404755067856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 937963a29690c6b43bbfc6829df67de2, type: 3}
+  m_Script: {fileID: 11500000, guid: a79f8218e0d6c0645886366f71cfdeaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  playerExplosion: {fileID: 8300000, guid: f07ca66862ebf9947bd369728cc5861a, type: 3}
+  playerShot: 0
+  type: 1
+  explosion: {fileID: 8300000, guid: f07ca66862ebf9947bd369728cc5861a, type: 3}
 --- !u!212 &212403337296731918
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -201,8 +204,13 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1020217031
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300128, guid: 4c2a4e7df40ab2f42ad3c423142080e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0

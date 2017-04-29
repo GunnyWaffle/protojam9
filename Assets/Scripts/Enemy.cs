@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour {
     public float speed = 1.0f;
 
     //Enemy shoot
-    public EnemyBullet bullet;
+    public Bullet bullet;
     public float timeBetweenShots;
     private float lastShotTime;
 
@@ -101,7 +101,7 @@ public class Enemy : MonoBehaviour {
 
     private void FireBullet()
     {
-        EnemyBullet ent = Instantiate(bullet, transform.position, transform.rotation);
+        Instantiate(bullet, transform.position, transform.rotation);
         audioSource.PlayOneShot(enemyShoot);
         lastShotTime = timeBetweenShots;
     }
