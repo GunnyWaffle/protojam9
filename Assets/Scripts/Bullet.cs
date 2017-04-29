@@ -2,51 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum BulletMove
-{
-    None,
-    Linear
-}
-
-public enum BulletRotate
-{
-    None
-}
-
-static class BulletMethods
-{
-    public static void Move(this BulletMove bm, GameObject go)
-    {
-        switch (bm)
-        {
-            case BulletMove.Linear:
-                LinearMove(go);
-                break;
-            case BulletMove.None:
-            default:
-                break;
-        }
-    }
-
-    public static void Rotate(this BulletRotate bm, GameObject go)
-    {
-        switch (bm)
-        {
-            case BulletRotate.None:
-            default:
-                break;
-        }
-    }
-
-    static void LinearMove(GameObject go)
-    {
-        Vector3 screenPos = Globals.ClampToScreen(go.transform.position);
-
-        if ((go.transform.position - screenPos).magnitude > go.transform.localScale.magnitude)
-            GameObject.Destroy(go.gameObject);
-    }
-}
-
 public class Bullet : MonoBehaviour
 {
     public float speed;
@@ -57,6 +12,7 @@ public class Bullet : MonoBehaviour
 
     public BulletMove move = BulletMove.Linear;
     public BulletRotate rotate = BulletRotate.None;
+    public BulletFire fire = BulletFire.Single;
 
     void Start()
     {

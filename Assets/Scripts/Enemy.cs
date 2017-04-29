@@ -101,7 +101,7 @@ public class Enemy : MonoBehaviour {
 
     private void FireBullet()
     {
-        Instantiate(bullet, transform.position, transform.rotation);
+        bullet.fire.Fire(bullet.gameObject, gameObject);
         audioSource.PlayOneShot(enemyShoot);
         lastShotTime = timeBetweenShots;
     }

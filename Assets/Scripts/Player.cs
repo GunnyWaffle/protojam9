@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
             Audio.PlayOneShot(playerShoot);
             if (bulletPrefabs[(int)activeWeapon] != null)
             {
-                Instantiate(bulletPrefabs[(int)activeWeapon], transform.position, transform.rotation);
+                bulletPrefabs[(int)activeWeapon].fire.Fire(bulletPrefabs[(int)activeWeapon].gameObject, gameObject);
                 Audio.PlayOneShot(playerShoot);
             }
             else
