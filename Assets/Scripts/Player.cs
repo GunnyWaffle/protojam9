@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     private int score;
     public Text scoreText;
 
+    public int health = 16;
+
     const int WeaponCount = 4;
 
     public Bullet[] bulletPrefabs = new Bullet[WeaponCount];
@@ -114,15 +116,15 @@ public class Player : MonoBehaviour
         anim.Play("PlayerShip", -1, bank);
     }
 
-    void OnTriggerEnter(Collider col)
+    public void DamagePlayer(int damage)
     {
-        if (col.gameObject.tag != "enemyBullet")
-            return;
-
         if (isDead)
             return;
 
-        KillPlayer();
+        health -= damage;
+
+        if (health <= 0)
+            KillPlayer();
     }
 
     public void KillPlayer()

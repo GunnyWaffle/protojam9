@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed;
-    public bool playerShot;
+    public float speed = 3;
+    public int damage = 4;
+    public bool playerShot = false;
     public EnemySpawner.EnemyType type;
-    private AudioSource audioSource;
-    public AudioClip explosion;
 
     public BulletMove move = BulletMove.Linear;
     public BulletRotate rotate = BulletRotate.None;
@@ -17,7 +16,6 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         GetComponent<Rigidbody2D>().velocity = transform.up * speed;
-        audioSource = GetComponent<AudioSource>();
     }
 
 	void Update()
@@ -30,21 +28,17 @@ public class Bullet : MonoBehaviour
     {
         if (!playerShot && collision.tag == "Player")
         {
-            Player player = collision.gameObject.GetComponent<Player>();
-            audioSource.PlayOneShot(explosion);
-            player.KillPlayer();
+            collision.gameObject.GetComponent<Player>().DamagePlayer(damage);
             Destroy(gameObject);
         }
 
         if (playerShot && collision.tag == "enemy")
         {
-            Enemy currentEnemy = collision.gameObject.GetComponent<Enemy>();
-            Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-            if (currentEnemy.type == type)
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            if (enemy.type == type)
             {
-                player.UpdateScore();
-                audioSource.PlayOneShot(explosion);
-                currentEnemy.DestroyShip();
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().UpdateScore();
+                enemy.DestroyShip();
                 Destroy(gameObject);
             }
         }

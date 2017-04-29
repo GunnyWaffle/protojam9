@@ -94,8 +94,7 @@ public class Enemy : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             DestroyShip();
-            audioSource.PlayOneShot(playerExplosion);
-            collision.gameObject.GetComponent<Player>().KillPlayer();
+            collision.gameObject.GetComponent<Player>().DamagePlayer(8);
         }
     }
 
