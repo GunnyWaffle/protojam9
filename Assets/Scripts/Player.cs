@@ -7,7 +7,9 @@ public class Player : MonoBehaviour
     private int score;
     public Text scoreText;
 
-    public int health = 16;
+    public int maxHealth = 12;
+    public int health = 12;
+    public int lives = 3;
 
     const int WeaponCount = 4;
 
@@ -129,7 +131,15 @@ public class Player : MonoBehaviour
 
     public void KillPlayer()
     {
-        isDead = true;
+        if (--lives == 0)
+            isDead = true;
+
+        if (!isDead)
+        {
+            // TODO game state needs to be called here for player death, that is NOT game over
+            health = maxHealth;
+            return;
+        }
 
         GetComponent<SpriteRenderer>().enabled = false;
         Audio.PlayOneShot(playerExplosion);

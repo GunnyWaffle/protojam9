@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
-  health: 16
+  health: 12
   bulletPrefabs:
   - {fileID: 114448702234317316, guid: 3d1fb2cba7e29e7489ed2d7b53181849, type: 2}
   - {fileID: 114067818841735052, guid: a53eb8de1dc64434299ef82a00a3e2bf, type: 2}
@@ -226,7 +226,7 @@ ParticleSystem:
   simulationSpeed: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   autoRandomSeed: 1
   startDelay:
     minMaxState: 0
@@ -270,7 +270,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1692737553
+  randomSeed: 1502801903
   InitialModule:
     serializedVersion: 3
     enabled: 1
