@@ -8,8 +8,7 @@ public class HangerBaySpawn : MonoBehaviour {
     public Quaternion startingAngle = Quaternion.Euler(0, 180, 0);
     public GameObject exitHangerBay;
     public float speedExitHangerBay;
-
-    private bool shouldSpawn = true;
+    public string spawnSortingLayer;
 
     public enum EnemyType
     {
@@ -25,13 +24,7 @@ public class HangerBaySpawn : MonoBehaviour {
         Enemy enemy = typesOfEnemies[enemyType];
 
         Enemy newEnemy = Instantiate(enemy, gameObject.transform.position, startingAngle);
-        newEnemy.LockFlightPattern(true);
+        newEnemy.LockFlightPattern(true, spawnSortingLayer);
         newEnemy.ApplyTrajectory(exitHangerBay.transform.position - gameObject.transform.position, speedExitHangerBay);
-        // May need to init the enemy
-    }
-
-    public void StopSpawning()
-    {
-        shouldSpawn = false;
     }
 }

@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour {
     float orbit_radius_Y = 1.0f;
 
     public float speed = 1.0f;
-
+    
     //Enemy shoot
     public Bullet bullet;
     public float timeBetweenShots;
@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour {
 
     public EnemySpawner.EnemyType type;
     private Rigidbody2D myRB2d;
+    private SpriteRenderer mySRD;
 
     private Vector3 currentTargetLocation;
     private bool flightLocked = false;
@@ -33,6 +34,7 @@ public class Enemy : MonoBehaviour {
     private void Awake()
     {
         myRB2d = GetComponent<Rigidbody2D>();
+        mySRD = GetComponent<SpriteRenderer>();
     }
     // Use this for initialization
     void Start () {
@@ -42,9 +44,10 @@ public class Enemy : MonoBehaviour {
         GenerateTargetLocation();
     }
 
-    public void LockFlightPattern(bool flightLocked)
+    public void LockFlightPattern(bool flightLocked, string sortingLayer)
     {
         this.flightLocked = flightLocked;
+        mySRD.sortingLayerName = sortingLayer;
     }
 
     // Update is called once per frame

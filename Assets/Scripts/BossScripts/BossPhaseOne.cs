@@ -34,6 +34,7 @@ public class BossPhaseOne : MonoBehaviour {
         {
             HangerBaySpawn currentHander = hangers[Random.Range(0, hangers.Length)];
             currentHander.SpawnEnemy();
+            enemiesOnScreen++;
             lastSpawn = spawnTimer;
         }
 
@@ -66,5 +67,6 @@ public class BossPhaseOne : MonoBehaviour {
     public void KilledEnemy(EnemySpawner.EnemyType type)
     {
         enemiesOnScreen--;
+        lastSpawn = spawnTimer;
     }
 }
