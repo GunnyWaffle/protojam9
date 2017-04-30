@@ -1674,24 +1674,40 @@ Prefab:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 697408133}
-    - target: {fileID: 4415693109879352, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198944048071529288, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
+    - target: {fileID: 114711610294463050, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
         type: 2}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198944048071529288, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
-        type: 2}
-      propertyPath: randomSeed
-      value: 1502801903
+      propertyPath: invincibilityColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114711610294463050, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
         type: 2}
-      propertyPath: health
-      value: 12
+      propertyPath: invincibilityColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711610294463050, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
+        type: 2}
+      propertyPath: invincibilityColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212820096940392594, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212820096940392594, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212820096940392594, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114711610294463050, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
+        type: 2}
+      propertyPath: invincibilityPulseSpeed
+      value: 12.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf, type: 2}

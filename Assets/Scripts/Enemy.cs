@@ -93,8 +93,8 @@ public class Enemy : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            DestroyShip();
             collision.gameObject.GetComponent<Player>().DamagePlayer(8);
+            DestroyShip();
         }
     }
 

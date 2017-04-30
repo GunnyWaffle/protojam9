@@ -11,6 +11,14 @@ public class Player : MonoBehaviour
     public int health = 12;
     public int lives = 3;
 
+    public float invincibilityTime = 2.5f;
+    public float invincibilityPulseSpeed = 12.5f;
+    public Color invincibilityColor = Color.red;
+    float invincibilityCounter = 0;
+    public bool IsInvincible { get { return invincibilityCounter > 0; } }
+
+    SpriteRenderer sprite;
+
     const int WeaponCount = 4;
 
     public Bullet[] bulletPrefabs = new Bullet[WeaponCount];
@@ -31,11 +39,6 @@ public class Player : MonoBehaviour
     public float timerAfterDeath;
     public bool IsDead { get { return isDead; } }
 
-    public bool Died
-    {
-        get { return isDead; }
-    }
-
     //Audio Stuff
     AudioSource Audio;
     public AudioClip playerExplosion;
@@ -45,6 +48,7 @@ public class Player : MonoBehaviour
         explosion = transform.Find("explosion").GetComponent<ParticleSystem>();
         anim = GetComponent<Animator>();
         Audio = GetComponent<AudioSource>();
+        sprite = GetComponent<SpriteRenderer>();
         PlayerPrefs.SetInt("Score", 0);
     }
 
@@ -72,6 +76,27 @@ public class Player : MonoBehaviour
 
             timerAfterDeath -= Time.deltaTime;
             return;
+        }
+
+        if (invincibilityCounter > 0)
+        {
+            invincibilityCounter -= Time.deltaTime;
+            if (invincibilityCounter > 0)
+            {
+                float t = invincibilityCounter / invincibilityTime;
+                t *= invincibilityPulseSpeed;
+                t *= 180 * Mathf.Deg2Rad;
+                t = Mathf.Sin(t);
+                t = (t + 1) / 2;
+
+                Color lerpedColor = Color.Lerp(Color.white, invincibilityColor, t);
+                sprite.color = lerpedColor;
+            }
+            else
+            {
+                invincibilityCounter = 0;
+                sprite.color = Color.white;
+            }
         }
 
         for (uint i = 0; i < WeaponCount; ++i)
@@ -120,10 +145,12 @@ public class Player : MonoBehaviour
 
     public void DamagePlayer(int damage)
     {
-        if (isDead)
+        if (isDead || invincibilityCounter > 0)
             return;
 
         health -= damage;
+        invincibilityCounter = invincibilityTime;
+        // TODO sound
 
         if (health <= 0)
             KillPlayer();
