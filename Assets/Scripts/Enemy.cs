@@ -28,19 +28,28 @@ public class Enemy : MonoBehaviour {
     private Rigidbody2D myRB2d;
 
     private Vector3 currentTargetLocation;
+    private bool flightLocked = false;
 
+    private void Awake()
+    {
+        myRB2d = GetComponent<Rigidbody2D>();
+    }
     // Use this for initialization
     void Start () {
-        myRB2d = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>().gameObject;
         lastShotTime = timeBetweenShots;
         audioSource = GetComponent<AudioSource>();
         GenerateTargetLocation();
     }
 
+    public void LockFlightPattern(bool flightLocked)
+    {
+        this.flightLocked = flightLocked;
+    }
+
     // Update is called once per frame
     void Update () {
-        if (player != null)
+        if (player != null && !flightLocked)
         {
             //Enemy always faces player
             Vector3 dir = player.transform.position - transform.position;
@@ -82,9 +91,19 @@ public class Enemy : MonoBehaviour {
         }
     }
 
+    public void ApplyTrajectory(Vector3 direction, float speed)
+    {
+        myRB2d.velocity = direction.normalized * speed;
+    }
+
     public void DestroyShip()
     {
-        EnemySpawner.instance.KilledEnemy(type);
+        if (EnemySpawner.instance != null)
+            EnemySpawner.instance.KilledEnemy(type);
+
+        if (BossPhaseOne.instance != null)
+            BossPhaseOne.instance.KilledEnemy(type);
+
         audioSource.PlayOneShot(enemyExplosion);
         Destroy(gameObject);
     }
