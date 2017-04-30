@@ -37,6 +37,7 @@ public class MissileBullet : Bullet {
             if (bullet.playerShot)
             {
                 myHealth.DamageUnit(bullet.damage);
+                Destroy(collision.gameObject);
             }
         }
     }

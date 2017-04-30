@@ -47,7 +47,7 @@ public class Bullet : MonoBehaviour
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy.type == type)
             {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().UpdateScore();
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().UpdateScore(enemy.score);
                 enemy.DestroyShip();
                 Destroy(gameObject);
             }

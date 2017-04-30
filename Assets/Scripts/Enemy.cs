@@ -10,7 +10,8 @@ public class Enemy : MonoBehaviour {
     public AudioClip playerExplosion;
 
     public float speed = 1.0f;
-    
+    public int score;
+
     //Enemy shoot
     public Bullet bullet;
     public float timeBetweenShots;

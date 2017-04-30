@@ -180,9 +180,9 @@ public class Player : MonoBehaviour
         PlayerPrefs.SetInt("Score", score);
     }
 
-    public void UpdateScore()
+    public void UpdateScore(int points)
     {
-        score += 1; 
-		guiManager.UpdateScoreDisplay (score);
+        score += points;
+        guiManager.UpdateScoreDisplay (score);
     }
 }

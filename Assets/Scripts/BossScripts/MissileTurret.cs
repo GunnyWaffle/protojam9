@@ -15,10 +15,13 @@ public class MissileTurret : MonoBehaviour {
     private Player player;
     public GameObject fireLocation;
 
+    private HealthManager myHealth;
+
     // Use this for initialization
     void Start()
     {
         player = FindObjectOfType<Player>();
+        myHealth = gameObject.GetComponent<HealthManager>();
     }
 
     // Update is called once per frame
@@ -41,5 +44,18 @@ public class MissileTurret : MonoBehaviour {
         newBullet[0].GetComponent<MissileBullet>().SetTarget(player.gameObject);
         //audioSource.PlayOneShot(enemyShoot);
         lastShotFired = timeBetweenShot;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Bullet bullet = collision.GetComponent<Bullet>();
+        if (bullet != null)
+        {
+            if (bullet.playerShot)
+            {
+                myHealth.DamageUnit(bullet.damage);
+                Destroy(collision.gameObject);
+            }
+        }
     }
 }
