@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     private int score;
-    public Text scoreText;
+
+	public GUIManager guiManager;
 
     public int maxHealth = 12;
     public int health = 12;
@@ -149,6 +150,7 @@ public class Player : MonoBehaviour
             return;
 
         health -= damage;
+		guiManager.UpdateHealthDisplay (health, maxHealth);
         invincibilityCounter = invincibilityTime;
         // TODO sound
 
@@ -160,6 +162,8 @@ public class Player : MonoBehaviour
     {
         if (--lives == 0)
             isDead = true;
+
+		guiManager.UpdateLivesDisplay (lives);
 
         if (!isDead)
         {
@@ -178,7 +182,7 @@ public class Player : MonoBehaviour
 
     public void UpdateScore()
     {
-        score += 1;
-        scoreText.text = "Score: " + score;    
+        score += 1; 
+		guiManager.UpdateScoreDisplay (score);
     }
 }
