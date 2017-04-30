@@ -12,6 +12,8 @@ public class ScatterTurret : MonoBehaviour {
     private float lastShotFired;
     public int shotSpread;
 
+    public float rotationSpeed;
+
     private int shotsFired = 0;
 
     public AudioClip enemyShoot;
@@ -19,8 +21,6 @@ public class ScatterTurret : MonoBehaviour {
     private AudioSource audioSource;
 
     private Player player;
-    public GameObject spawnAreaOne;
-    public GameObject spawnAreaTwo;
 
     // Use this for initialization
     void Start () {
@@ -46,7 +46,7 @@ public class ScatterTurret : MonoBehaviour {
             {
                 // Are we in the deley between shots?
                 if (lastShotFired <= 0.0f)
-                    FireBullet(spawnAreaOne);
+                    FireBullet();
                 else
                     lastShotFired -= Time.deltaTime;
             }
@@ -57,7 +57,7 @@ public class ScatterTurret : MonoBehaviour {
         }
 	}
 
-    private void FireBullet(GameObject positionToFireFrom)
+    private void FireBullet()
     {
         float randomRotation = Random.Range(-shotSpread, shotSpread);
         shotsFired++;

@@ -20,7 +20,17 @@ public class Bullet : MonoBehaviour
 
 	void Update()
     {
+        Rotate();
+        Move();
+    }
+
+    protected virtual void Move()
+    {
         move.Move(gameObject);
+    }
+
+    protected virtual void Rotate()
+    {
         rotate.Rotate(gameObject);
     }
 
