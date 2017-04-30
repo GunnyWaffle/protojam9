@@ -7,14 +7,15 @@ public class GUIManager : MonoBehaviour {
 	//Public fields
 	public Color textColor; //Color of all GUI text
 	public Player player; //The player object in the game
-	public Gradient healthBarGradient; //An editable gradient that determins health bar color
+	//public Gradient healthBarGradient; //LEGACY: An editable gradient that determins health bar color
+	public List<Sprite> healthBarTextures; //A list of all health bar textures in order
 
 	//Private fields
 	private TextMesh scoreText; //Text displaying the score
 	private TextMesh livesText; //Text displaying the remaining lives
 	private TextMesh healthTextLabel; //Text next to health bar
-	private GameObject healthMeter; //Game object that we scale to accurately scale it's child (the visible health bar)
-	private float fullHealthScale; //The initial unity xScale of the health meter (represents full health)
+	//private GameObject healthMeter; //LEGACY: Game object that we scale to accurately scale it's child (the visible health bar)
+	//private float fullHealthScale; //LEGACY: The initial unity xScale of the health meter (represents full health)
 	private SpriteRenderer healthMeterBar; //The sprite renderer of the visible health bar
 
 	// Use this for initialization
@@ -23,9 +24,12 @@ public class GUIManager : MonoBehaviour {
 		scoreText = transform.Find ("ScoreText").GetComponent<TextMesh> ();
 		livesText = transform.Find ("LivesText").GetComponent<TextMesh> ();
 		healthTextLabel = transform.Find("HealthBar").transform.Find ("HealthLabel").GetComponent<TextMesh> ();
-		healthMeter = transform.Find("HealthBar").transform.Find ("HealthBarMeter").gameObject;
-		fullHealthScale = healthMeter.transform.localScale.x;
-		healthMeterBar = healthMeter.transform.Find("MeterBar") .GetComponent<SpriteRenderer> ();
+		//healthMeter = transform.Find("HealthBar").transform.Find ("HealthBarMeter").gameObject;
+		//fullHealthScale = healthMeter.transform.localScale.x;
+		//healthMeterBar = healthMeter.transform.Find("MeterBar") .GetComponent<SpriteRenderer> ();
+		healthMeterBar = transform.Find("HealthBar").transform.Find("HealthBarMeter") .GetComponent<SpriteRenderer> ();
+
+
 		ResetGui (); //Reset the look of everything, since it wont update until player updates it otherwise
 	}
 	
@@ -41,19 +45,36 @@ public class GUIManager : MonoBehaviour {
 
 	//Update the GUI Health Display
 	public void UpdateHealthDisplay(int health, int maxHealth){
-		//Prevent the health bar from displaying a negative
-		if (health < 0) { health = 0; }
+		//Need to calculate the amount of health to display. 
+		//We have an 8 cell health bar that can display arbitrary ranges
+		int displayedHealth;
+		//If at or below zero, draw zero
+		if (health <= 0) {
+			displayedHealth = 0;
+		} 
+		//Otherwise, calculate an approximation in a factor of 8 to display the remaining health percentage
+		else {
+			displayedHealth = (int)(((float)health / (float)maxHealth) * (float)(healthBarTextures.Count - 1));
+		}
 
-		//Calculate the new scale of the health meter bar
-		//Note: This is scaling the parent of the meter bar, which is at the left
-		//edge of the bar. This results in a one directional scale.
-		float newHealthScale = (fullHealthScale / maxHealth) * health;
-		Vector3 newScale = healthMeter.transform.localScale;
-		newScale.x = newHealthScale;
-		healthMeter.transform.localScale = newScale;
+		//update display texture
+		healthMeterBar.sprite = healthBarTextures [displayedHealth];
 
-		//Update the color of the bar based on the gradient
-		healthMeterBar.color = healthBarGradient.Evaluate ((float)health / (float)maxHealth);
+		#region OldHealthBarCode
+		////Prevent the health bar from displaying a negative
+		//if (health < 0) { health = 0; }
+		//
+		////Calculate the new scale of the health meter bar
+		////Note: This is scaling the parent of the meter bar, which is at the left
+		////edge of the bar. This results in a one directional scale.
+		//float newHealthScale = (fullHealthScale / maxHealth) * health;
+		//Vector3 newScale = healthMeter.transform.localScale;
+		//newScale.x = newHealthScale;
+		//healthMeter.transform.localScale = newScale;
+		//
+		////Update the color of the bar based on the gradient
+		//healthMeterBar.color = healthBarGradient.Evaluate ((float)health / (float)maxHealth);
+		#endregion
 	}
 
 	//Updates the GUI Lives Display
