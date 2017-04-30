@@ -10,8 +10,7 @@ public class ScatterTurret : MonoBehaviour {
     private float lastBarrageFired;
     public float timeBetweenOneShot;
     private float lastShotFired;
-    public float bulletSpeed;
-    public float shotSpread;
+    public int shotSpread;
 
     private int shotsFired = 0;
 
@@ -34,8 +33,10 @@ public class ScatterTurret : MonoBehaviour {
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle + 270);
 
+        // Should we fire  a new barrage?
         if (lastBarrageFired <= 0.0f)
         {
+            //Have we completed firing a baragge?
             if (shotsFired == shotsPerBarrage)
             {
                 shotsFired = 0;
@@ -43,6 +44,7 @@ public class ScatterTurret : MonoBehaviour {
             }
             else
             {
+                // Are we in the deley between shots?
                 if (lastShotFired <= 0.0f)
                     FireBullet(spawnAreaOne);
                 else
@@ -57,8 +59,10 @@ public class ScatterTurret : MonoBehaviour {
 
     private void FireBullet(GameObject positionToFireFrom)
     {
+        float randomRotation = Random.Range(-shotSpread, shotSpread);
         shotsFired++;
-        bullet.fire.Fire(bullet.gameObject, gameObject);
+        var newBullet = bullet.fire.Fire(bullet.gameObject, gameObject);
+        bullet.rotate.Rotate(newBullet[0].gameObject, randomRotation);
         //audioSource.PlayOneShot(enemyShoot);
         lastShotFired = timeBetweenOneShot;
     }

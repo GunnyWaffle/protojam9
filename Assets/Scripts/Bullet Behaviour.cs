@@ -10,6 +10,7 @@ public enum BulletMove
 
 public enum BulletRotate
 {
+    Angle,
     None
 }
 
@@ -33,10 +34,13 @@ static class BulletMethods
         }
     }
 
-    public static void Rotate(this BulletRotate br, GameObject go)
+    public static void Rotate(this BulletRotate br, GameObject go, float angle = 0.0f)
     {
         switch (br)
         {
+            case BulletRotate.Angle:
+                AngleRotation(go, angle);
+                break;
             case BulletRotate.None:
             default:
                 break;
@@ -69,5 +73,10 @@ static class BulletMethods
         bullets[0] = GameObject.Instantiate(prefab, source.transform.position, source.transform.rotation).GetComponent<Bullet>();
 
         return bullets;
+    }
+
+    static void AngleRotation(GameObject go, float angle)
+    {
+        go.transform.rotation = Quaternion.Euler(go.transform.rotation.eulerAngles.x, go.transform.rotation.eulerAngles.y, go.transform.rotation.eulerAngles.z + angle);
     }
 }

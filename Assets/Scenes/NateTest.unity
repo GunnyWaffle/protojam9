@@ -837,8 +837,7 @@ MonoBehaviour:
   shotsPerBarrage: 4
   timeBetweenBarrages: 5
   timeBetweenOneShot: 0.2
-  bulletSpeed: 0
-  shotSpread: 0
+  shotSpread: 15
   enemyShoot: {fileID: 0}
   enemyExplosion: {fileID: 0}
   spawnAreaOne: {fileID: 480891650}
@@ -1912,7 +1911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 12
   spawnTimer: 3
-  numEnemiesOnScreen: 3
+  numEnemiesOnScreen: 0
 --- !u!212 &1216510756
 SpriteRenderer:
   m_ObjectHideFlags: 0
