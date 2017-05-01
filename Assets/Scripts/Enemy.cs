@@ -10,16 +10,9 @@ public class Enemy : MonoBehaviour {
     public AudioClip enemyExplosion;
     public AudioClip playerExplosion;
 
-    //Alters orbit speed along x and y
-    float orbit_period_X = 1.0f;
-    float orbit_period_Y = 1.0f;
-
-    //Alters orbit length along x and y
-    float orbit_radius_X = 1.0f;
-    float orbit_radius_Y = 1.0f;
-
     public float speed = 1.0f;
-    
+    public int score;
+
     //Enemy shoot
     public Bullet bullet;
     public float timeBetweenShots;

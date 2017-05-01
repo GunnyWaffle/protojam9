@@ -11,6 +11,7 @@ public enum BulletMove
 public enum BulletRotate
 {
     Angle,
+    FollowUnit,
     None
 }
 
@@ -29,19 +30,24 @@ static class BulletMethods
                 LinearMove(go);
                 break;
             case BulletMove.None:
+                break;
             default:
                 break;
         }
     }
 
-    public static void Rotate(this BulletRotate br, GameObject go, float angle = 0.0f)
+    public static void Rotate(this BulletRotate br, GameObject go, float angle = 0.0f, GameObject unitToFollow = null)
     {
         switch (br)
         {
             case BulletRotate.Angle:
                 AngleRotation(go, angle);
                 break;
+            case BulletRotate.FollowUnit:
+                FollowUnit(go, unitToFollow);
+                break;
             case BulletRotate.None:
+                break;
             default:
                 break;
         }
@@ -78,5 +84,12 @@ static class BulletMethods
     static void AngleRotation(GameObject go, float angle)
     {
         go.transform.rotation = Quaternion.Euler(go.transform.rotation.eulerAngles.x, go.transform.rotation.eulerAngles.y, go.transform.rotation.eulerAngles.z + angle);
+    }
+
+    static void FollowUnit(GameObject you, GameObject other)
+    {
+        Vector3 dir = other.transform.position - you.transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        you.transform.rotation = Quaternion.Euler(0, 0, angle + 270);
     }
 }

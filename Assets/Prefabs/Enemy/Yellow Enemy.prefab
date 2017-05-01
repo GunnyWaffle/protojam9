@@ -189,6 +189,7 @@ MonoBehaviour:
   enemyExplosion: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
   playerExplosion: {fileID: 8300000, guid: f07ca66862ebf9947bd369728cc5861a, type: 3}
   speed: 60
+  score: 1
   bullet: {fileID: 114957375796777518, guid: f35ee4e759fc0af499b1790f6546621b, type: 2}
   timeBetweenShots: 2.5
   type: 2

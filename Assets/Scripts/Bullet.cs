@@ -20,7 +20,17 @@ public class Bullet : MonoBehaviour
 
 	void Update()
     {
+        Rotate();
+        Move();
+    }
+
+    protected virtual void Move()
+    {
         move.Move(gameObject);
+    }
+
+    protected virtual void Rotate()
+    {
         rotate.Rotate(gameObject);
     }
 
@@ -37,7 +47,7 @@ public class Bullet : MonoBehaviour
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy.type == type)
             {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().UpdateScore();
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().UpdateScore(enemy.score);
                 enemy.DestroyShip();
                 Destroy(gameObject);
             }

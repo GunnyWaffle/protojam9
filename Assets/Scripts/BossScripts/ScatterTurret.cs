@@ -12,6 +12,8 @@ public class ScatterTurret : MonoBehaviour {
     private float lastShotFired;
     public int shotSpread;
 
+    public float rotationSpeed;
+
     private int shotsFired = 0;
 
     public AudioClip enemyShoot;
@@ -19,12 +21,13 @@ public class ScatterTurret : MonoBehaviour {
     private AudioSource audioSource;
 
     private Player player;
-    public GameObject spawnAreaOne;
-    public GameObject spawnAreaTwo;
+
+    private HealthManager myHealth;
 
     // Use this for initialization
     void Start () {
         player = FindObjectOfType<Player>();
+        myHealth = gameObject.GetComponent<HealthManager>();
 	}
 	
 	// Update is called once per frame
@@ -46,7 +49,7 @@ public class ScatterTurret : MonoBehaviour {
             {
                 // Are we in the deley between shots?
                 if (lastShotFired <= 0.0f)
-                    FireBullet(spawnAreaOne);
+                    FireBullet();
                 else
                     lastShotFired -= Time.deltaTime;
             }
@@ -57,7 +60,7 @@ public class ScatterTurret : MonoBehaviour {
         }
 	}
 
-    private void FireBullet(GameObject positionToFireFrom)
+    private void FireBullet()
     {
         float randomRotation = Random.Range(-shotSpread, shotSpread);
         shotsFired++;
@@ -65,5 +68,18 @@ public class ScatterTurret : MonoBehaviour {
         bullet.rotate.Rotate(newBullet[0].gameObject, randomRotation);
         //audioSource.PlayOneShot(enemyShoot);
         lastShotFired = timeBetweenOneShot;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Bullet bullet = collision.GetComponent<Bullet>();
+        if (bullet != null)
+        {
+            if (bullet.playerShot)
+            {
+                myHealth.DamageUnit(bullet.damage);
+                Destroy(collision.gameObject);
+            }
+        }
     }
 }

@@ -150,12 +150,12 @@ public class Player : MonoBehaviour
             return;
 
         health -= damage;
-		guiManager.UpdateHealthDisplay (health, maxHealth);
         invincibilityCounter = invincibilityTime;
         // TODO sound
 
         if (health <= 0)
-            KillPlayer();
+			KillPlayer();
+		guiManager.UpdateHealthDisplay (health, maxHealth);
     }
 
     public void KillPlayer()
@@ -180,9 +180,9 @@ public class Player : MonoBehaviour
         PlayerPrefs.SetInt("Score", score);
     }
 
-    public void UpdateScore()
+    public void UpdateScore(int points)
     {
-        score += 1; 
-		guiManager.UpdateScoreDisplay (score);
+        score += points;
+        guiManager.UpdateScoreDisplay (score);
     }
 }
