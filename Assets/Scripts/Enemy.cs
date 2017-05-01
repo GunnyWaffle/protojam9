@@ -167,12 +167,17 @@ public class Enemy : MonoBehaviour {
 
     public void DestroyShip()
     {
-        if (EnemySpawner.instance != null)
-            EnemySpawner.instance.KilledEnemy(type);
-
-        if (BossPhaseOne.instance != null)
-            BossPhaseOne.instance.KilledEnemy(type);
-
+        if (type == EnemySpawner.EnemyType.Blue)
+        {
+            if (EnemySpawner.instance != null)
+                EnemySpawner.instance.KilledEnemy(type);
+        }
+        else
+        {
+            if (BossPhaseOne.instance != null)
+                BossPhaseOne.instance.KilledEnemy(type);
+        }
+        
         audioSource.PlayOneShot(enemyExplosion);
         Destroy(gameObject);
     }

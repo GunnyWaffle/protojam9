@@ -18,7 +18,17 @@ public class EnemySpawner : MonoBehaviour {
     private float spawnBuffer = 10.0f;
     private int enemiesOnScreen = 0;
     private Camera myCamera;
-
+    [SerializeField]
+    SpawnDirection spawnDir;
+    
+    enum SpawnDirection
+    {
+        Random = 0,
+        Bottom,
+        Left,
+        Top,
+        Right
+    };
 
     public enum EnemyType
     {
@@ -54,11 +64,14 @@ public class EnemySpawner : MonoBehaviour {
     void SpawnEnemy()
     {
         float a, b, c, d;
-        int side = Random.Range(1, 5);
+        int side = (int)spawnDir;
         int enemyType = Random.Range(0, typesOfEnemies.Count);
         Enemy enemy = typesOfEnemies[enemyType];
         float startingAngle;
         Vector3 spawnLocation;
+
+        if (side == 0)
+            side = Random.Range(1, 5);
 
         // Spawn on bottom
         if (side == 1)
