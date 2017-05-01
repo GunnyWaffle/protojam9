@@ -173,7 +173,7 @@ MonoBehaviour:
   enemyShoot: {fileID: 8300000, guid: 9af15d4bc5cfebe4380040902cae74a0, type: 3}
   enemyExplosion: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
   playerExplosion: {fileID: 8300000, guid: f07ca66862ebf9947bd369728cc5861a, type: 3}
-  speed: 70
+  speed: 50
   bullet: {fileID: 114957375796777518, guid: 1552503b772daf948a92a5533a4e0839, type: 2}
   timeBetweenShots: 4
   type: 0
@@ -207,7 +207,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1020217031
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300108, guid: 4c2a4e7df40ab2f42ad3c423142080e0, type: 3}
   m_Color: {r: 0.21285681, g: 0.78465784, b: 0.9338235, a: 1}

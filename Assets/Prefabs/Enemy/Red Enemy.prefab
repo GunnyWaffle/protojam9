@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114336825812326232}
   - component: {fileID: 50911313530574308}
   - component: {fileID: 82716908739366038}
+  - component: {fileID: 114963661514879004}
   m_Layer: 8
   m_Name: Red Enemy
   m_TagString: enemy
@@ -173,10 +174,24 @@ MonoBehaviour:
   enemyShoot: {fileID: 8300000, guid: 9af15d4bc5cfebe4380040902cae74a0, type: 3}
   enemyExplosion: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
   playerExplosion: {fileID: 8300000, guid: f07ca66862ebf9947bd369728cc5861a, type: 3}
-  speed: 30
+  speed: 50
   bullet: {fileID: 114957375796777518, guid: e225138ed7ec8344b992c79ef76b156b, type: 2}
-  timeBetweenShots: 4
+  timeBetweenShots: 2
   type: 3
+--- !u!114 &114963661514879004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1837863278376824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c11c158b53a85429fa70f04e27eaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSpeed: 5
+  dashActivationTime: 2
+  speedDriftLevel: 4.07
 --- !u!212 &212839972201628298
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -207,7 +222,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1020217031
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300058, guid: 4c2a4e7df40ab2f42ad3c423142080e0, type: 3}
   m_Color: {r: 0.99264705, g: 0.3941393, b: 0.3941393, a: 1}

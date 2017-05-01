@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
+
     private GameObject player;
     private AudioSource audioSource;
     public AudioClip enemyShoot;
@@ -39,7 +40,7 @@ public class Enemy : MonoBehaviour {
     // Use this for initialization
     void Start () {
         player = FindObjectOfType<Player>().gameObject;
-        lastShotTime = timeBetweenShots;
+        lastShotTime = (1 * timeBetweenShots) / 4;
         audioSource = GetComponent<AudioSource>();
         GenerateTargetLocation();
     }
@@ -54,43 +55,115 @@ public class Enemy : MonoBehaviour {
     void Update () {
         if (player != null && !flightLocked)
         {
-            //Enemy always faces player
-            Vector3 dir = player.transform.position - transform.position;
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle + 270);
+            PerformActions();
+        }
+    }
 
-            // Follow the player
-            switch (type)
-            {
-                case EnemySpawner.EnemyType.Blue:
-                    if ((transform.position - currentTargetLocation).magnitude < 0.02f)
-                    {
-                        FireBullet();
-                        GenerateTargetLocation();
-                    }
-                    dir = currentTargetLocation - transform.position;
-                    break;
-                case EnemySpawner.EnemyType.Green:
-                    if (lastShotTime <= 0.0f)
-                        FireBullet();
+    void PerformActions()
+    {
+        // Move
+        Move();
 
-                    if ((transform.position - currentTargetLocation).magnitude < 0.02f)
-                        GenerateTargetLocation();
+        // Try to fire at the player
+        Attack();
 
-                    dir = currentTargetLocation - transform.position;
-                    break;
-                case EnemySpawner.EnemyType.Red:
-                    if (lastShotTime <= 0.0f)
-                        FireBullet();
-                    break;
-                case EnemySpawner.EnemyType.Yellow:
-                    if (lastShotTime <= 0.0f)
-                        FireBullet();
-                    break;
-            }
+        lastShotTime -= Time.deltaTime;
+    }
 
-            myRB2d.velocity = dir.normalized * speed * Time.deltaTime;
-            lastShotTime -= Time.deltaTime;
+    void Move()
+    {
+        //Enemy always faces player
+        Vector3 dir = player.transform.position - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        Vector3 normal = Vector3.Cross(dir.normalized, Vector3.forward);
+
+        Vector3 moveDir = Vector3.zero;
+        switch (type)
+        {
+            case EnemySpawner.EnemyType.Blue:
+                transform.rotation = Quaternion.Euler(0, 0, 180);
+                moveDir = new Vector3(Mathf.Sin(2 * Time.time), -1, 0);
+                moveDir.Normalize();
+                break;
+            case EnemySpawner.EnemyType.Green:
+                transform.rotation = Quaternion.Euler(0, 0, angle + 270);
+                normal.Normalize();
+                Vector3 offset;
+                if (dir.magnitude <= 1)
+                {
+                    offset = dir.normalized * -Mathf.Abs(Mathf.Sin(2 * Time.time));
+                }
+                else if (dir.magnitude <= 2)
+                {
+                    offset = Vector3.zero;
+                }
+                else
+                {
+                    offset = dir.normalized * Mathf.Abs(Mathf.Sin(2 * Time.time));
+                }
+                 
+                offset.Normalize();
+                moveDir = normal + offset;
+                moveDir.Normalize();
+                break;
+            case EnemySpawner.EnemyType.Red:
+                transform.rotation = Quaternion.Euler(0, 0, angle + 270);
+                moveDir = dir.normalized;
+                break;
+            case EnemySpawner.EnemyType.Yellow:
+                transform.rotation = Quaternion.Euler(0, 0, angle + 270);
+                normal.Normalize();
+                moveDir = normal;
+                moveDir.Normalize();
+                break;
+            default:
+                moveDir = dir.normalized;
+                break;
+        }
+        ApplyTrajectory(moveDir, speed * Time.deltaTime);
+    }
+
+    void OnBecameInvisible()
+    {
+        if (type == EnemySpawner.EnemyType.Blue)
+            DestroyShip();
+    }
+
+    void Attack()
+    {
+        Vector3 dir = player.transform.position - transform.position;
+        switch (type)
+        {
+            case EnemySpawner.EnemyType.Blue:
+                //if ((transform.position - currentTargetLocation).magnitude < 0.02f)
+                if (lastShotTime <= 0.0f)
+                {
+                    FireBullet();
+                }
+                //GenerateTargetLocation();
+                //dir = currentTargetLocation - transform.position;
+                break;
+            case EnemySpawner.EnemyType.Green:
+                if (lastShotTime <= 0.0f)
+                    FireBullet();
+
+                //if ((transform.position - currentTargetLocation).magnitude < 0.02f)
+                //GenerateTargetLocation();
+
+                //dir = currentTargetLocation - transform.position;
+                break;
+            case EnemySpawner.EnemyType.Red:
+                if (lastShotTime <= 0.0f)
+                {
+                    FireBullet();
+                }
+                break;
+            case EnemySpawner.EnemyType.Yellow:
+                if (lastShotTime <= 0.0f)
+                {
+                    FireBullet();
+                }
+                break;
         }
     }
 

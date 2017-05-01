@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114355801983137592}
   - component: {fileID: 50949301394337858}
   - component: {fileID: 82774009816099114}
+  - component: {fileID: 114302876928736210}
   m_Layer: 8
   m_Name: Yellow Enemy
   m_TagString: enemy
@@ -159,6 +160,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114302876928736210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1251685963404768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44c11c158b53a85429fa70f04e27eaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSpeed: 10
+  dashActivationTime: 6
+  speedDriftLevel: 1
 --- !u!114 &114355801983137592
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -175,7 +190,7 @@ MonoBehaviour:
   playerExplosion: {fileID: 8300000, guid: f07ca66862ebf9947bd369728cc5861a, type: 3}
   speed: 60
   bullet: {fileID: 114957375796777518, guid: f35ee4e759fc0af499b1790f6546621b, type: 2}
-  timeBetweenShots: 4
+  timeBetweenShots: 2.5
   type: 2
 --- !u!212 &212053199553976036
 SpriteRenderer:
@@ -207,7 +222,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1020217031
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300134, guid: 4c2a4e7df40ab2f42ad3c423142080e0, type: 3}
   m_Color: {r: 0.99264705, g: 0.99264705, b: 0.007298882, a: 1}
