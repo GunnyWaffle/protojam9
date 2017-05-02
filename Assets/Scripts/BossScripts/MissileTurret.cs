@@ -19,6 +19,7 @@ public class MissileTurret : MonoBehaviour {
     void Start()
     {
         player = FindObjectOfType<Player>();
+        lastShotFired = timeBetweenShot;
     }
 
     // Update is called once per frame

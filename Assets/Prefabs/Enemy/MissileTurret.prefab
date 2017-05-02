@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6b9496530140646975d73d52fad30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 13
+  health: 50
   scoreValue: 2
   deathSound: {fileID: 0}
   damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 114239494669975498, guid: 500053850878d0540af3483ba39dcb9d, type: 2}
-  timeBetweenShot: 1000
+  timeBetweenShot: 7
   enemyShoot: {fileID: 0}
   enemyExplosion: {fileID: 0}
   fireLocation: {fileID: 1375559802903026}

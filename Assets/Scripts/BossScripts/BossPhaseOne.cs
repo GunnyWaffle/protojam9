@@ -30,6 +30,7 @@ public class BossPhaseOne : MonoBehaviour {
         rgb2d = gameObject.GetComponent<Rigidbody2D>();
         hangers = gameObject.GetComponentsInChildren<HangerBaySpawn>();
         player = FindObjectOfType<Player>();
+        lastSpawn = spawnTimer;
     }
 
     // Update is called once per frame
@@ -64,6 +65,7 @@ public class BossPhaseOne : MonoBehaviour {
     private void TransitionPhaseTwo()
     {
         Destroy(gameObject);
+        SceneTransition.Gameover();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -77,6 +79,9 @@ public class BossPhaseOne : MonoBehaviour {
     public void KilledEnemy(EnemySpawner.EnemyType type)
     {
         enemiesOnScreen--;
+        if (enemiesOnScreen < 0)
+            enemiesOnScreen = 0;
+
         lastSpawn = spawnTimer;
     }
 }

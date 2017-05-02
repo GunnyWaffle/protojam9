@@ -25,6 +25,7 @@ public class ScatterTurret : MonoBehaviour {
     // Use this for initialization
     void Start () {
         player = FindObjectOfType<Player>();
+        lastBarrageFired = timeBetweenBarrages;
 	}
 	
 	// Update is called once per frame

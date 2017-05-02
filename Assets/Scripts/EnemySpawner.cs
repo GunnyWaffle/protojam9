@@ -141,6 +141,10 @@ public class EnemySpawner : MonoBehaviour {
     public void KilledEnemy(EnemyType type)
     {
         enemiesOnScreen--;
+        if (enemiesOnScreen < 0)
+            enemiesOnScreen = 0;
+
+        lastSpawn = spawnTimer;
     }
 
     public void StopSpawning()
