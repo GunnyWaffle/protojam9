@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4960590555611728}
   - component: {fileID: 212169630236813210}
-  - component: {fileID: 114417627234620418}
+  - component: {fileID: 114239494669975498}
   - component: {fileID: 114668016399159678}
   - component: {fileID: 70420421738024382}
   - component: {fileID: 50234718371072826}
@@ -79,7 +79,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.006874429, y: -0.009165883}
   m_Size: {x: 0.0495875, y: 0.12166822}
   m_Direction: 0
---- !u!114 &114417627234620418
+--- !u!114 &114239494669975498
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1548002571985112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f060fd76e5cad494aa2d3ab42120badb, type: 3}
+  m_Script: {fileID: 11500000, guid: a79f8218e0d6c0645886366f71cfdeaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.7
@@ -113,8 +113,14 @@ MonoBehaviour:
   health: 13
   scoreValue: 1
   deathSound: {fileID: 0}
-  damageColor: {r: 0.08235294, g: 0.3647059, b: 0.8, a: 1}
-  timeForDamage: 0.15
+  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  timeForDamage: 0.1
+  customCallback:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!212 &212169630236813210
 SpriteRenderer:
   m_ObjectHideFlags: 1

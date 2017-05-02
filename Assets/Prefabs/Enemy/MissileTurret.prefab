@@ -101,8 +101,14 @@ MonoBehaviour:
   health: 13
   scoreValue: 2
   deathSound: {fileID: 0}
-  damageColor: {r: 0.08235294, g: 0.3647059, b: 0.8, a: 1}
-  timeForDamage: 0.15
+  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  timeForDamage: 0.1
+  customCallback:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114687388789933986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e5b95606489e44f94975f4db5fa082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 114417627234620418, guid: 500053850878d0540af3483ba39dcb9d, type: 2}
-  timeBetweenShot: 4
+  bullet: {fileID: 114239494669975498, guid: 500053850878d0540af3483ba39dcb9d, type: 2}
+  timeBetweenShot: 1000
   enemyShoot: {fileID: 0}
   enemyExplosion: {fileID: 0}
   fireLocation: {fileID: 1375559802903026}

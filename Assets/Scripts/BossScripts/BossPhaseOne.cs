@@ -8,16 +8,19 @@ public class BossPhaseOne : MonoBehaviour {
     public int health;
     public float spawnTimer;
     public int numEnemiesOnScreen;
+    public int criticalAreas;
+    public int score;
 
     private Collider2D hitBox;
     private Rigidbody2D rgb2d;
     private HangerBaySpawn[] hangers;
+    private Player player;
 
     private float lastSpawn = 0.0f;
     private int enemiesOnScreen;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         if (instance == null)
             instance = this;
         else
@@ -26,10 +29,11 @@ public class BossPhaseOne : MonoBehaviour {
         hitBox = gameObject.GetComponent<Collider2D>();
         rgb2d = gameObject.GetComponent<Rigidbody2D>();
         hangers = gameObject.GetComponentsInChildren<HangerBaySpawn>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        player = FindObjectOfType<Player>();
+    }
+
+    // Update is called once per frame
+    void Update() {
         if (enemiesOnScreen < numEnemiesOnScreen && lastSpawn <= 0.0f)
         {
             HangerBaySpawn currentHander = hangers[Random.Range(0, hangers.Length)];
@@ -40,20 +44,26 @@ public class BossPhaseOne : MonoBehaviour {
 
         if (lastSpawn > 0.0f)
             lastSpawn -= Time.deltaTime;
+
+        if (criticalAreas == 0)
+            DestroyBoss();
     }
 
-    public void DamageBoss(int damage)
+    public void DecrementCriticalAreas()
     {
-        health -= damage;
-        // TODO sound
+        instance.criticalAreas -= 1;
+    }
 
-        if (health <= 0)
-            TransitionPhaseTwo();
+    public void DestroyBoss()
+    {
+        player.UpdateScore(score);
+
+        TransitionPhaseTwo();
     }
 
     private void TransitionPhaseTwo()
     {
-        return;
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

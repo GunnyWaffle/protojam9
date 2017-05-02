@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MissileTurret : MonoBehaviour {
 
-    public MissileBullet bullet;
+    public Bullet bullet;
     public float timeBetweenShot;
     private float lastShotFired;
 
@@ -15,13 +15,10 @@ public class MissileTurret : MonoBehaviour {
     private Player player;
     public GameObject fireLocation;
 
-    private HealthManager myHealth;
-
     // Use this for initialization
     void Start()
     {
         player = FindObjectOfType<Player>();
-        myHealth = gameObject.GetComponent<HealthManager>();
     }
 
     // Update is called once per frame
@@ -41,21 +38,8 @@ public class MissileTurret : MonoBehaviour {
     private void FireMissile()
     {
         var newBullet = bullet.fire.Fire(bullet.gameObject, fireLocation);
-        newBullet[0].GetComponent<MissileBullet>().target = player.gameObject;
+        newBullet[0].GetComponent<Bullet>().target = player.gameObject;
         //audioSource.PlayOneShot(enemyShoot);
         lastShotFired = timeBetweenShot;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Bullet bullet = collision.GetComponent<Bullet>();
-        if (bullet != null)
-        {
-            if (bullet.playerShot)
-            {
-                myHealth.DamageUnit(bullet.damage);
-                Destroy(collision.gameObject);
-            }
-        }
     }
 }

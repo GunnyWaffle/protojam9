@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthManager : MonoBehaviour {
 
@@ -8,7 +9,9 @@ public class HealthManager : MonoBehaviour {
     public int scoreValue;
     public AudioClip deathSound;
     public Color damageColor;
+    public Color defaultColor;
     public float timeForDamage;
+    public UnityEvent customCallback;
     private float currentTimeForDamage;
     private bool isDamaged = false;
 
@@ -30,7 +33,7 @@ public class HealthManager : MonoBehaviour {
         {
             if (currentTimeForDamage <= 0.0f)
             {
-                spr.color = Color.white;
+                spr.color = defaultColor;
                 isDamaged = false;
             }
             else
@@ -68,6 +71,21 @@ public class HealthManager : MonoBehaviour {
             Destroy(gameObject);
         }
 
+        customCallback.Invoke();
+
         player.UpdateScore(scoreValue);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Bullet bullet = collision.GetComponent<Bullet>();
+        if (bullet != null)
+        {
+            if (bullet.playerShot)
+            {
+                DamageUnit(bullet.damage);
+                Destroy(collision.gameObject);
+            }
+        }
     }
 }

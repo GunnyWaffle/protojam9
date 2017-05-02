@@ -22,12 +22,9 @@ public class ScatterTurret : MonoBehaviour {
 
     private Player player;
 
-    private HealthManager myHealth;
-
     // Use this for initialization
     void Start () {
         player = FindObjectOfType<Player>();
-        myHealth = gameObject.GetComponent<HealthManager>();
 	}
 	
 	// Update is called once per frame
@@ -69,18 +66,5 @@ public class ScatterTurret : MonoBehaviour {
         bullet.rotate.Rotate(newBullet[0]);
         //audioSource.PlayOneShot(enemyShoot);
         lastShotFired = timeBetweenOneShot;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Bullet bullet = collision.GetComponent<Bullet>();
-        if (bullet != null)
-        {
-            if (bullet.playerShot)
-            {
-                myHealth.DamageUnit(bullet.damage);
-                Destroy(collision.gameObject);
-            }
-        }
     }
 }
