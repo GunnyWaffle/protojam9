@@ -2,26 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// for all behaviours, please keep 'None' as the first option, so that default behaviour is predictable
+
+// available movement behaviours
 public enum BulletMove
 {
-    None,
-    Linear
+    None, // do not move
+    Linear // move along the forward angular direction linearlly
 }
 
+// available rotation behaviours
 public enum BulletRotate
 {
-    None,
-    Angle,
-    LookAtTarget
+    None, // do not rotate
+    Angle, // rotate to the set angle property
+    LookAtTarget // set the angle to the target, then call the Angle method
 }
 
+// available firing behaviours
 public enum BulletFire
 {
-    Single
+    Single // a single shot is fired in the facing direction of the firing object
 }
 
+// the everything
+// for each enum you add, provide a case in it's appropriate switch statement
+// also write a method for implementing the behaviour, and call it in the switch case
+// it is good design to keep rotation and movement separate
+// IE: if you want to make a projectile go crazy, have a "random spin" and "random move" behaviour
+// this way you can mix and match with other behaviours, while keeping your code relevant to it's purpose
 static class BulletMethods
 {
+    // movement behaviours
     public static void Move(this BulletMove bm, Bullet bullet)
     {
         switch (bm)
@@ -36,6 +48,7 @@ static class BulletMethods
         }
     }
 
+    // rotation behaviours
     public static void Rotate(this BulletRotate br, Bullet bullet)
     {
         switch (br)
@@ -53,6 +66,7 @@ static class BulletMethods
         }
     }
 
+    // firing behaviours
     public static Bullet[] Fire(this BulletFire bf, GameObject prefab, GameObject source)
     {
         switch (bf)
@@ -64,25 +78,27 @@ static class BulletMethods
         }
     }
 
+    /* ~~~~~~~~~~~~~~~~~ movement methods ~~~~~~~~~~~~~~~~~ */
+
+    // move in the forward direction of the bullet
     static void LinearMove(Bullet bullet)
     {
         bullet.Rigid.velocity = bullet.transform.up * bullet.speed;
+        Cull(bullet);
+    }
 
+    // always call this at the end of each movement behaviour to destroy the bullet when it leaves the screen
+    static void Cull(Bullet bullet)
+    {
         Vector3 screenPos = Globals.ClampToScreen(bullet.transform.position);
 
         if ((bullet.transform.position - screenPos).magnitude > bullet.transform.localScale.magnitude)
             GameObject.Destroy(bullet.gameObject);
     }
 
-    static Bullet[] SingleFire(GameObject prefab, GameObject source)
-    {
-        Bullet[] bullets = new Bullet[1];
+    /* ~~~~~~~~~~~~~~~~~ rotation methods ~~~~~~~~~~~~~~~~~ */
 
-        bullets[0] = GameObject.Instantiate(prefab, source.transform.position, source.transform.rotation).GetComponent<Bullet>();
-
-        return bullets;
-    }
-
+    // apply the angle to the bullet
     static void AngleRotate(Bullet bullet)
     {
         bullet.transform.rotation = Quaternion.Euler(
@@ -91,10 +107,24 @@ static class BulletMethods
             bullet.angle);
     }
 
+    // get the angle to the target, then apply it to the bullet
     static void LookAtTarget(Bullet bullet)
     {
         Vector3 dir = bullet.target.transform.position - bullet.transform.position;
         bullet.angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
         AngleRotate(bullet);
     }
+
+    /* ~~~~~~~~~~~~~~~~~ firing methods ~~~~~~~~~~~~~~~~~ */
+
+    // fire a single bullet, in the facing direction of the source
+    static Bullet[] SingleFire(GameObject prefab, GameObject source)
+    {
+        Bullet[] bullets = new Bullet[1];
+
+        bullets[0] = GameObject.Instantiate(prefab, source.transform.position, source.transform.rotation).GetComponent<Bullet>();
+
+        return bullets;
+    }
 }
+ 

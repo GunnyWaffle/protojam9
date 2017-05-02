@@ -178,6 +178,7 @@ public class Enemy : MonoBehaviour {
                 BossPhaseOne.instance.KilledEnemy(type);
         }
         
+        // this is causing some serious console spam
         audioSource.PlayOneShot(enemyExplosion);
         Destroy(gameObject);
     }
