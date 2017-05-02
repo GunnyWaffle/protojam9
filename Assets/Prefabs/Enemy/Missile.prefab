@@ -94,11 +94,11 @@ MonoBehaviour:
   damage: 4
   playerShot: 0
   type: 3
-  move: 1
-  rotate: 1
-  fire: 0
   angle: 0
   target: {fileID: 0}
+  move: 1
+  rotate: 2
+  fire: 0
 --- !u!114 &114668016399159678
 MonoBehaviour:
   m_ObjectHideFlags: 1
