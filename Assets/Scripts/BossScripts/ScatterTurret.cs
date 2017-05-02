@@ -65,7 +65,8 @@ public class ScatterTurret : MonoBehaviour {
         float randomRotation = Random.Range(-shotSpread, shotSpread);
         shotsFired++;
         var newBullet = bullet.fire.Fire(bullet.gameObject, gameObject);
-        bullet.rotate.Rotate(newBullet[0].gameObject, randomRotation);
+        newBullet[0].angle = randomRotation;
+        bullet.rotate.Rotate(newBullet[0]);
         //audioSource.PlayOneShot(enemyShoot);
         lastShotFired = timeBetweenOneShot;
     }

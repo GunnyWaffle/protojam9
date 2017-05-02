@@ -5,28 +5,11 @@ using UnityEngine;
 public class MissileBullet : Bullet {
 
     private HealthManager myHealth;
-    private GameObject target;
 
-    private void Start()
+    new void Start()
     {
+        base.Start();
         myHealth = gameObject.GetComponent<HealthManager>();
-    }
-
-    protected override void Move()
-    {
-        GetComponent<Rigidbody2D>().velocity = transform.up * speed;
-
-        base.Move();
-    }
-
-    protected override void Rotate()
-    {
-        rotate.Rotate(gameObject, 0.0f, target);
-    }
-
-    public void SetTarget(GameObject newTarget)
-    {
-        target = newTarget;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

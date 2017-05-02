@@ -13,25 +13,21 @@ public class Bullet : MonoBehaviour
     public BulletRotate rotate = BulletRotate.None;
     public BulletFire fire = BulletFire.Single;
 
-    void Start()
+    public float angle = 0;
+    public GameObject target;
+
+    private Rigidbody2D rigid;
+    public Rigidbody2D Rigid { get { return rigid; } }
+
+    protected void Start()
     {
-        GetComponent<Rigidbody2D>().velocity = transform.up * speed;
+        rigid = GetComponent<Rigidbody2D>();
     }
 
 	void Update()
     {
-        Rotate();
-        Move();
-    }
-
-    protected virtual void Move()
-    {
-        move.Move(gameObject);
-    }
-
-    protected virtual void Rotate()
-    {
-        rotate.Rotate(gameObject);
+        rotate.Rotate(this);
+        move.Move(this);
     }
 
     void OnTriggerEnter2D(Collider2D collision)

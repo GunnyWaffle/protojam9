@@ -10,9 +10,9 @@ public enum BulletMove
 
 public enum BulletRotate
 {
+    None,
     Angle,
-    FollowUnit,
-    None
+    LookAtTarget
 }
 
 public enum BulletFire
@@ -22,12 +22,12 @@ public enum BulletFire
 
 static class BulletMethods
 {
-    public static void Move(this BulletMove bm, GameObject go)
+    public static void Move(this BulletMove bm, Bullet bullet)
     {
         switch (bm)
         {
             case BulletMove.Linear:
-                LinearMove(go);
+                LinearMove(bullet);
                 break;
             case BulletMove.None:
                 break;
@@ -36,15 +36,15 @@ static class BulletMethods
         }
     }
 
-    public static void Rotate(this BulletRotate br, GameObject go, float angle = 0.0f, GameObject unitToFollow = null)
+    public static void Rotate(this BulletRotate br, Bullet bullet)
     {
         switch (br)
         {
             case BulletRotate.Angle:
-                AngleRotation(go, angle);
+                AngleRotate(bullet);
                 break;
-            case BulletRotate.FollowUnit:
-                FollowUnit(go, unitToFollow);
+            case BulletRotate.LookAtTarget:
+                LookAtTarget(bullet);
                 break;
             case BulletRotate.None:
                 break;
@@ -64,12 +64,14 @@ static class BulletMethods
         }
     }
 
-    static void LinearMove(GameObject go)
+    static void LinearMove(Bullet bullet)
     {
-        Vector3 screenPos = Globals.ClampToScreen(go.transform.position);
+        bullet.Rigid.velocity = bullet.transform.up * bullet.speed;
 
-        if ((go.transform.position - screenPos).magnitude > go.transform.localScale.magnitude)
-            GameObject.Destroy(go.gameObject);
+        Vector3 screenPos = Globals.ClampToScreen(bullet.transform.position);
+
+        if ((bullet.transform.position - screenPos).magnitude > bullet.transform.localScale.magnitude)
+            GameObject.Destroy(bullet.gameObject);
     }
 
     static Bullet[] SingleFire(GameObject prefab, GameObject source)
@@ -81,15 +83,18 @@ static class BulletMethods
         return bullets;
     }
 
-    static void AngleRotation(GameObject go, float angle)
+    static void AngleRotate(Bullet bullet)
     {
-        go.transform.rotation = Quaternion.Euler(go.transform.rotation.eulerAngles.x, go.transform.rotation.eulerAngles.y, go.transform.rotation.eulerAngles.z + angle);
+        bullet.transform.rotation = Quaternion.Euler(
+            bullet.transform.rotation.eulerAngles.x,
+            bullet.transform.rotation.eulerAngles.y,
+            bullet.angle);
     }
 
-    static void FollowUnit(GameObject you, GameObject other)
+    static void LookAtTarget(Bullet bullet)
     {
-        Vector3 dir = other.transform.position - you.transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        you.transform.rotation = Quaternion.Euler(0, 0, angle + 270);
+        Vector3 dir = bullet.target.transform.position - bullet.transform.position;
+        bullet.angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
+        AngleRotate(bullet);
     }
 }

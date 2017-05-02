@@ -41,7 +41,7 @@ public class MissileTurret : MonoBehaviour {
     private void FireMissile()
     {
         var newBullet = bullet.fire.Fire(bullet.gameObject, fireLocation);
-        newBullet[0].GetComponent<MissileBullet>().SetTarget(player.gameObject);
+        newBullet[0].GetComponent<MissileBullet>().target = player.gameObject;
         //audioSource.PlayOneShot(enemyShoot);
         lastShotFired = timeBetweenShot;
     }
