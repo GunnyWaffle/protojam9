@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6b9496530140646975d73d52fad30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 13
+  health: 8
   scoreValue: 1
   deathSound: {fileID: 0}
   damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}

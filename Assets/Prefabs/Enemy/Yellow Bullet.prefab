@@ -199,7 +199,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_Intensity: 100.42
+  m_Intensity: 1
   m_Range: 0.33
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -240,6 +240,8 @@ MonoBehaviour:
   damage: 4
   playerShot: 0
   type: 2
+  angle: 0
+  target: {fileID: 0}
   move: 1
   rotate: 0
   fire: 0
@@ -273,7 +275,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1020217031
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300128, guid: 4c2a4e7df40ab2f42ad3c423142080e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
