@@ -76,7 +76,7 @@ public class BossPhaseOne : MonoBehaviour {
         }
     }
 
-    public void KilledEnemy(EnemySpawner.EnemyType type)
+    public void KilledEnemy(HealthManager.DamagedByType type)
     {
         enemiesOnScreen--;
         if (enemiesOnScreen < 0)

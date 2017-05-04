@@ -834,16 +834,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114965697940599208, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: typesOfEnemies.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114346668197634610, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: typesOfEnemies.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4279498511745658, guid: daa55cccafd10a94e8514e9d1bae6c4e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.04
@@ -875,115 +865,6 @@ Prefab:
     - target: {fileID: 4279498511745658, guid: daa55cccafd10a94e8514e9d1bae6c4e, type: 2}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114720509471571310, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: numEnemiesOnScreen
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114965445865040366, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: health
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 114716662292320636, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: health
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 114965697940599208, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: typesOfEnemies.Array.data[3]
-      value: 
-      objectReference: {fileID: 114355801983137592, guid: bda4bf335a26cf94eb3dd2acf419b299,
-        type: 2}
-    - target: {fileID: 114965697940599208, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: typesOfEnemies.Array.data[0]
-      value: 
-      objectReference: {fileID: 114355801983137592, guid: bda4bf335a26cf94eb3dd2acf419b299,
-        type: 2}
-    - target: {fileID: 114346668197634610, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: typesOfEnemies.Array.data[3]
-      value: 
-      objectReference: {fileID: 114355801983137592, guid: bda4bf335a26cf94eb3dd2acf419b299,
-        type: 2}
-    - target: {fileID: 114346668197634610, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: typesOfEnemies.Array.data[0]
-      value: 
-      objectReference: {fileID: 114355801983137592, guid: bda4bf335a26cf94eb3dd2acf419b299,
-        type: 2}
-    - target: {fileID: 114468133822415470, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: shotsPerBarrage
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114338813886347428, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: shotsPerBarrage
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114117751369086288, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: timeBetweenShot
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114342469171692142, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: timeBetweenShot
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114701334539589890, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: health
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114863038488847540, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: health
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114453529292905298, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: health
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114611759046530434, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: health
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114468133822415470, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: shotSpread
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114338813886347428, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: shotSpread
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114468133822415470, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: rotationSpeed
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 114342469171692142, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: rotationSpeed
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 114117751369086288, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: rotationSpeed
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 114338813886347428, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: rotationSpeed
-      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: daa55cccafd10a94e8514e9d1bae6c4e, type: 2}
@@ -3196,7 +3077,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 73328d254da2a9e478d1c6dac349c5dc, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.473
   m_Pitch: 1
   Loop: 1
   Mute: 0

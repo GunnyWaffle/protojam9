@@ -9,22 +9,37 @@ public class HealthManager : MonoBehaviour {
     public int scoreValue;
     public AudioClip deathSound;
     public Color damageColor;
-    public Color defaultColor;
+    private Color defaultColor;
     public float timeForDamage;
-    public UnityEvent customCallback;
+    public DamagedByType type;
     private float currentTimeForDamage;
     private bool isDamaged = false;
 
-    private bool isDead = false;
+    public UnityEvent customCallback;
+
+    [HideInInspector]
+    public bool isDead { get; private set; }
     private Player player;
     private AudioSource audio;
     private SpriteRenderer spr;
+    private Collider2D collider;
+    public enum DamagedByType
+    {
+        Blue = 0,
+        Green = 1,
+        Yellow = 2,
+        Red = 3,
+        Any = 4
+    };
 
     private void Start()
     {
         player = FindObjectOfType<Player>();
         spr = gameObject.GetComponent<SpriteRenderer>();
         audio = gameObject.GetComponent<AudioSource>();
+        collider = gameObject.GetComponent<Collider2D>();
+        defaultColor = spr.color;
+        isDead = false;
     }
 
     private void Update()
@@ -58,13 +73,14 @@ public class HealthManager : MonoBehaviour {
 
     public void KillUnit()
     {
+        isDead = true;
         spr.enabled = false;
+        collider.enabled = false;
 
         if (audio != null && deathSound != null)
         {
             audio.PlayOneShot(deathSound);
-            while (audio.isPlaying) { /*wait*/ }
-            Destroy(gameObject);
+            Destroy(gameObject, deathSound.length);
         }
         else
         {
@@ -81,7 +97,7 @@ public class HealthManager : MonoBehaviour {
         Bullet bullet = collision.GetComponent<Bullet>();
         if (bullet != null)
         {
-            if (bullet.playerShot)
+            if (bullet.playerShot && (bullet.type == this.type || DamagedByType.Any == type))
             {
                 DamageUnit(bullet.damage);
                 Destroy(collision.gameObject);

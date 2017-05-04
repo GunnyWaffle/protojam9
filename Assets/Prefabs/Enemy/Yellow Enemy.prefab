@@ -36,11 +36,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4893498536723918}
   - component: {fileID: 58503234777305058}
-  - component: {fileID: 212053199553976036}
   - component: {fileID: 114355801983137592}
+  - component: {fileID: 114302876928736210}
+  - component: {fileID: 114124468255423596}
+  - component: {fileID: 212053199553976036}
   - component: {fileID: 50949301394337858}
   - component: {fileID: 82774009816099114}
-  - component: {fileID: 114302876928736210}
   m_Layer: 8
   m_Name: Yellow Enemy
   m_TagString: enemy
@@ -226,6 +227,39 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114124468255423596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1251685963404768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c6b9496530140646975d73d52fad30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
+  scoreValue: 1
+  deathSound: {fileID: 0}
+  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
+  timeForDamage: 0.1
+  type: 2
+  customCallback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114355801983137592}
+        m_MethodName: UpdateSpawners
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114302876928736210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -252,13 +286,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyShoot: {fileID: 8300000, guid: 9af15d4bc5cfebe4380040902cae74a0, type: 3}
-  enemyExplosion: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
-  playerExplosion: {fileID: 8300000, guid: f07ca66862ebf9947bd369728cc5861a, type: 3}
   speed: 60
-  score: 1
   bullet: {fileID: 114957375796777518, guid: f35ee4e759fc0af499b1790f6546621b, type: 2}
   timeBetweenShots: 2.5
-  type: 2
+  myHealth: {fileID: 0}
 --- !u!212 &212053199553976036
 SpriteRenderer:
   m_ObjectHideFlags: 1

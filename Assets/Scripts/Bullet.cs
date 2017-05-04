@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
     public float speed = 3; // movement speed
     public int damage = 4; // damage applied to hit entity
     public bool playerShot = false; // true if the player shot this
-    public EnemySpawner.EnemyType type; // the type of bullet this is
+    public HealthManager.DamagedByType type; // the type of bullet this is
 
     // optional properties, add to this list for more exposed variables needed in behaviours
     public float angle = 0; // the forward facing angle
@@ -53,15 +53,15 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (playerShot && collision.tag == "enemy")
+        /*if (playerShot && collision.tag == "enemy")
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            if (enemy.type == type)
+            if (enemy.mtype == type)
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().UpdateScore(enemy.score);
-                enemy.DestroyShip();
+                enemy.UpdateSpawners();
                 Destroy(gameObject);
             }
-        }
+        }*/
     }
 }

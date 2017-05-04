@@ -7,18 +7,16 @@ public class Enemy : MonoBehaviour {
     private GameObject player;
     private AudioSource audioSource;
     public AudioClip enemyShoot;
-    public AudioClip enemyExplosion;
-    public AudioClip playerExplosion;
 
     public float speed = 1.0f;
-    public int score;
 
     //Enemy shoot
     public Bullet bullet;
     public float timeBetweenShots;
     private float lastShotTime;
 
-    public EnemySpawner.EnemyType type;
+    [HideInInspector]
+    public HealthManager myHealth;
     private Rigidbody2D myRB2d;
     private SpriteRenderer mySRD;
 
@@ -29,6 +27,7 @@ public class Enemy : MonoBehaviour {
     {
         myRB2d = GetComponent<Rigidbody2D>();
         mySRD = GetComponent<SpriteRenderer>();
+        myHealth = GetComponent<HealthManager>();
     }
     // Use this for initialization
     void Start () {
@@ -72,14 +71,14 @@ public class Enemy : MonoBehaviour {
         Vector3 normal = Vector3.Cross(dir.normalized, Vector3.forward);
 
         Vector3 moveDir = Vector3.zero;
-        switch (type)
+        switch (myHealth.type)
         {
-            case EnemySpawner.EnemyType.Blue:
+            case HealthManager.DamagedByType.Blue:
                 transform.rotation = Quaternion.Euler(0, 0, 180);
                 moveDir = new Vector3(Mathf.Sin(2 * Time.time), -1, 0);
                 moveDir.Normalize();
                 break;
-            case EnemySpawner.EnemyType.Green:
+            case HealthManager.DamagedByType.Green:
                 transform.rotation = Quaternion.Euler(0, 0, angle + 270);
                 normal.Normalize();
                 Vector3 offset;
@@ -100,11 +99,11 @@ public class Enemy : MonoBehaviour {
                 moveDir = normal + offset;
                 moveDir.Normalize();
                 break;
-            case EnemySpawner.EnemyType.Red:
+            case HealthManager.DamagedByType.Red:
                 transform.rotation = Quaternion.Euler(0, 0, angle + 270);
                 moveDir = dir.normalized;
                 break;
-            case EnemySpawner.EnemyType.Yellow:
+            case HealthManager.DamagedByType.Yellow:
                 transform.rotation = Quaternion.Euler(0, 0, angle + 270);
                 normal.Normalize();
                 moveDir = normal;
@@ -119,50 +118,20 @@ public class Enemy : MonoBehaviour {
 
     void CheckIfOnScreen()
     {
-        if (type == EnemySpawner.EnemyType.Blue)
+        if (myHealth.type == HealthManager.DamagedByType.Blue)
         {
             Vector3 bottom = Camera.main.ScreenToWorldPoint(Vector3.down);
             if (transform.position.y < bottom.y)
-                DestroyShip();
+            {
+                UpdateSpawners();
+                Destroy(gameObject);
+            }
         }
     }
 
     void Attack()
     {
-        Vector3 dir = player.transform.position - transform.position;
-        switch (type)
-        {
-            case EnemySpawner.EnemyType.Blue:
-                //if ((transform.position - currentTargetLocation).magnitude < 0.02f)
-                if (lastShotTime <= 0.0f)
-                {
-                    FireBullet();
-                }
-                //GenerateTargetLocation();
-                //dir = currentTargetLocation - transform.position;
-                break;
-            case EnemySpawner.EnemyType.Green:
-                if (lastShotTime <= 0.0f)
-                    FireBullet();
-
-                //if ((transform.position - currentTargetLocation).magnitude < 0.02f)
-                //GenerateTargetLocation();
-
-                //dir = currentTargetLocation - transform.position;
-                break;
-            case EnemySpawner.EnemyType.Red:
-                if (lastShotTime <= 0.0f)
-                {
-                    FireBullet();
-                }
-                break;
-            case EnemySpawner.EnemyType.Yellow:
-                if (lastShotTime <= 0.0f)
-                {
-                    FireBullet();
-                }
-                break;
-        }
+        FireBullet();
     }
 
     public void ApplyTrajectory(Vector3 direction, float speed)
@@ -170,22 +139,18 @@ public class Enemy : MonoBehaviour {
         myRB2d.velocity = direction.normalized * speed;
     }
 
-    public void DestroyShip()
+    public void UpdateSpawners()
     {
-        if (type == EnemySpawner.EnemyType.Blue)
+        if (myHealth.type == HealthManager.DamagedByType.Blue)
         {
             if (EnemySpawner.instance != null)
-                EnemySpawner.instance.KilledEnemy(type);
+                EnemySpawner.instance.KilledEnemy(myHealth.type);
         }
         else
         {
             if (BossPhaseOne.instance != null)
-                BossPhaseOne.instance.KilledEnemy(type);
+                BossPhaseOne.instance.KilledEnemy(myHealth.type);
         }
-        
-        // this is causing some serious console spam
-        audioSource.PlayOneShot(enemyExplosion);
-        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -193,15 +158,18 @@ public class Enemy : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<Player>().DamagePlayer(8);
-            DestroyShip();
+            UpdateSpawners();
         }
     }
 
     private void FireBullet()
     {
-        bullet.fire.Fire(bullet.gameObject, gameObject);
-        audioSource.PlayOneShot(enemyShoot);
-        lastShotTime = timeBetweenShots;
+        if (lastShotTime <= 0.0f && !myHealth.isDead)
+        {
+            bullet.fire.Fire(bullet.gameObject, gameObject);
+            audioSource.PlayOneShot(enemyShoot);
+            lastShotTime = timeBetweenShots;
+        }
     }
 
     private void GenerateTargetLocation()

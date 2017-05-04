@@ -30,14 +30,6 @@ public class EnemySpawner : MonoBehaviour {
         Right
     };
 
-    public enum EnemyType
-    {
-        Blue = 0,
-        Green = 1,
-        Yellow = 2,
-        Red = 3
-    };
-
     private void Start()
     {
         if (instance == null)
@@ -138,7 +130,7 @@ public class EnemySpawner : MonoBehaviour {
         enemiesOnScreen++;
     }
 
-    public void KilledEnemy(EnemyType type)
+    public void KilledEnemy(HealthManager.DamagedByType type)
     {
         enemiesOnScreen--;
         if (enemiesOnScreen < 0)

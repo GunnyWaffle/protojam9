@@ -54,9 +54,9 @@ public class EnemySpecial : MonoBehaviour {
         if (nextDashTime <= 0.0f)
         {
             Vector3 dir = Vector3.zero; ;
-            if (enemyScript.type == EnemySpawner.EnemyType.Yellow)
+            if (enemyScript.myHealth.type == HealthManager.DamagedByType.Yellow)
                 dir = transform.rotation * Vector3.up;
-            if (enemyScript.type == EnemySpawner.EnemyType.Red)
+            if (enemyScript.myHealth.type == HealthManager.DamagedByType.Red)
             {
                 Vector3 playerDir = transform.rotation * Vector3.up;
                 dir = Vector3.Cross(playerDir, Vector3.forward);
