@@ -8,7 +8,8 @@ using UnityEngine;
 public enum BulletMove
 {
     None, // do not move
-    Linear // move along the forward angular direction linearlly
+    Linear, // move along the forward angular direction linearlly
+    LinearGrowth // move along the forward angular direction quadratically
 }
 
 // available rotation behaviours
@@ -40,6 +41,9 @@ static class BulletMethods
         {
             case BulletMove.Linear:
                 LinearMove(bullet);
+                break;
+            case BulletMove.LinearGrowth:
+                LinearGrowthMove(bullet);
                 break;
             case BulletMove.None:
                 break;
@@ -85,6 +89,12 @@ static class BulletMethods
     {
         bullet.Rigid.velocity = bullet.transform.up * bullet.speed;
         Cull(bullet);
+    }
+
+    static void LinearGrowthMove(Bullet bullet)
+    {
+        bullet.timeAlive += Time.deltaTime;
+        bullet.Rigid.velocity = bullet.transform.up * bullet.timeAlive * bullet.speed;
     }
 
     // always call this at the end of each movement behaviour to destroy the bullet when it leaves the screen

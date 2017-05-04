@@ -918,12 +918,12 @@ Prefab:
     - target: {fileID: 114468133822415470, guid: daa55cccafd10a94e8514e9d1bae6c4e,
         type: 2}
       propertyPath: shotsPerBarrage
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114338813886347428, guid: daa55cccafd10a94e8514e9d1bae6c4e,
         type: 2}
       propertyPath: shotsPerBarrage
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114117751369086288, guid: daa55cccafd10a94e8514e9d1bae6c4e,
         type: 2}
@@ -954,6 +954,16 @@ Prefab:
         type: 2}
       propertyPath: health
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468133822415470, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: shotSpread
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114338813886347428, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: shotSpread
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: daa55cccafd10a94e8514e9d1bae6c4e, type: 2}

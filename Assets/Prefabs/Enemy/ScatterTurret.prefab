@@ -70,10 +70,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 114957375796777518, guid: e225138ed7ec8344b992c79ef76b156b, type: 2}
-  shotsPerBarrage: 4
+  shotsPerBarrage: 3
   timeBetweenBarrages: 5
   timeBetweenOneShot: 0.2
-  shotSpread: 7
+  shotSpread: 20
   rotationSpeed: 0
   enemyShoot: {fileID: 0}
   enemyExplosion: {fileID: 0}

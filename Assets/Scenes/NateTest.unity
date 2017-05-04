@@ -650,6 +650,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114342469171692142, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: timeBetweenShot
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468133822415470, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: shotsPerBarrage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468133822415470, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: shotSpread
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: daa55cccafd10a94e8514e9d1bae6c4e, type: 2}
   m_IsPrefabParent: 0

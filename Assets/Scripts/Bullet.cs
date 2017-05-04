@@ -27,6 +27,9 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rigid;
     public Rigidbody2D Rigid { get { return rigid; } }
 
+    [HideInInspector]
+    public float timeAlive = 0.0f;
+
     // must call this base.Start() if you inherit Bullet
     // feel free to add more component grabs here for optional properties
     protected void Start()
