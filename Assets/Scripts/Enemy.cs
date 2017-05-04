@@ -49,6 +49,7 @@ public class Enemy : MonoBehaviour {
         if (player != null && !flightLocked)
         {
             PerformActions();
+            CheckIfOnScreen();
         }
     }
 
@@ -116,10 +117,14 @@ public class Enemy : MonoBehaviour {
         ApplyTrajectory(moveDir, speed * Time.deltaTime);
     }
 
-    void OnBecameInvisible()
+    void CheckIfOnScreen()
     {
         if (type == EnemySpawner.EnemyType.Blue)
-            DestroyShip();
+        {
+            Vector3 bottom = Camera.main.ScreenToWorldPoint(Vector3.down);
+            if (transform.position.y < bottom.y)
+                DestroyShip();
+        }
     }
 
     void Attack()
