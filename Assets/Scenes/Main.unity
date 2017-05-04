@@ -2889,13 +2889,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1682610939}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d07c707b0bd4994eabba882fc55c1a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 61b6b3bee0ed9b84d935c586e199f09b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typesOfEnemies:
-  - {fileID: 114019844243690734, guid: 7acf9d3f472b87f4ebf453470c7a9d62, type: 2}
-  numEnemiesOnScreen: 3
-  spawnTimer: 0.7
+  typesOfFormations:
+  - {fileID: 1329779252875274, guid: 9fa0ab252679f5847990af17476e7043, type: 2}
+  - {fileID: 1901756498387166, guid: 5b0df144fecba7f4cbbae8a7a5f6ff34, type: 2}
+  numSquadsOnScreen: 2
+  spawnTimer: 2
   spawnDir: 3
 --- !u!4 &1718288611 stripped
 Transform:

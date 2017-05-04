@@ -175,7 +175,12 @@ public class Player : MonoBehaviour
         GetComponent<SpriteRenderer>().enabled = false;
         Audio.PlayOneShot(playerExplosion);
         explosion.Play(true);
-        EnemySpawner.instance.StopSpawning();
+
+        if (EnemySpawner.instance)
+            EnemySpawner.instance.StopSpawning();
+
+        if (EnemyFormationSpawner.instance)
+        EnemyFormationSpawner.instance.StopSpawning();
 
         PlayerPrefs.SetInt("Score", score);
     }
