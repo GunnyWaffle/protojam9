@@ -124,6 +124,7 @@ MonoBehaviour:
   timeBetweenShot: 7
   enemyShoot: {fileID: 0}
   enemyExplosion: {fileID: 0}
+  rotationSpeed: 35
   fireLocation: {fileID: 1375559802903026}
 --- !u!212 &212782460843989224
 SpriteRenderer:

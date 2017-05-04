@@ -12,6 +12,8 @@ public class MissileTurret : MonoBehaviour {
     public AudioClip enemyExplosion;
     private AudioSource audioSource;
 
+    public float rotationSpeed;
+
     private Player player;
     public GameObject fireLocation;
 
@@ -25,15 +27,41 @@ public class MissileTurret : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = player.transform.position - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle + 270);
+        RotateTurret();
 
         // Are we in the deley between shots?
         if (lastShotFired <= 0.0f)
             FireMissile();
         else
             lastShotFired -= Time.deltaTime;
+    }
+
+    private void RotateTurret()
+    {
+        // Find direction to the player
+        Vector3 dir = player.transform.position - transform.position;
+        // Get the angle for vector and convert to Unity rotation, 0 is at the top of screen.
+        float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + 270) % 360;
+
+        float angleDif = transform.rotation.eulerAngles.z - angle;
+        float currentRotationAmount = rotationSpeed * Time.deltaTime;
+
+        if (transform.rotation.eulerAngles.z > angle && angleDif < 180)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - currentRotationAmount);
+        }
+        else if (transform.rotation.eulerAngles.z < angle && angleDif < 180)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + currentRotationAmount);
+        }
+        else if (transform.rotation.eulerAngles.z > angle && angleDif > 180)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + currentRotationAmount);
+        }
+        else if (transform.rotation.eulerAngles.z < angle && angleDif < 180)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - currentRotationAmount);
+        }
     }
 
     private void FireMissile()

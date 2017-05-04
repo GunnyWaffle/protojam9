@@ -74,7 +74,7 @@ MonoBehaviour:
   timeBetweenBarrages: 5
   timeBetweenOneShot: 0.2
   shotSpread: 20
-  rotationSpeed: 0
+  rotationSpeed: 45
   enemyShoot: {fileID: 0}
   enemyExplosion: {fileID: 0}
 --- !u!114 &114709902122622696
