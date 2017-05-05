@@ -9,7 +9,8 @@ public enum BulletMove
 {
     None, // do not move
     Linear, // move along the forward angular direction linearlly
-    LinearGrowth // move along the forward angular direction quadratically
+    LinearGrowth, // move along the forward angular direction quadratically
+    SpinMove // move in the direction initially released.
 }
 
 // available rotation behaviours
@@ -17,7 +18,8 @@ public enum BulletRotate
 {
     None, // do not rotate
     Angle, // rotate to the set angle property
-    LookAtTarget // set the angle to the target, then call the Angle method
+    LookAtTarget, // set the angle to the target, then call the Angle method
+    Spin // spin in a single direction for the life of a bullet
 }
 
 // available firing behaviours
@@ -45,6 +47,9 @@ static class BulletMethods
             case BulletMove.LinearGrowth:
                 LinearGrowthMove(bullet);
                 break;
+            case BulletMove.SpinMove:
+                SpinMove(bullet);
+                break;
             case BulletMove.None:
                 break;
             default:
@@ -62,6 +67,9 @@ static class BulletMethods
                 break;
             case BulletRotate.LookAtTarget:
                 LookAtTarget(bullet);
+                break;
+            case BulletRotate.Spin:
+                Spin(bullet);
                 break;
             case BulletRotate.None:
                 break;
@@ -91,10 +99,17 @@ static class BulletMethods
         Cull(bullet);
     }
 
+    // move in the forward direction of the bullet, but speed grows over time.
     static void LinearGrowthMove(Bullet bullet)
     {
         bullet.timeAlive += Time.deltaTime;
         bullet.Rigid.velocity = bullet.transform.up * bullet.timeAlive * bullet.speed;
+    }
+
+    // Move in the direction of original release. Allows the bullet to spin as an effect.
+    static void SpinMove(Bullet bullet)
+    {
+        bullet.Rigid.velocity = bullet.releaseDirection * bullet.speed;
     }
 
     // always call this at the end of each movement behaviour to destroy the bullet when it leaves the screen
@@ -122,6 +137,13 @@ static class BulletMethods
     {
         Vector3 dir = bullet.target.transform.position - bullet.transform.position;
         bullet.angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
+        AngleRotate(bullet);
+    }
+
+    // Spin in a single direction for the life of the bullet
+    static void Spin(Bullet bullet)
+    {
+        bullet.angle = (bullet.angle + (bullet.spinSpeed * Time.deltaTime)) % 360;
         AngleRotate(bullet);
     }
 

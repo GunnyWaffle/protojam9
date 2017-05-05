@@ -17,6 +17,10 @@ public class Bullet : MonoBehaviour
     // optional properties, add to this list for more exposed variables needed in behaviours
     public float angle = 0; // the forward facing angle
     public GameObject target; // the target
+    // Recommended to pair these two together. Spinning a bullet while using linear move will have the bullet act like a bomerang.
+    public float spinSpeed = 0; // speed that a bullet will spin at.
+    [HideInInspector]
+    public Vector3 releaseDirection; // direction that a bullet was released at.
 
     // the current behaviour of the bullet
     public BulletMove move = BulletMove.Linear; // used each update
