@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ffbafc7bcf1543e4997331f89c2817ad
-timeCreated: 1493052389
+timeCreated: 1494004169
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -100,38 +100,12 @@ TextureImporter:
       name: tyrian.shp.01D8A7_0
       rect:
         serializedVersion: 2
-        x: 12
+        x: 24
         y: 168
-        width: 12
+        width: 24
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tyrian.shp.01D8A7_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 168
-        width: 12
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: tyrian.shp.01D8A7_2
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 168
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

@@ -100,7 +100,8 @@ public class HealthManager : MonoBehaviour {
             if (bullet.playerShot && (bullet.type == this.type || DamagedByType.Any == type))
             {
                 DamageUnit(bullet.damage);
-                Destroy(collision.gameObject);
+                if (bullet.shouldDestroyOnImpact)
+                    Destroy(collision.gameObject);
             }
         }
     }

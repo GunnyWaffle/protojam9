@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     public int damage = 4; // damage applied to hit entity
     public bool playerShot = false; // true if the player shot this
     public HealthManager.DamagedByType type; // the type of bullet this is
+    public bool shouldDestroyOnImpact = true; // should we destoroy this bullet on impact?
 
     // optional properties, add to this list for more exposed variables needed in behaviours
     public float angle = 0; // the forward facing angle
@@ -54,18 +55,8 @@ public class Bullet : MonoBehaviour
         if (!playerShot && collision.tag == "Player")
         {
             collision.gameObject.GetComponent<Player>().DamagePlayer(damage);
-            Destroy(gameObject);
-        }
-
-        /*if (playerShot && collision.tag == "enemy")
-        {
-            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            if (enemy.mtype == type)
-            {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().UpdateScore(enemy.score);
-                enemy.UpdateSpawners();
+            if (shouldDestroyOnImpact)
                 Destroy(gameObject);
-            }
-        }*/
+        }
     }
 }
