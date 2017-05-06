@@ -343,9 +343,18 @@ MonoBehaviour:
   damage: 4
   playerShot: 1
   type: 3
+  shouldDestroyOnImpact: 1
+  angle: 0
+  target: {fileID: 0}
+  weaveSpeed: 0.45
+  weaveAmplitude: 0.5
+  weaveGrowthRate: 3
+  spinSpeed: 0
+  releaseDirection: {x: 0, y: 0, z: 0}
   move: 1
   rotate: 0
-  fire: 0
+  fire: 1
+  timeAlive: 0
 --- !u!212 &212983721825355370
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -376,7 +385,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1020217031
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300100, guid: 58bc5a41695b3ed40b476c7a081f021d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

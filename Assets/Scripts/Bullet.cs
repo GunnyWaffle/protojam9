@@ -18,6 +18,10 @@ public class Bullet : MonoBehaviour
     // optional properties, add to this list for more exposed variables needed in behaviours
     public float angle = 0; // the forward facing angle
     public GameObject target; // the target
+    public float weaveSpeed = 25;
+    public float weaveAmplitude = 5;
+    public float weaveGrowthRate = 0.5f;
+
     // Recommended to pair these two together. Spinning a bullet while using linear move will have the bullet act like a bomerang.
     public float spinSpeed = 0; // speed that a bullet will spin at.
     [HideInInspector]
@@ -45,6 +49,7 @@ public class Bullet : MonoBehaviour
     // apply bullet behaviours
 	void Update()
     {
+        timeAlive += Time.deltaTime;
         rotate.Rotate(this);
         move.Move(this);
     }

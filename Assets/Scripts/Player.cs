@@ -8,15 +8,17 @@ public class Player : MonoBehaviour
 
 	public GUIManager guiManager;
 
-    public int maxHealth = 12;
-    public int health = 12;
+    public float shootThreshold = 0.2f;
+    public int maxHealth = 100;
+    public int health = 100;
     public int lives = 3;
 
     public float invincibilityTime = 2.5f;
     public float invincibilityPulseSpeed = 12.5f;
-    public Color invincibilityColor = Color.red;
+    public Color damageColor = Color.red;
     float invincibilityCounter = 0;
     public bool IsInvincible { get { return invincibilityCounter > 0; } }
+    public bool lerpIFrameAnim = false;
 
     SpriteRenderer sprite;
 
@@ -37,7 +39,7 @@ public class Player : MonoBehaviour
 
     ParticleSystem explosion;
     bool isDead = false;
-    public float timerAfterDeath;
+    public float timerAfterDeath; // hijack for respawn timer
     public bool IsDead { get { return isDead; } }
 
     //Audio Stuff
@@ -66,6 +68,8 @@ public class Player : MonoBehaviour
             Debug.LogWarning("Don't change maxShotsPerSecond array size!");
             System.Array.Resize<float>(ref maxShotsPerSecond, WeaponCount);
         }
+
+        shootThreshold = Mathf.Clamp01(shootThreshold);
     }
 
     void Update()
@@ -90,8 +94,13 @@ public class Player : MonoBehaviour
                 t = Mathf.Sin(t);
                 t = (t + 1) / 2;
 
-                Color lerpedColor = Color.Lerp(Color.white, invincibilityColor, t);
-                sprite.color = lerpedColor;
+                if (lerpIFrameAnim)
+                {
+                    Color lerpedColor = Color.Lerp(Color.white, damageColor, t);
+                    sprite.color = lerpedColor;
+                }
+                else
+                    sprite.color = t > 0.5f ? damageColor : Color.white;
             }
             else
             {
@@ -108,7 +117,10 @@ public class Player : MonoBehaviour
         if (switchMask > 0)
             activeWeapon = (WeaponType)Globals.BitScanForward(switchMask);
 
-        if (Input.GetAxis("RightTrigger") > 0 && timeElapsed[(int)activeWeapon] >=  1.0f / maxShotsPerSecond[(int)activeWeapon])
+        Vector3 offset = new Vector3(Input.GetAxis("LeftJoyX"), -Input.GetAxis("LeftJoyY"), 0);
+        Vector3 turn = new Vector3(Input.GetAxis("RightJoyX"), -Input.GetAxis("RightJoyY"), 0);
+
+        if (turn.magnitude > shootThreshold && timeElapsed[(int)activeWeapon] >=  1.0f / maxShotsPerSecond[(int)activeWeapon])
         {
             timeElapsed[(int)activeWeapon] = 0;
             Audio.PlayOneShot(playerShoot);
@@ -120,9 +132,6 @@ public class Player : MonoBehaviour
             else
                 Debug.Log("The bullet prefab for weapon " + activeWeapon + " is missing and/or null!");
         }
-
-        Vector3 offset = new Vector3(Input.GetAxis("LeftJoyX"), -Input.GetAxis("LeftJoyY"), 0);
-        Vector3 turn = new Vector3(Input.GetAxis("RightJoyX"), -Input.GetAxis("RightJoyY"), 0);
 
         Vector3 pos = Globals.ClampToScreen(transform.position);
 
@@ -144,6 +153,11 @@ public class Player : MonoBehaviour
         anim.Play("PlayerShip", -1, bank);
     }
 
+    public void DamagePlayerPercent(float damagePercentOfMax)
+    {
+        DamagePlayer((int)(damagePercentOfMax * maxHealth));
+    }
+
     public void DamagePlayer(int damage)
     {
         if (isDead || invincibilityCounter > 0)
@@ -151,7 +165,7 @@ public class Player : MonoBehaviour
 
         health -= damage;
         invincibilityCounter = invincibilityTime;
-        // TODO sound
+        // play the sound for the player being hit
 
         if (health <= 0)
 			KillPlayer();
@@ -164,17 +178,18 @@ public class Player : MonoBehaviour
             isDead = true;
 
 		guiManager.UpdateLivesDisplay (lives);
+        Audio.PlayOneShot(playerExplosion);
+        explosion.Play(true);
 
         if (!isDead)
         {
-            // TODO game state needs to be called here for player death, that is NOT game over
+            invincibilityCounter = invincibilityTime * 2.5f;
+            // teleport to pre-defined position
             health = maxHealth;
             return;
         }
 
         GetComponent<SpriteRenderer>().enabled = false;
-        Audio.PlayOneShot(playerExplosion);
-        explosion.Play(true);
 
         if (EnemySpawner.instance)
             EnemySpawner.instance.StopSpawning();
