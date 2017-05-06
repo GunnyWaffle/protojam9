@@ -21,6 +21,7 @@ public class Bullet : MonoBehaviour
     public float weaveSpeed = 25;
     public float weaveAmplitude = 5;
     public float weaveGrowthRate = 0.5f;
+    public float speedGrowthRate = 1;
 
     // Recommended to pair these two together. Spinning a bullet while using linear move will have the bullet act like a bomerang.
     public float spinSpeed = 0; // speed that a bullet will spin at.

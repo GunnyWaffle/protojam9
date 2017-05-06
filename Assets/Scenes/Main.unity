@@ -684,6 +684,34 @@ Transform:
   m_PrefabParentObject: {fileID: 4740602650928322, guid: e166838bfb75f7842a4a20c1330a3c7d,
     type: 2}
   m_PrefabInternal: {fileID: 182757225}
+--- !u!1 &283172629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 283172630}
+  m_Layer: 0
+  m_Name: Player Respawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &283172630
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 283172629}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &297611713 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4740602650928322, guid: e166838bfb75f7842a4a20c1330a3c7d,
@@ -1671,15 +1699,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4550434267226092, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4550434267226092, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.54
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4550434267226092, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4550434267226092, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1703,14 +1731,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114711610294463050, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
         type: 2}
-      propertyPath: scoreText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114711610294463050, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
-        type: 2}
       propertyPath: guiManager
       value: 
       objectReference: {fileID: 751212}
+    - target: {fileID: 114711610294463050, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf,
+        type: 2}
+      propertyPath: respawnTransform
+      value: 
+      objectReference: {fileID: 283172630}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 256ce3ccf01a5ed41b1d9e2907aa8dcf, type: 2}
   m_IsPrefabParent: 0

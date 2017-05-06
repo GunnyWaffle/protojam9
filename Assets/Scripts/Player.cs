@@ -39,13 +39,18 @@ public class Player : MonoBehaviour
 
     ParticleSystem explosion;
     bool isDead = false;
-    public float timerAfterDeath; // hijack for respawn timer
+    bool isRespawning = false;
+    public float respawnDelay = 5; // hijack for respawn timer
+    float respawnCounter;
     public bool IsDead { get { return isDead; } }
+    public bool IsRespawning {  get { return isRespawning; } }
+    public Transform respawnTransform;
 
     //Audio Stuff
     AudioSource Audio;
     public AudioClip playerExplosion;
     public AudioClip playerShoot;
+
 	void Start()
     {
         explosion = transform.Find("explosion").GetComponent<ParticleSystem>();
@@ -76,11 +81,15 @@ public class Player : MonoBehaviour
     {
         if (isDead)
         {
-            if (timerAfterDeath <= 0.0f)
-                SceneTransition.Gameover();
+            if (respawnCounter <= 0.0f)
+            {
+                if (lives == -1)
+                    SceneTransition.Gameover();
+                else
+                    Respawn();
+            }
 
-            timerAfterDeath -= Time.deltaTime;
-            return;
+            respawnCounter -= Time.deltaTime;
         }
 
         if (invincibilityCounter > 0)
@@ -96,18 +105,22 @@ public class Player : MonoBehaviour
 
                 if (lerpIFrameAnim)
                 {
-                    Color lerpedColor = Color.Lerp(Color.white, damageColor, t);
+                    Color lerpedColor = Color.Lerp(Color.white, isRespawning ? new Color(0, 0, 0, 0) : damageColor, t);
                     sprite.color = lerpedColor;
                 }
                 else
-                    sprite.color = t > 0.5f ? damageColor : Color.white;
+                    sprite.color = t > 0.5f ? (isRespawning ? new Color(0, 0, 0, 0) : damageColor) : Color.white;
             }
             else
             {
                 invincibilityCounter = 0;
                 sprite.color = Color.white;
+                isRespawning = false;
             }
         }
+
+        if (isDead)
+            return;
 
         for (uint i = 0; i < WeaponCount; ++i)
             timeElapsed[i] += Time.deltaTime;
@@ -174,22 +187,23 @@ public class Player : MonoBehaviour
 
     public void KillPlayer()
     {
-        if (--lives == 0)
-            isDead = true;
+        if (isDead || lives < 0)
+            return;
 
-		guiManager.UpdateLivesDisplay (lives);
+        --lives;
+        isDead = true;
+
+        respawnCounter = respawnDelay;
+
+        guiManager.UpdateLivesDisplay (lives);
+
         Audio.PlayOneShot(playerExplosion);
         explosion.Play(true);
 
-        if (!isDead)
-        {
-            invincibilityCounter = invincibilityTime * 2.5f;
-            // teleport to pre-defined position
-            health = maxHealth;
-            return;
-        }
-
         GetComponent<SpriteRenderer>().enabled = false;
+
+        if (lives >= 0)
+            return;
 
         if (EnemySpawner.instance)
             EnemySpawner.instance.StopSpawning();
@@ -200,8 +214,30 @@ public class Player : MonoBehaviour
         PlayerPrefs.SetInt("Score", score);
     }
 
+    void Respawn()
+    {
+        if (lives < 0)
+            return;
+
+        isDead = false;
+        isRespawning = true;
+        invincibilityCounter = invincibilityTime * 2.5f;
+        health = maxHealth;
+        GetComponent<SpriteRenderer>().enabled = true;
+        explosion.Stop(true);
+
+        if (respawnTransform)
+        {
+            transform.position = respawnTransform.position;
+            transform.rotation = respawnTransform.rotation;
+        }
+    }
+
     public void UpdateScore(int points)
     {
+        if (isDead)
+            return;
+
         score += points;
         guiManager.UpdateScoreDisplay (score);
     }

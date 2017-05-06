@@ -110,7 +110,7 @@ static class BulletMethods
     // move in the forward direction of the bullet, but speed grows over time.
     static void LinearGrowthMove(Bullet bullet)
     {
-        bullet.Rigid.velocity = bullet.transform.up * bullet.timeAlive * bullet.speed;
+        bullet.Rigid.velocity = bullet.transform.up * bullet.timeAlive * bullet.speed * bullet.speedGrowthRate;
     }
 
     // Move in the direction of original release. Allows the bullet to spin as an effect.
@@ -132,7 +132,7 @@ static class BulletMethods
     {
         Vector3 screenPos = Globals.ClampToScreen(bullet.transform.position);
 
-        if ((bullet.transform.position - screenPos).magnitude > bullet.transform.localScale.magnitude)
+        if ((bullet.transform.position - screenPos).magnitude > bullet.GetComponent<SpriteRenderer>().sprite.bounds.extents.magnitude)
             GameObject.Destroy(bullet.gameObject);
     }
 
