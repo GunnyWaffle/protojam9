@@ -10,7 +10,8 @@ public enum BulletMove
     None, // do not move
     Linear, // move along the forward angular direction linearlly
     LinearGrowth, // move along the forward angular direction quadratically
-    SpinMove // move in the direction initially released.
+    SpinMove, // move in the direction initially released.
+    Weave
 }
 
 // available rotation behaviours
@@ -25,7 +26,8 @@ public enum BulletRotate
 // available firing behaviours
 public enum BulletFire
 {
-    Single // a single shot is fired in the facing direction of the firing object
+    Single, // a single shot is fired in the facing direction of the firing object
+    Double
 }
 
 // the everything
@@ -50,11 +52,16 @@ static class BulletMethods
             case BulletMove.SpinMove:
                 SpinMove(bullet);
                 break;
+            case BulletMove.Weave:
+                WeaveMove(bullet);
+                break;
             case BulletMove.None:
                 break;
             default:
                 break;
         }
+
+        Cull(bullet);
     }
 
     // rotation behaviours
@@ -85,6 +92,8 @@ static class BulletMethods
         {
             case BulletFire.Single:
                 return SingleFire(prefab, source);
+            case BulletFire.Double:
+                return DoubleFire(prefab, source);
             default:
                 return new Bullet[0];
         }
@@ -96,14 +105,12 @@ static class BulletMethods
     static void LinearMove(Bullet bullet)
     {
         bullet.Rigid.velocity = bullet.transform.up * bullet.speed;
-        Cull(bullet);
     }
 
     // move in the forward direction of the bullet, but speed grows over time.
     static void LinearGrowthMove(Bullet bullet)
     {
-        bullet.timeAlive += Time.deltaTime;
-        bullet.Rigid.velocity = bullet.transform.up * bullet.timeAlive * bullet.speed;
+        bullet.Rigid.velocity = bullet.transform.up * bullet.timeAlive * bullet.speed * bullet.speedGrowthRate;
     }
 
     // Move in the direction of original release. Allows the bullet to spin as an effect.
@@ -112,12 +119,20 @@ static class BulletMethods
         bullet.Rigid.velocity = bullet.releaseDirection * bullet.speed;
     }
 
-    // always call this at the end of each movement behaviour to destroy the bullet when it leaves the screen
+    // weave back and forth based on time alive
+    static void WeaveMove(Bullet bullet)
+    {
+        LinearMove(bullet);
+        Vector3 weaveOffset = bullet.transform.right * (Mathf.Cos(bullet.timeAlive * bullet.weaveSpeed) * bullet.weaveAmplitude);
+        Vector2 weave = new Vector2(weaveOffset.x, weaveOffset.y) * (bullet.timeAlive / bullet.weaveGrowthRate);
+        bullet.Rigid.velocity += weave;
+    }
+
     static void Cull(Bullet bullet)
     {
         Vector3 screenPos = Globals.ClampToScreen(bullet.transform.position);
 
-        if ((bullet.transform.position - screenPos).magnitude > bullet.transform.localScale.magnitude)
+        if ((bullet.transform.position - screenPos).magnitude > bullet.GetComponent<SpriteRenderer>().sprite.bounds.extents.magnitude)
             GameObject.Destroy(bullet.gameObject);
     }
 
@@ -155,6 +170,20 @@ static class BulletMethods
         Bullet[] bullets = new Bullet[1];
 
         bullets[0] = GameObject.Instantiate(prefab, source.transform.position, source.transform.rotation).GetComponent<Bullet>();
+
+        return bullets;
+    }
+
+    // fire two bullets, in the facing direction of the source
+    static Bullet[] DoubleFire(GameObject prefab, GameObject source)
+    {
+        Bullet[] bullets = new Bullet[2];
+        Sprite sourceSprite = source.GetComponent<SpriteRenderer>().sprite;
+
+        Vector3 offset = source.transform.right * sourceSprite.bounds.extents.x * 0.5f;
+
+        bullets[0] = GameObject.Instantiate(prefab, source.transform.position + offset, source.transform.rotation).GetComponent<Bullet>();
+        bullets[1] = GameObject.Instantiate(prefab, source.transform.position - offset, source.transform.rotation).GetComponent<Bullet>();
 
         return bullets;
     }

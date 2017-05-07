@@ -8,15 +8,17 @@ public class Player : MonoBehaviour
 
 	public GUIManager guiManager;
 
-    public int maxHealth = 12;
-    public int health = 12;
+    public float shootThreshold = 0.2f;
+    public int maxHealth = 100;
+    public int health = 100;
     public int lives = 3;
 
     public float invincibilityTime = 2.5f;
     public float invincibilityPulseSpeed = 12.5f;
-    public Color invincibilityColor = Color.red;
+    public Color damageColor = Color.red;
     float invincibilityCounter = 0;
     public bool IsInvincible { get { return invincibilityCounter > 0; } }
+    public bool lerpIFrameAnim = false;
 
     SpriteRenderer sprite;
 
@@ -37,13 +39,20 @@ public class Player : MonoBehaviour
 
     ParticleSystem explosion;
     bool isDead = false;
-    public float timerAfterDeath;
+    bool isRespawning = false;
+    public float respawnDelay = 5; // hijack for respawn timer
+    float respawnCounter;
     public bool IsDead { get { return isDead; } }
+    public bool IsRespawning {  get { return isRespawning; } }
+    public Transform respawnTransform;
 
     //Audio Stuff
     AudioSource Audio;
     public AudioClip playerExplosion;
     public AudioClip playerShoot;
+
+	private ColorFlash flashController;
+
 	void Start()
     {
         explosion = transform.Find("explosion").GetComponent<ParticleSystem>();
@@ -51,6 +60,10 @@ public class Player : MonoBehaviour
         Audio = GetComponent<AudioSource>();
         sprite = GetComponent<SpriteRenderer>();
         PlayerPrefs.SetInt("Score", 0);
+		flashController = GetComponent<ColorFlash>();
+		flashController.Duration = invincibilityTime;
+		flashController.Speed = invincibilityPulseSpeed;
+		flashController.Color = damageColor;
     }
 
     void OnValidate()
@@ -66,17 +79,23 @@ public class Player : MonoBehaviour
             Debug.LogWarning("Don't change maxShotsPerSecond array size!");
             System.Array.Resize<float>(ref maxShotsPerSecond, WeaponCount);
         }
+
+        shootThreshold = Mathf.Clamp01(shootThreshold);
     }
 
     void Update()
     {
         if (isDead)
         {
-            if (timerAfterDeath <= 0.0f)
-                SceneTransition.Gameover();
+            if (respawnCounter <= 0.0f)
+            {
+                if (lives == -1)
+                    SceneTransition.Gameover();
+                else
+                    Respawn();
+            }
 
-            timerAfterDeath -= Time.deltaTime;
-            return;
+            respawnCounter -= Time.deltaTime;
         }
 
         if (invincibilityCounter > 0)
@@ -90,15 +109,24 @@ public class Player : MonoBehaviour
                 t = Mathf.Sin(t);
                 t = (t + 1) / 2;
 
-                Color lerpedColor = Color.Lerp(Color.white, invincibilityColor, t);
-                sprite.color = lerpedColor;
+                if (lerpIFrameAnim)
+                {
+                    Color lerpedColor = Color.Lerp(Color.white, isRespawning ? new Color(0, 0, 0, 0) : damageColor, t);
+                    sprite.color = lerpedColor;
+                }
+                else
+                    sprite.color = t > 0.5f ? (isRespawning ? new Color(0, 0, 0, 0) : damageColor) : Color.white;
             }
             else
             {
                 invincibilityCounter = 0;
                 sprite.color = Color.white;
+                isRespawning = false;
             }
         }
+
+        if (isDead)
+            return;
 
         for (uint i = 0; i < WeaponCount; ++i)
             timeElapsed[i] += Time.deltaTime;
@@ -108,7 +136,10 @@ public class Player : MonoBehaviour
         if (switchMask > 0)
             activeWeapon = (WeaponType)Globals.BitScanForward(switchMask);
 
-        if (Input.GetAxis("RightTrigger") > 0 && timeElapsed[(int)activeWeapon] >=  1.0f / maxShotsPerSecond[(int)activeWeapon])
+        Vector3 offset = new Vector3(Input.GetAxis("LeftJoyX"), -Input.GetAxis("LeftJoyY"), 0);
+        Vector3 turn = new Vector3(Input.GetAxis("RightJoyX"), -Input.GetAxis("RightJoyY"), 0);
+
+        if (turn.magnitude > shootThreshold && timeElapsed[(int)activeWeapon] >=  1.0f / maxShotsPerSecond[(int)activeWeapon])
         {
             timeElapsed[(int)activeWeapon] = 0;
             Audio.PlayOneShot(playerShoot);
@@ -120,9 +151,6 @@ public class Player : MonoBehaviour
             else
                 Debug.Log("The bullet prefab for weapon " + activeWeapon + " is missing and/or null!");
         }
-
-        Vector3 offset = new Vector3(Input.GetAxis("LeftJoyX"), -Input.GetAxis("LeftJoyY"), 0);
-        Vector3 turn = new Vector3(Input.GetAxis("RightJoyX"), -Input.GetAxis("RightJoyY"), 0);
 
         Vector3 pos = Globals.ClampToScreen(transform.position);
 
@@ -144,14 +172,20 @@ public class Player : MonoBehaviour
         anim.Play("PlayerShip", -1, bank);
     }
 
+    public void DamagePlayerPercent(float damagePercentOfMax)
+    {
+        DamagePlayer((int)(damagePercentOfMax * maxHealth));
+    }
+
     public void DamagePlayer(int damage)
     {
         if (isDead || invincibilityCounter > 0)
             return;
 
         health -= damage;
-        invincibilityCounter = invincibilityTime;
-        // TODO sound
+		invincibilityCounter = invincibilityTime;
+		flashController.Flash();
+		// play the sound for the player being hit
 
         if (health <= 0)
 			KillPlayer();
@@ -160,21 +194,23 @@ public class Player : MonoBehaviour
 
     public void KillPlayer()
     {
-        if (--lives == 0)
-            isDead = true;
-
-		guiManager.UpdateLivesDisplay (lives);
-
-        if (!isDead)
-        {
-            // TODO game state needs to be called here for player death, that is NOT game over
-            health = maxHealth;
+        if (isDead || lives < 0)
             return;
-        }
 
-        GetComponent<SpriteRenderer>().enabled = false;
+        --lives;
+        isDead = true;
+
+        respawnCounter = respawnDelay;
+
+        guiManager.UpdateLivesDisplay (lives);
+
         Audio.PlayOneShot(playerExplosion);
         explosion.Play(true);
+
+        GetComponent<SpriteRenderer>().enabled = false;
+
+        if (lives >= 0)
+            return;
 
         if (EnemySpawner.instance)
             EnemySpawner.instance.StopSpawning();
@@ -185,8 +221,31 @@ public class Player : MonoBehaviour
         PlayerPrefs.SetInt("Score", score);
     }
 
+    void Respawn()
+    {
+        if (lives < 0)
+            return;
+
+        isDead = false;
+        isRespawning = true;
+        invincibilityCounter = invincibilityTime * 2.5f;
+        health = maxHealth;
+        guiManager.UpdateHealthDisplay(health, maxHealth);
+        GetComponent<SpriteRenderer>().enabled = true;
+        explosion.Stop(true);
+
+        if (respawnTransform)
+        {
+            transform.position = respawnTransform.position;
+            transform.rotation = respawnTransform.rotation;
+        }
+    }
+
     public void UpdateScore(int points)
     {
+        if (isDead)
+            return;
+
         score += points;
         guiManager.UpdateScoreDisplay (score);
     }

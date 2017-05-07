@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 212820096940392594}
   - component: {fileID: 95939319643423286}
   - component: {fileID: 82795463714105510}
+  - component: {fileID: 114769686873170494}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1692372722376252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4415693109879352}
@@ -199,12 +200,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guiManager: {fileID: 0}
-  maxHealth: 12
-  health: 12
+  shootThreshold: 0.2
+  maxHealth: 100
+  health: 100
   lives: 3
   invincibilityTime: 2.5
   invincibilityPulseSpeed: 12.5
-  invincibilityColor: {r: 1, g: 0, b: 0, a: 1}
+  damageColor: {r: 1, g: 1, b: 1, a: 1}
+  lerpIFrameAnim: 0
   bulletPrefabs:
   - {fileID: 114448702234317316, guid: 3d1fb2cba7e29e7489ed2d7b53181849, type: 2}
   - {fileID: 114067818841735052, guid: a53eb8de1dc64434299ef82a00a3e2bf, type: 2}
@@ -213,13 +216,29 @@ MonoBehaviour:
   speed: 2.05
   focusPercentage: 0.45
   maxShotsPerSecond:
-  - 6
-  - 6
-  - 6
-  - 6
-  timerAfterDeath: 5
+  - 2.5
+  - 3.5
+  - 4.25
+  - 3.75
+  respawnDelay: 5
+  respawnTransform: {fileID: 0}
   playerExplosion: {fileID: 8300000, guid: f07ca66862ebf9947bd369728cc5861a, type: 3}
   playerShoot: {fileID: 8300000, guid: 563a3933569cf204abacf86b01e22862, type: 3}
+--- !u!114 &114769686873170494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1692372722376252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 20
+  Duration: 1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!198 &198944048071529288
 ParticleSystem:
   m_ObjectHideFlags: 1
