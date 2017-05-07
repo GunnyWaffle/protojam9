@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1398131709632694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: 0.1, z: 0}
+  m_LocalPosition: {x: -0.024, y: -0.262, z: 0}
   m_LocalScale: {x: 0.8602297, y: 0.8467086, z: 1}
   m_Children:
   - {fileID: 4954272603497406}
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6b9496530140646975d73d52fad30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 16
   scoreValue: 1
   deathSound: {fileID: 0}
   damageColor: {r: 0.978, g: 0, b: 0, a: 0.966}
@@ -226,11 +226,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1930168175
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 251f6cc7428120845a0b6f198456f767, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.991}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -268,7 +268,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1930168175
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1c619632598965148b3a321a3d5fceb9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.972}
   m_FlipX: 0

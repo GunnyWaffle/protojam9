@@ -5,6 +5,8 @@ using UnityEngine;
 public class BossPhaseTwo : MonoBehaviour {
 
     public static BossPhaseTwo instance;
+    public BossPhaseThree bossPhaseThreePrefab;
+    public GameObject bossPhaseThreeSpawnLoc;
     public float spawnTimer;
     public int numEnemiesOnScreen;
     public int criticalAreas;
@@ -81,8 +83,8 @@ public class BossPhaseTwo : MonoBehaviour {
 
     private void TransitionPhaseThree()
     {
+        BossPhaseThree newBossPhase = Instantiate(bossPhaseThreePrefab, bossPhaseThreeSpawnLoc.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
-        SceneTransition.Gameover();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
