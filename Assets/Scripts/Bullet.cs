@@ -45,6 +45,12 @@ public class Bullet : MonoBehaviour
     protected void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+		TrailRenderer trailRenderer = GetComponentInChildren<TrailRenderer>();
+		if (trailRenderer)
+		{
+			trailRenderer.sortingLayerName = "Objects";
+			trailRenderer.sortingOrder = 2;
+		}
     }
 
     // apply bullet behaviours

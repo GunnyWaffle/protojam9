@@ -51,6 +51,8 @@ public class Player : MonoBehaviour
     public AudioClip playerExplosion;
     public AudioClip playerShoot;
 
+	private ColorFlash flashController;
+
 	void Start()
     {
         explosion = transform.Find("explosion").GetComponent<ParticleSystem>();
@@ -58,6 +60,10 @@ public class Player : MonoBehaviour
         Audio = GetComponent<AudioSource>();
         sprite = GetComponent<SpriteRenderer>();
         PlayerPrefs.SetInt("Score", 0);
+		flashController = GetComponent<ColorFlash>();
+		flashController.Duration = invincibilityTime;
+		flashController.Speed = invincibilityPulseSpeed;
+		flashController.Color = damageColor;
     }
 
     void OnValidate()
@@ -103,18 +109,18 @@ public class Player : MonoBehaviour
                 t = Mathf.Sin(t);
                 t = (t + 1) / 2;
 
-                if (lerpIFrameAnim)
-                {
-                    Color lerpedColor = Color.Lerp(Color.white, isRespawning ? new Color(0, 0, 0, 0) : damageColor, t);
-                    sprite.color = lerpedColor;
-                }
-                else
-                    sprite.color = t > 0.5f ? (isRespawning ? new Color(0, 0, 0, 0) : damageColor) : Color.white;
+                //if (lerpIFrameAnim)
+                //{
+                //    Color lerpedColor = Color.Lerp(Color.white, isRespawning ? new Color(0, 0, 0, 0) : damageColor, t);
+                //    sprite.color = lerpedColor;
+                //}
+                //else
+                //    sprite.color = t > 0.5f ? (isRespawning ? new Color(0, 0, 0, 0) : damageColor) : Color.white;
             }
             else
             {
                 invincibilityCounter = 0;
-                sprite.color = Color.white;
+                //sprite.color = Color.white;
                 isRespawning = false;
             }
         }
@@ -177,8 +183,9 @@ public class Player : MonoBehaviour
             return;
 
         health -= damage;
-        invincibilityCounter = invincibilityTime;
-        // play the sound for the player being hit
+		invincibilityCounter = invincibilityTime;
+		flashController.Flash();
+		// play the sound for the player being hit
 
         if (health <= 0)
 			KillPlayer();
