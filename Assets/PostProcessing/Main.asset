@@ -31,9 +31,9 @@ MonoBehaviour:
   antialiasing:
     m_Enabled: 1
     m_Settings:
-      method: 1
+      method: 0
       fxaaSettings:
-        preset: 4
+        preset: 0
       taaSettings:
         jitterSpread: 0.791
         sharpen: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
     m_Settings:
       shutterAngle: 271
       sampleCount: 15
-      frameBlending: 1
+      frameBlending: 0.167
   eyeAdaptation:
     m_Enabled: 0
     m_Settings:
