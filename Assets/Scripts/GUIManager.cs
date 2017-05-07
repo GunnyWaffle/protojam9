@@ -19,6 +19,9 @@ public class GUIManager : MonoBehaviour
     private SpriteRenderer healthMeterBar; //The sprite renderer of the visible health bar
     private Vector3 initialLiveTextPos; //The initial position of the life text
     private List<GameObject> lifeIcons; //List of icons displaying lives
+    private Vector3 trackerStart; //The starting point for the boss tracker
+    private Vector3 trackerEnd; //The end point for the boss tracker
+    private GameObject progressTracker; //The skull sprite that shows boss progress
 
     // Use this for initialization
     void Start()
@@ -30,6 +33,9 @@ public class GUIManager : MonoBehaviour
         healthMeterBar = transform.Find("HealthBar").transform.Find("HealthBarMeter").GetComponent<SpriteRenderer>();
         initialLiveTextPos = livesText.transform.position;
         lifeIcons = new List<GameObject>();
+        trackerStart = transform.Find("ProgressBar").transform.Find("StartPos").transform.position;
+        trackerEnd = transform.Find("ProgressBar").transform.Find("EndPos").transform.position;
+        progressTracker = transform.Find("ProgressBar").transform.Find("BossTracker").gameObject;
 
         ResetGui(); //Reset the look of everything, since it wont update until player updates it otherwise
     }
@@ -37,7 +43,6 @@ public class GUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     //Update the GUI Score Display
@@ -99,6 +104,20 @@ public class GUIManager : MonoBehaviour
         }
     }
 
+    //Updates the progress tracker
+    public void UpdateProgressTracker(float percentageLeft)
+    {
+        //Ensure that percentage is within 0 and 1
+        percentageLeft = Mathf.Clamp(percentageLeft, 0.0f, 1.0f);
+        
+        //Move the tracker to the correct position between the start and end point
+        progressTracker.transform.position = new Vector3(
+                Mathf.Lerp(trackerEnd.x, trackerStart.x, percentageLeft),
+                Mathf.Lerp(trackerEnd.y, trackerStart.y, percentageLeft),
+                Mathf.Lerp(trackerEnd.z, trackerStart.z, percentageLeft)
+            );
+    }
+
     //Resets the GUI to it's initial state at the start of the game
     private void ResetGui()
     {
@@ -106,6 +125,7 @@ public class GUIManager : MonoBehaviour
         UpdateScoreDisplay(0);
         UpdateHealthDisplay(player.health, player.maxHealth);
         UpdateLivesDisplay(player.lives);
+        UpdateProgressTracker(1);
 
         //Set the colors of all the text meshes to the inspector selected color
         scoreText.color = textColor;
