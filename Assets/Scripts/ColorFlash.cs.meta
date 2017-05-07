@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: 25cb1d7d0aedfd643b38faf3cd672159
-timeCreated: 1494115102
+timeCreated: 1494128261
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

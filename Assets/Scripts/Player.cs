@@ -109,18 +109,18 @@ public class Player : MonoBehaviour
                 t = Mathf.Sin(t);
                 t = (t + 1) / 2;
 
-                //if (lerpIFrameAnim)
-                //{
-                //    Color lerpedColor = Color.Lerp(Color.white, isRespawning ? new Color(0, 0, 0, 0) : damageColor, t);
-                //    sprite.color = lerpedColor;
-                //}
-                //else
-                //    sprite.color = t > 0.5f ? (isRespawning ? new Color(0, 0, 0, 0) : damageColor) : Color.white;
+                if (lerpIFrameAnim)
+                {
+                    Color lerpedColor = Color.Lerp(Color.white, isRespawning ? new Color(0, 0, 0, 0) : damageColor, t);
+                    sprite.color = lerpedColor;
+                }
+                else
+                    sprite.color = t > 0.5f ? (isRespawning ? new Color(0, 0, 0, 0) : damageColor) : Color.white;
             }
             else
             {
                 invincibilityCounter = 0;
-                //sprite.color = Color.white;
+                sprite.color = Color.white;
                 isRespawning = false;
             }
         }
