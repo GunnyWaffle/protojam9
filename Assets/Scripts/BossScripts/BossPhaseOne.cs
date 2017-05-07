@@ -5,11 +5,20 @@ using UnityEngine;
 public class BossPhaseOne : MonoBehaviour {
 
     public static BossPhaseOne instance;
+    public BossPhaseTwo bossTwoPrefab;
     public float spawnTimer;
     public int numEnemiesOnScreen;
     public int criticalAreas;
     public int score;
 
+    private bool missileTurretOneAlive = true;
+    public void DeactivateMissleOne() { missileTurretOneAlive = false; }
+    private bool missileTurretTwoAlive = true;
+    public void DeactivateMissleTwo() { missileTurretTwoAlive = false; }
+    private bool scatterTurretOneAlive = true;
+    public void DeactivateScatterOne() { scatterTurretOneAlive = false; }
+    private bool scatterTurretTwoAlive = true;
+    public void DeactivateScatterTwo() { scatterTurretTwoAlive = false; }
     private Collider2D hitBox;
     private HangerBaySpawn[] hangers;
     private Player player;
@@ -61,8 +70,9 @@ public class BossPhaseOne : MonoBehaviour {
 
     private void TransitionPhaseTwo()
     {
+        BossPhaseTwo newBossPhase = Instantiate(bossTwoPrefab, transform.position, transform.rotation);
+        newBossPhase.InitializePhase(missileTurretOneAlive, missileTurretTwoAlive, scatterTurretOneAlive, scatterTurretTwoAlive, enemiesOnScreen);
         Destroy(gameObject);
-        SceneTransition.Gameover();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

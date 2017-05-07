@@ -67,7 +67,7 @@ public class HealthManager : MonoBehaviour {
         currentTimeForDamage = timeForDamage;
         // TODO sound
 
-        if (health <= 0)
+        if (health <= 0 && !isDead)
             KillUnit();
     }
 

@@ -9,6 +9,10 @@ public class BossPhaseTwo : MonoBehaviour {
     public int numEnemiesOnScreen;
     public int criticalAreas;
     public int score;
+    public GameObject missleTurretOne;
+    public GameObject missleTurretTwo;
+    public GameObject scatterTurretOne;
+    public GameObject scatterTurretTwo;
 
     private Collider2D hitBox;
     private HangerBaySpawn[] hangers;
@@ -29,6 +33,20 @@ public class BossPhaseTwo : MonoBehaviour {
         hangers = gameObject.GetComponentsInChildren<HangerBaySpawn>();
         player = FindObjectOfType<Player>();
         lastSpawn = spawnTimer;
+    }
+
+    public void InitializePhase(bool missleOne, bool missleTwo, bool scatterOne, bool scatterTwo, int enemiesOnScreen)
+    {
+        if (!missleOne)
+            missleTurretOne.SetActive(false);
+        if (!missleTwo)
+            missleTurretTwo.SetActive(false);
+        if (!scatterOne)
+            scatterTurretOne.SetActive(false);
+        if (!scatterTwo)
+            scatterTurretTwo.SetActive(false);
+
+        this.enemiesOnScreen = enemiesOnScreen;
     }
 
     // Update is called once per frame

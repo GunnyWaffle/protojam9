@@ -150,6 +150,8 @@ public class Enemy : MonoBehaviour {
         {
             if (BossPhaseOne.instance != null)
                 BossPhaseOne.instance.KilledEnemy(myHealth.type);
+            if (BossPhaseTwo.instance != null)
+                BossPhaseTwo.instance.KilledEnemy(myHealth.type);
         }
     }
 
