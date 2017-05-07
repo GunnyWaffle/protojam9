@@ -230,6 +230,7 @@ public class Player : MonoBehaviour
         isRespawning = true;
         invincibilityCounter = invincibilityTime * 2.5f;
         health = maxHealth;
+        guiManager.UpdateHealthDisplay(health, maxHealth);
         GetComponent<SpriteRenderer>().enabled = true;
         explosion.Stop(true);
 
