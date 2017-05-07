@@ -2160,48 +2160,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4740602650928322, guid: e166838bfb75f7842a4a20c1330a3c7d,
     type: 2}
   m_PrefabInternal: {fileID: 1009110635}
---- !u!1001 &1239913234
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4694509944848978, guid: 6bd629d030a7f1c4891e5a0b2d1d2615, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694509944848978, guid: 6bd629d030a7f1c4891e5a0b2d1d2615, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694509944848978, guid: 6bd629d030a7f1c4891e5a0b2d1d2615, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694509944848978, guid: 6bd629d030a7f1c4891e5a0b2d1d2615, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694509944848978, guid: 6bd629d030a7f1c4891e5a0b2d1d2615, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694509944848978, guid: 6bd629d030a7f1c4891e5a0b2d1d2615, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694509944848978, guid: 6bd629d030a7f1c4891e5a0b2d1d2615, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694509944848978, guid: 6bd629d030a7f1c4891e5a0b2d1d2615, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 6bd629d030a7f1c4891e5a0b2d1d2615, type: 2}
-  m_IsPrefabParent: 0
 --- !u!4 &1273642011 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4740602650928322, guid: e166838bfb75f7842a4a20c1330a3c7d,
@@ -3072,7 +3030,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 73328d254da2a9e478d1c6dac349c5dc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c34f6394a2cdeee44b7901cc5cb36e8c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
