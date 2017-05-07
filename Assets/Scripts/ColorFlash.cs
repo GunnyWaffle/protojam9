@@ -11,7 +11,6 @@ public class ColorFlash : MonoBehaviour {
 
 	private Material _oldMaterial;
 	private SpriteRenderer _renderer;
-	private IEnumerator _flashCoroutine;
 	private bool _isFlashing;
 
 	private float _flashTimer = 0.0f, _lastFlashTime = 0.0f;
