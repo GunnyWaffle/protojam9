@@ -11,7 +11,6 @@ public class BossPhaseTwo : MonoBehaviour {
     public int score;
 
     private Collider2D hitBox;
-    private Rigidbody2D rgb2d;
     private HangerBaySpawn[] hangers;
     private Player player;
 
@@ -27,7 +26,6 @@ public class BossPhaseTwo : MonoBehaviour {
             Destroy(gameObject);
 
         hitBox = gameObject.GetComponent<Collider2D>();
-        rgb2d = gameObject.GetComponent<Rigidbody2D>();
         hangers = gameObject.GetComponentsInChildren<HangerBaySpawn>();
         player = FindObjectOfType<Player>();
         lastSpawn = spawnTimer;
@@ -60,13 +58,13 @@ public class BossPhaseTwo : MonoBehaviour {
     {
         player.UpdateScore(score);
 
-        TransitionPhaseTwo();
+        TransitionPhaseThree();
     }
 
-    private void TransitionPhaseTwo()
+    private void TransitionPhaseThree()
     {
-        //Destroy(gameObject);
-        //SceneTransition.Gameover();
+        Destroy(gameObject);
+        SceneTransition.Gameover();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

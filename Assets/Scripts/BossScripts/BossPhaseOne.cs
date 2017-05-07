@@ -5,14 +5,12 @@ using UnityEngine;
 public class BossPhaseOne : MonoBehaviour {
 
     public static BossPhaseOne instance;
-    public int health;
     public float spawnTimer;
     public int numEnemiesOnScreen;
     public int criticalAreas;
     public int score;
 
     private Collider2D hitBox;
-    private Rigidbody2D rgb2d;
     private HangerBaySpawn[] hangers;
     private Player player;
 
@@ -27,7 +25,6 @@ public class BossPhaseOne : MonoBehaviour {
             Destroy(gameObject);
 
         hitBox = gameObject.GetComponent<Collider2D>();
-        rgb2d = gameObject.GetComponent<Rigidbody2D>();
         hangers = gameObject.GetComponentsInChildren<HangerBaySpawn>();
         player = FindObjectOfType<Player>();
         lastSpawn = spawnTimer;

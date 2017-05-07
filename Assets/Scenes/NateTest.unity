@@ -1914,6 +1914,7 @@ GameObject:
   - component: {fileID: 652447079}
   - component: {fileID: 652447077}
   - component: {fileID: 652447076}
+  - component: {fileID: 652447078}
   m_Layer: 8
   m_Name: BossPhase2
   m_TagString: boss
@@ -2007,6 +2008,21 @@ PolygonCollider2D:
       - {x: 0.3178798, y: -0.5668333}
       - {x: 0.44399804, y: -0.39439553}
       - {x: 0.523998, y: -0.17469771}
+--- !u!114 &652447078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 652447075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e171ed15a2ee5c45bad27e62aba2129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTimer: 3
+  numEnemiesOnScreen: 5
+  criticalAreas: 2
+  score: 20
 --- !u!212 &652447079
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3867,6 +3883,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114729261265317858, guid: da3b54eb0a4328e4699a75590bdb934f,
+        type: 2}
+      propertyPath: customCallback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 652447078}
     - target: {fileID: 1808421426466152, guid: da3b54eb0a4328e4699a75590bdb934f, type: 2}
       propertyPath: m_IsActive
       value: 0
