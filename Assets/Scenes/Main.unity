@@ -894,6 +894,41 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 212990557383034466, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c542ff1b0a5459e47ab78682a1fccdec, type: 2}
+    - target: {fileID: 212585794929197404, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c542ff1b0a5459e47ab78682a1fccdec, type: 2}
+    - target: {fileID: 212950326281687822, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c542ff1b0a5459e47ab78682a1fccdec, type: 2}
+    - target: {fileID: 212278020244004786, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c542ff1b0a5459e47ab78682a1fccdec, type: 2}
+    - target: {fileID: 212808947485589474, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c542ff1b0a5459e47ab78682a1fccdec, type: 2}
+    - target: {fileID: 212180080609243316, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c542ff1b0a5459e47ab78682a1fccdec, type: 2}
+    - target: {fileID: 212192531199531538, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c542ff1b0a5459e47ab78682a1fccdec, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: daa55cccafd10a94e8514e9d1bae6c4e, type: 2}
   m_IsPrefabParent: 0
@@ -2732,6 +2767,7 @@ GameObject:
   - component: {fileID: 1682610941}
   - component: {fileID: 1682610940}
   - component: {fileID: 1682610945}
+  - component: {fileID: 1682610946}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -2790,7 +2826,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -2827,6 +2863,18 @@ MonoBehaviour:
   numSquadsOnScreen: 2
   spawnTimer: 2
   spawnDir: 3
+--- !u!114 &1682610946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1682610939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: eaddc92b2bf4c1842bdb94b1e2d2c436, type: 2}
 --- !u!4 &1718288611 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4740602650928322, guid: e166838bfb75f7842a4a20c1330a3c7d,
