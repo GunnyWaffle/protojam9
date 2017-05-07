@@ -25,6 +25,7 @@ public class Bullet : MonoBehaviour
 
     // Recommended to pair these two together. Spinning a bullet while using linear move will have the bullet act like a bomerang.
     public float spinSpeed = 0; // speed that a bullet will spin at.
+    public float spinFalloff = 0; // linear coefficient used to force the bulle to spin ever outward. A bullet will stay in a perfect cycle if 1, spread outward if < 1 and cycle tighter if >1.
     [HideInInspector]
     public Vector3 releaseDirection; // direction that a bullet was released at.
 
