@@ -30,7 +30,7 @@ public class SceneTransition : MonoBehaviour
 
     public static void Gameover()
     {
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("AfterGame");
     }
 
     void Reset()
