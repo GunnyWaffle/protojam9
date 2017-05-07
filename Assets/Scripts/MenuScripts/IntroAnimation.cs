@@ -121,8 +121,8 @@ public class IntroAnimation : MonoBehaviour
     private void StageThree()
     {
         flashTimer += Time.deltaTime * 5;
-        blockColor.g = Mathf.Cos(flashTimer);
-        blockColor.b = Mathf.Cos(flashTimer);
+        blockColor.g = Mathf.Cos(flashTimer) / 2 + 0.5f;
+        blockColor.b = Mathf.Cos(flashTimer) / 2 + 0.5f;
         titleBlock.color = blockColor;
     }
 
@@ -130,8 +130,8 @@ public class IntroAnimation : MonoBehaviour
     private void StageFour()
     {
         flashTimer += Time.deltaTime * 5;
-        blockColor.g = Mathf.Cos(flashTimer);
-        blockColor.b = Mathf.Cos(flashTimer);
+        blockColor.g = Mathf.Cos(flashTimer) / 2 + 0.5f;
+        blockColor.b = Mathf.Cos(flashTimer) / 2 + 0.5f;
         titleBlock.color = blockColor;
         mainCam.GetComponent<Camera>().orthographicSize = Mathf.Lerp(2, 5, Smootherstep(timer *.5f));
     }
@@ -142,8 +142,8 @@ public class IntroAnimation : MonoBehaviour
         if(!(blockColor.g - .99f > 0))
         {
             flashTimer += Time.deltaTime * 5;
-            blockColor.g = Mathf.Cos(flashTimer);
-            blockColor.b = Mathf.Cos(flashTimer);
+            blockColor.g = Mathf.Cos(flashTimer) / 2 + 0.5f;
+            blockColor.b = Mathf.Cos(flashTimer) / 2 + 0.5f;
         }
         blockColor.a = Mathf.Lerp(1, 0, timer * 2);
         titleBlock.color = blockColor;
