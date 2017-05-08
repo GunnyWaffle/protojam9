@@ -19,6 +19,13 @@ public class BossPhaseTwo : MonoBehaviour {
     private Collider2D hitBox;
     private HangerBaySpawn[] hangers;
     private Player player;
+    private ColorFlash myColorFlash;
+    public float transitionInFlashAmount;
+    private float flashInTimePlayed;
+    public float transitionOutFlashAmount;
+    private float flashOutTimePlayed;
+    public float timeBetweenFlashes = 0.2f;
+    private float lastFlashTime;
 
     private float lastSpawn = 0.0f;
     private int enemiesOnScreen;
@@ -32,44 +39,91 @@ public class BossPhaseTwo : MonoBehaviour {
             Destroy(gameObject);
 
         hitBox = gameObject.GetComponent<Collider2D>();
+        myColorFlash = gameObject.GetComponent<ColorFlash>();
         hangers = gameObject.GetComponentsInChildren<HangerBaySpawn>();
         player = FindObjectOfType<Player>();
+        flashOutTimePlayed = transitionOutFlashAmount;
+        flashInTimePlayed = transitionInFlashAmount;
+        lastFlashTime = timeBetweenFlashes;
         lastSpawn = spawnTimer;
     }
 
-    public void InitializePhase(bool missleOne, bool missleTwo, bool scatterOne, bool scatterTwo, int enemiesOnScreen)
+    public void InitializePhase(MissileTurret missileOne, MissileTurret missileTwo, ScatterTurret scatterOne, ScatterTurret scatterTwo, int enemiesOnScreen)
     {
         // Is the first missile turret present? If not leave remains on the ship where it should be.
-        if (!missleOne)
+        if (missileOne == null)
+        {
+            missleTurretOne.GetComponent<HealthManager>().LeaveRemains();
             missleTurretOne.SetActive(false);
+        }
         else
-            scatterTurretOne.GetComponent<HealthManager>().LeaveRemains();
+        {
+            missleTurretOne.GetComponent<HealthManager>().SetHealth(missileOne.GetComponent<HealthManager>().GetHealth());
+            missleTurretOne.transform.rotation = missileOne.transform.rotation;
+        }
 
         // Is the second missle turret present? If not leave remains on the ship where it should be.
-        if (!missleTwo)
+        if (missileTwo == null)
+        {
+            missleTurretTwo.GetComponent<HealthManager>().LeaveRemains();
             missleTurretTwo.SetActive(false);
+        }
         else
-            scatterTurretOne.GetComponent<HealthManager>().LeaveRemains();
+        {
+            missleTurretTwo.GetComponent<HealthManager>().SetHealth(missileTwo.GetComponent<HealthManager>().GetHealth());
+            missleTurretTwo.transform.rotation = missileTwo.transform.rotation;
+        }
 
         // Is the first scatter turret present? If not leave remains.
-        if (!scatterOne)
-            scatterTurretOne.SetActive(false);
-        else
+        if (scatterOne == null)
+        {
             scatterTurretOne.GetComponent<HealthManager>().LeaveRemains();
+            scatterTurretOne.SetActive(false);
+        }
+        else
+        {
+            scatterTurretOne.GetComponent<HealthManager>().SetHealth(scatterOne.GetComponent<HealthManager>().GetHealth());
+            scatterTurretOne.transform.rotation = scatterOne.transform.rotation;
+        }
 
         // Is the second scatter turret present? If nor leave remains.
-        if (!scatterTwo)
+        if (scatterTwo == null)
+        {
+            scatterTurretTwo.GetComponent<HealthManager>().LeaveRemains();
             scatterTurretTwo.SetActive(false);
+        }
         else
-            scatterTurretOne.GetComponent<HealthManager>().LeaveRemains();
+        {
+            scatterTurretTwo.GetComponent<HealthManager>().SetHealth(scatterTwo.GetComponent<HealthManager>().GetHealth());
+            scatterTurretTwo.transform.rotation = scatterTwo.transform.rotation;
+        }
 
 
         this.enemiesOnScreen = enemiesOnScreen;
     }
 
+    private void FlashBoss()
+    {
+        if (lastFlashTime <= 0.0f)
+        {
+            myColorFlash.Flash();
+            lastFlashTime = timeBetweenFlashes;
+        }
+        else
+        {
+            lastFlashTime -= Time.deltaTime;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (flashInTimePlayed > 0.0f)
+        {
+            FlashBoss();
+            flashInTimePlayed -= Time.deltaTime;
+        }
+
         if (enemiesOnScreen < numEnemiesOnScreen && lastSpawn <= 0.0f)
         {
             HangerBaySpawn currentHander = hangers[Random.Range(0, hangers.Length)];

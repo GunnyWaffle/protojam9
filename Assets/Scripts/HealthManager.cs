@@ -52,7 +52,8 @@ public class HealthManager : MonoBehaviour {
         collider = gameObject.GetComponent<Collider2D>();
         animator = gameObject.GetComponent<Animator>();
         flashController = gameObject.GetComponent<ColorFlash>();
-        remainingHealth = StartingHealth;
+        if (remainingHealth == 0)
+            remainingHealth = StartingHealth;
         isDead = false;
     }
 
@@ -147,6 +148,16 @@ public class HealthManager : MonoBehaviour {
     {
         if (onDeathRemains != null)
             Instantiate(onDeathRemains, gameObject.transform.position, Quaternion.identity, gameObject.transform.parent);
+    }
+
+    public void SetHealth(int health)
+    {
+        remainingHealth = health;
+    }
+
+    public int GetHealth()
+    {
+        return remainingHealth;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

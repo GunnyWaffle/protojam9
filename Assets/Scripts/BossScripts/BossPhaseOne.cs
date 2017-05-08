@@ -11,17 +11,23 @@ public class BossPhaseOne : MonoBehaviour {
     public int criticalAreas;
     public int score;
 
-    private bool missileTurretOneAlive = true;
-    public void DeactivateMissleOne() { missileTurretOneAlive = false; }
-    private bool missileTurretTwoAlive = true;
-    public void DeactivateMissleTwo() { missileTurretTwoAlive = false; }
-    private bool scatterTurretOneAlive = true;
-    public void DeactivateScatterOne() { scatterTurretOneAlive = false; }
-    private bool scatterTurretTwoAlive = true;
-    public void DeactivateScatterTwo() { scatterTurretTwoAlive = false; }
+    public MissileTurret missileTurretOne;
+    public void DeactivateMissleOne() { missileTurretOne.enabled = false; }
+    public MissileTurret missileTurretTwo;
+    public void DeactivateMissleTwo() { missileTurretTwo.enabled = false; }
+    public ScatterTurret scatterTurretOne;
+    public void DeactivateScatterOne() { scatterTurretOne.enabled = false; }
+    public ScatterTurret scatterTurretTwo;
+    public void DeactivateScatterTwo() { scatterTurretTwo.enabled = false; }
     private Collider2D hitBox;
     private HangerBaySpawn[] hangers;
     private Player player;
+    public float explosionTimer;
+
+    public ExplosionArea onDeathExplosion;
+    private ColorFlash myColorFlash;
+    private float timeBetweenFlashes = 0.2f;
+    private float lastFlash;
 
     private float lastSpawn = 0.0f;
     private int enemiesOnScreen;
@@ -36,7 +42,9 @@ public class BossPhaseOne : MonoBehaviour {
         hitBox = gameObject.GetComponent<Collider2D>();
         hangers = gameObject.GetComponentsInChildren<HangerBaySpawn>();
         player = FindObjectOfType<Player>();
+        myColorFlash = gameObject.GetComponent<ColorFlash>();
         lastSpawn = spawnTimer;
+        lastFlash = timeBetweenFlashes;
     }
 
     // Update is called once per frame
@@ -72,8 +80,31 @@ public class BossPhaseOne : MonoBehaviour {
 
     private void TransitionPhaseTwo()
     {
+        StartCoroutine(PlayDeathAnimation());
+
+        FlashBoss();
+    }
+
+    private void FlashBoss()
+    {
+        if (lastFlash <= 0.0f)
+        {
+            myColorFlash.Flash();
+            lastFlash = timeBetweenFlashes;
+        }
+        else
+        {
+            lastFlash -= Time.deltaTime;
+        }
+    }
+
+    private IEnumerator PlayDeathAnimation()
+    {
+        onDeathExplosion.TurnOnExplosions();
+        yield return new WaitForSeconds(explosionTimer);
+        onDeathExplosion.TurnOffExplosions();
         BossPhaseTwo newBossPhase = Instantiate(bossTwoPrefab, transform.position, transform.rotation);
-        newBossPhase.InitializePhase(missileTurretOneAlive, missileTurretTwoAlive, scatterTurretOneAlive, scatterTurretTwoAlive, enemiesOnScreen);
+        newBossPhase.InitializePhase(missileTurretOne, missileTurretTwo, scatterTurretOne, scatterTurretTwo, enemiesOnScreen);
         Destroy(gameObject);
     }
 
