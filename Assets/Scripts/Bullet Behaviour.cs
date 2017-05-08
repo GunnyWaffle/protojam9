@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +21,8 @@ public enum BulletRotate
     None, // do not rotate
     Angle, // rotate to the set angle property
     LookAtTarget, // set the angle to the target, then call the Angle method
-    Spin // spin in a single direction for the life of a bullet
+    Spin, // spin in a single direction for the life of a bullet
+    SpinOutward // Bullet rotation will slow over time and eventually spin outward from center.
 }
 
 // available firing behaviours
@@ -77,6 +79,9 @@ static class BulletMethods
                 break;
             case BulletRotate.Spin:
                 Spin(bullet);
+                break;
+            case BulletRotate.SpinOutward:
+                SpinOutward(bullet);
                 break;
             case BulletRotate.None:
                 break;
@@ -160,6 +165,21 @@ static class BulletMethods
     {
         bullet.angle = (bullet.angle + (bullet.spinSpeed * Time.deltaTime)) % 360;
         AngleRotate(bullet);
+    }
+
+    // Will spin slower over time.
+    static void SpinOutward(Bullet bullet)
+    {
+        if (bullet.timeAlive > 2.0f)
+        {
+            //bullet.angle = (bullet.angle + (bullet.spinSpeed * Time.deltaTime / bullet.timeAlive)) % 360;
+            bullet.angle = (bullet.angle + (bullet.spinSpeed * Time.deltaTime - bullet.timeAlive * bullet.spinFalloff)) % 360;
+            AngleRotate(bullet);
+        }
+        else
+        {
+            Spin(bullet);
+        }
     }
 
     /* ~~~~~~~~~~~~~~~~~ firing methods ~~~~~~~~~~~~~~~~~ */

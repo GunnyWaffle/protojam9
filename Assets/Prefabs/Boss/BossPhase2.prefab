@@ -41,6 +41,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1055566228586206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4877856157593638}
+  m_Layer: 8
+  m_Name: BossPhase3Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1111150816955170
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +189,6 @@ GameObject:
   - component: {fileID: 4311531803525052}
   - component: {fileID: 212118457598178028}
   - component: {fileID: 60388275428149574}
-  - component: {fileID: 50979180030939460}
   - component: {fileID: 114498844945860342}
   m_Layer: 8
   m_Name: BossPhase2
@@ -280,7 +294,7 @@ Transform:
   m_LocalScale: {x: 1.0000002, y: 0.9999974, z: 1}
   m_Children: []
   m_Father: {fileID: 4311531803525052}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4296008343331278
 Transform:
@@ -293,7 +307,7 @@ Transform:
   m_LocalScale: {x: 0.6496292, y: 0.70176446, z: 1}
   m_Children: []
   m_Father: {fileID: 4311531803525052}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -143.78401}
 --- !u!4 &4310023230349002
 Transform:
@@ -307,7 +321,7 @@ Transform:
   m_Children:
   - {fileID: 4545915207845438}
   m_Father: {fileID: 4311531803525052}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -143.78401}
 --- !u!4 &4311531803525052
 Transform:
@@ -319,6 +333,7 @@ Transform:
   m_LocalPosition: {x: 0.08, y: 0.22, z: 0}
   m_LocalScale: {x: 1.5393398, y: 1.4606038, z: 1}
   m_Children:
+  - {fileID: 4877856157593638}
   - {fileID: 4455462571389888}
   - {fileID: 4881781054973180}
   - {fileID: 4165478063017220}
@@ -368,7 +383,7 @@ Transform:
   m_LocalScale: {x: 0.6496292, y: 0.70176446, z: 1}
   m_Children: []
   m_Father: {fileID: 4311531803525052}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -143.78401}
 --- !u!4 &4455462571389888
 Transform:
@@ -381,7 +396,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4311531803525052}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!4 &4545915207845438
 Transform:
@@ -408,7 +423,7 @@ Transform:
   m_Children:
   - {fileID: 4081746043130412}
   m_Father: {fileID: 4311531803525052}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4756789207304194
 Transform:
@@ -422,7 +437,7 @@ Transform:
   m_Children:
   - {fileID: 4333496846007088}
   m_Father: {fileID: 4311531803525052}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -143.78401}
 --- !u!4 &4822113132113624
 Transform:
@@ -436,7 +451,20 @@ Transform:
   m_Children:
   - {fileID: 4415666744448006}
   m_Father: {fileID: 4311531803525052}
-  m_RootOrder: 3
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4877856157593638
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1055566228586206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.071, y: -0.338, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4311531803525052}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4881781054973180
 Transform:
@@ -449,28 +477,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4311531803525052}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50979180030939460
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1483926833108272}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!60 &60388275428149574
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -799,7 +807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6b9496530140646975d73d52fad30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 16
   scoreValue: 1
   deathSound: {fileID: 0}
   damageColor: {r: 0.978, g: 0, b: 0, a: 0.966}
@@ -871,6 +879,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e171ed15a2ee5c45bad27e62aba2129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossPhaseThreePrefab: {fileID: 114162949868759994, guid: d1befc7f1a562fd42ab371cd1f4773aa,
+    type: 2}
+  bossPhaseThreeSpawnLoc: {fileID: 1055566228586206}
   spawnTimer: 3
   numEnemiesOnScreen: 5
   criticalAreas: 2
@@ -957,7 +968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6b9496530140646975d73d52fad30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 16
   scoreValue: 1
   deathSound: {fileID: 0}
   damageColor: {r: 0.978, g: 0, b: 0, a: 0.966}

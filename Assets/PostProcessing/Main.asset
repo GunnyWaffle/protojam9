@@ -31,9 +31,9 @@ MonoBehaviour:
   antialiasing:
     m_Enabled: 1
     m_Settings:
-      method: 1
+      method: 0
       fxaaSettings:
-        preset: 4
+        preset: 0
       taaSettings:
         jitterSpread: 0.791
         sharpen: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
     m_Settings:
       shutterAngle: 271
       sampleCount: 15
-      frameBlending: 1
+      frameBlending: 0.167
   eyeAdaptation:
     m_Enabled: 0
     m_Settings:
@@ -112,7 +112,7 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       tonemapping:
-        tonemapper: 1
+        tonemapper: 2
         neutralBlackIn: 0.02
         neutralWhiteIn: 10
         neutralBlackOut: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
         neutralWhiteLevel: 5.3
         neutralWhiteClip: 10
       basic:
-        postExposure: 0
+        postExposure: -0.04
         temperature: 0
         tint: 0
         hueShift: 0
@@ -305,7 +305,7 @@ MonoBehaviour:
       opacity: 1
       rounded: 1
   dithering:
-    m_Enabled: 1
+    m_Enabled: 0
   monitors:
     currentMonitorID: 0
     refreshOnPlay: 0
