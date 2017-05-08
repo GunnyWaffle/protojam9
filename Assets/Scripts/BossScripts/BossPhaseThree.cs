@@ -74,18 +74,19 @@ public class BossPhaseThree : MonoBehaviour {
     }
     public void DecrementCriticalAreas()
     {
+        player.UpdateScore(1000);
         instance.criticalAreas -= 1;
     }
 
     public void DestroyBoss()
     {
-        player.UpdateScore(score);
-
+        player.UpdateScore(2000);
         EndBossFight();
     }
 
     private void EndBossFight()
     {
+        PlayerPrefs.SetInt("Victory", 0);
         Destroy(gameObject);
         SceneTransition.Gameover();
     }

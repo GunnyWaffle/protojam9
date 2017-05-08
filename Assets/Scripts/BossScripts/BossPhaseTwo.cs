@@ -76,6 +76,7 @@ public class BossPhaseTwo : MonoBehaviour {
             currentHander.SpawnEnemy();
             enemiesOnScreen++;
             lastSpawn = spawnTimer;
+            player.UpdateScore(-10);
         }
 
         if (lastSpawn > 0.0f)
@@ -87,12 +88,13 @@ public class BossPhaseTwo : MonoBehaviour {
 
     public void DecrementCriticalAreas()
     {
+        player.UpdateScore(500);
         instance.criticalAreas -= 1;
     }
 
     public void DestroyBoss()
     {
-        player.UpdateScore(score);
+        player.UpdateScore(1000);
 
         TransitionPhaseThree();
     }

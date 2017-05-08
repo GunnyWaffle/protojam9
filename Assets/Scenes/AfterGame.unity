@@ -237,7 +237,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 355706918}
-  m_Text: DEFEAT!
+  m_Text: VICTORY!
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -932,6 +932,7 @@ MonoBehaviour:
   scoresDisplay: {fileID: 857585509}
   victoryMusic: {fileID: 8300000, guid: 706fe23093002444d83205f48dfa1477, type: 3}
   defeatMusic: {fileID: 8300000, guid: f62e932b565c22c409006ef544133159, type: 3}
+  bossExplosion: {fileID: 8300000, guid: c5f83e11617c1a04f86f0aff97709228, type: 3}
   musicPlayer: {fileID: 2051437286}
   scoreManager: {fileID: 2051437287}
   continueText: {fileID: 1145021881}

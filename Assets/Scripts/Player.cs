@@ -90,7 +90,10 @@ public class Player : MonoBehaviour
             if (respawnCounter <= 0.0f)
             {
                 if (lives == -1)
+                {
+                    PlayerPrefs.SetInt("Victory", 1);
                     SceneTransition.Gameover();
+                }
                 else
                     Respawn();
             }
@@ -185,6 +188,7 @@ public class Player : MonoBehaviour
         health -= damage;
 		invincibilityCounter = invincibilityTime;
 		flashController.Flash();
+        UpdateScore(-200);
 		// play the sound for the player being hit
 
         if (health <= 0)
@@ -201,6 +205,7 @@ public class Player : MonoBehaviour
         isDead = true;
 
         respawnCounter = respawnDelay;
+        UpdateScore(-600);
 
         guiManager.UpdateLivesDisplay (lives);
 
@@ -247,6 +252,13 @@ public class Player : MonoBehaviour
             return;
 
         score += points;
+
+        if(score < 0)
+        {
+            score = 0;
+        }
+        PlayerPrefs.SetInt("Score", score);
+
         guiManager.UpdateScoreDisplay (score);
     }
 }

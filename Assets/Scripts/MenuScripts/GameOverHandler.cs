@@ -12,6 +12,7 @@ public class GameOverHandler : MonoBehaviour
     public TextMesh scoresDisplay; //Originally the "Enter Your Initials" label. Becomes the leaderboard display
     public AudioClip victoryMusic; //The music to play on victory
     public AudioClip defeatMusic; //The music to play on defeat
+    public AudioClip bossExplosion; //Boss explodes in the distance
     public AudioSource musicPlayer; //The audio source that plays the music
     public HighScore scoreManager; //the score manager that handles loading the leaderboards and saving the score
     public GameObject continueText; //the text telling the player to press A to continue from the leaderboards
@@ -65,11 +66,13 @@ public class GameOverHandler : MonoBehaviour
     private void SetupVictoryScreen()
     {
         musicPlayer.Stop();
+        musicPlayer.PlayOneShot(bossExplosion);
         musicPlayer.clip = victoryMusic;
         musicPlayer.Play();
+        musicPlayer.PlayOneShot(bossExplosion);
         statusText.text = "VICTORY!";
         flavorText.text = "You Have Saved The Earth!";
-        statusText.gameObject.GetComponent<TextEffect>().currentlyRotating = true;
+        statusText.gameObject.GetComponent<TextEffect>().SetRotationActive(false);
     }
 
     //Setup the defeat display
@@ -80,12 +83,13 @@ public class GameOverHandler : MonoBehaviour
         musicPlayer.Play();
         statusText.text = "DEFEAT!";
         flavorText.text = "You Failed to Defend The Earth!";
-        statusText.gameObject.GetComponent<TextEffect>().currentlyRotating = false;
+        statusText.gameObject.GetComponent<TextEffect>().SetRotationActive(false);
     }
 
     //Display the text
     private void SetupScoreText()
     {
+        print(PlayerPrefs.GetInt("Score"));
         string score = PlayerPrefs.GetInt("Score").ToString();
         scoreText.text = "Score: " + score;
     }

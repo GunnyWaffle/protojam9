@@ -28,6 +28,7 @@ public class ScatterTurret : MonoBehaviour {
         player = FindObjectOfType<Player>();
         myHealth = gameObject.GetComponent<HealthManager>();
         lastBarrageFired = timeBetweenBarrages;
+        audioSource = gameObject.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -98,7 +99,7 @@ public class ScatterTurret : MonoBehaviour {
         newBullet[0].rotate = BulletRotate.Angle;
         newBullet[0].angle = randomRotation + gameObject.transform.rotation.eulerAngles.z;
         bullet.rotate.Rotate(newBullet[0]);
-        //audioSource.PlayOneShot(enemyShoot);
+        audioSource.PlayOneShot(enemyShoot);
         lastShotFired = timeBetweenOneShot;
     }
 }

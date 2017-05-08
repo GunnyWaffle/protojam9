@@ -22,6 +22,7 @@ public class MissileTurret : MonoBehaviour {
     {
         player = FindObjectOfType<Player>();
         lastShotFired = timeBetweenShot;
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -68,7 +69,7 @@ public class MissileTurret : MonoBehaviour {
     {
         var newBullet = bullet.fire.Fire(bullet.gameObject, fireLocation);
         newBullet[0].GetComponent<Bullet>().target = player.gameObject;
-        //audioSource.PlayOneShot(enemyShoot);
+        audioSource.PlayOneShot(enemyShoot);
         lastShotFired = timeBetweenShot;
     }
 }
