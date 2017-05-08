@@ -1263,7 +1263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Color: {r: 1, g: 1, b: 1, a: 1}
-  Speed: 20
+  Speed: 5
   Duration: 0.1
   FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!114 &114246000063586944
@@ -1525,8 +1525,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6b9496530140646975d73d52fad30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingHealth: 40
-  scoreValue: 1
+  StartingHealth: 30
+  scoreValue: 1000
   deathSound: {fileID: 8300000, guid: 24cd4270b980bc941908075a5330689e, type: 3}
   type: 4
   onDeathRemains: {fileID: 1762184931368458, guid: dc7fe8f4ce2941a46b46dc09ae186404,
@@ -1610,8 +1610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6b9496530140646975d73d52fad30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingHealth: 9
-  scoreValue: 1
+  StartingHealth: 30
+  scoreValue: 1000
   deathSound: {fileID: 8300000, guid: 24cd4270b980bc941908075a5330689e, type: 3}
   type: 4
   onDeathRemains: {fileID: 1762184931368458, guid: dc7fe8f4ce2941a46b46dc09ae186404,

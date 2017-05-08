@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  damage: 3
+  damage: 2
   playerShot: 1
   type: 0
   shouldDestroyOnImpact: 1
@@ -266,6 +266,7 @@ MonoBehaviour:
   weaveGrowthRate: 0.75
   speedGrowthRate: 1
   spinSpeed: 0
+  spinFalloff: 0
   releaseDirection: {x: 0, y: 0, z: 0}
   move: 4
   rotate: 0

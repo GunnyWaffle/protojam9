@@ -238,11 +238,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6b9496530140646975d73d52fad30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
-  scoreValue: 1
+  StartingHealth: 0
+  scoreValue: 100
   deathSound: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
-  timeForDamage: 0.1
   type: 1
+  onDeathRemains: {fileID: 0}
+  shouldFlashWithDamage: 0
   customCallback:
     m_PersistentCalls:
       m_Calls:

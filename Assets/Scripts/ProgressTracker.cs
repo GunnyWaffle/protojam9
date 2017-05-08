@@ -42,6 +42,7 @@ public class ProgressTracker : MonoBehaviour {
 
         if (percentageCompletion >= 1)
         {
+            PlayerPrefs.SetInt("Victory", 1);
             SceneTransition.Gameover();
         }
     }

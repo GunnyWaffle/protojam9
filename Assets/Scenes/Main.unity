@@ -282,8 +282,7 @@ MonoBehaviour:
   background: {fileID: 1890816342}
   transition: {fileID: 1784355307}
   gui: {fileID: 751212}
-  totalGameTime: 360
-  percentageCompletion: 0
+  totalGameTime: 180
 --- !u!1 &1407678821
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,7 +631,6 @@ MonoBehaviour:
   - {fileID: 2800000, guid: a8ff504f58841284d9c1ce1c5259f969, type: 3}
   - {fileID: 2800000, guid: 8c013108a4a669047812aca4e1ea0b78, type: 3}
   - {fileID: 2800000, guid: 07e7b31b191cc2941a451ba4e8c5be9d, type: 3}
-  background: {fileID: 1890816342}
 --- !u!23 &1784355308
 MeshRenderer:
   m_ObjectHideFlags: 0

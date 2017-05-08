@@ -123,10 +123,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6b9496530140646975d73d52fad30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingHealth: 16
-  scoreValue: 1
+  StartingHealth: 100
+  scoreValue: 5000
   deathSound: {fileID: 0}
   type: 4
+  onDeathRemains: {fileID: 0}
   shouldFlashWithDamage: 1
   customCallback:
     m_PersistentCalls:

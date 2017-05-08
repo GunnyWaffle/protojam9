@@ -215,7 +215,7 @@ public class Player : MonoBehaviour
         explosion.Play(true);
 
         sprite.enabled = false;
-        Debug.Log("Killed the player");
+        
         if (lives >= 0)
             return;
 

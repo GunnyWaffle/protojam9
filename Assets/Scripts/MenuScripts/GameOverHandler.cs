@@ -100,8 +100,9 @@ public class GameOverHandler : MonoBehaviour
         //Up down movement
         float movement = Input.GetAxis("LeftJoyY");
 
+        // currentSpot bug patch, don't let it go out of range
         //If they are trying to move down, and are coming from a resting joystick state
-        if (Mathf.Abs(movement) > deadzoneTolerance && !waitForDeadzone)
+        if (currentSpot < initials.Length && Mathf.Abs(movement) > deadzoneTolerance && !waitForDeadzone)
         {
             //If we went up, go backwards
             if(movement > 0)

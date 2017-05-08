@@ -339,8 +339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79f8218e0d6c0645886366f71cfdeaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5.6
-  damage: 4
+  speed: 4.9
+  damage: 2
   playerShot: 1
   type: 3
   shouldDestroyOnImpact: 1
@@ -351,6 +351,7 @@ MonoBehaviour:
   weaveGrowthRate: 3
   speedGrowthRate: 1
   spinSpeed: 0
+  spinFalloff: 0
   releaseDirection: {x: 0, y: 0, z: 0}
   move: 1
   rotate: 0
