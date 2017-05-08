@@ -18,7 +18,7 @@ public class ProgressTracker : MonoBehaviour {
     public float totalGameTime = 360f;
 
     float gameStartTime;
-    public float percentageCompletion = 0;
+    float percentageCompletion = 0;
     Zone currentZone = 0;
     Zone percentZone = 0;
 
