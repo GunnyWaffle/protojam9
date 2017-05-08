@@ -5,12 +5,21 @@ using UnityEngine.Events;
 
 public class HealthManager : MonoBehaviour {
 
-    public int health;
+    public int StartingHealth;
+    private int remainingHealth;
     public int scoreValue;
     public AudioClip deathSound;
-    public float timeForDamage;
     public DamagedByType type;
-    private float currentTimeForDamage;
+
+    public bool shouldFlashWithDamage = false;
+    private const float firstFlashingThreshold = 0.5f; // Begin flashing at 50 percent dead.
+    private const float firstFlashThresholdTime = 2.0f; // Time between flashes at first threshold
+    private const float secondFlashingThreshhold = 0.25f; // Begin flashing more regularily at 75 percent dead.
+    private const float secondFlashingThreshholdTime = 1.0f; // Time between flashes at second threshold
+    private const float thirdFlashingThreshhold = 0.15f; // Begin flashing more regularily at 85 percent dead.
+    private const float thirdFlashingThreshholdTime = 0.2f; // Time between flashes at second threshold
+    private float timeBetweenFlashes = -1.0f;
+    private float lastFlash;
 
     public UnityEvent customCallback;
 
@@ -40,17 +49,59 @@ public class HealthManager : MonoBehaviour {
         collider = gameObject.GetComponent<Collider2D>();
         animator = gameObject.GetComponent<Animator>();
         flashController = gameObject.GetComponent<ColorFlash>();
+        remainingHealth = StartingHealth;
         isDead = false;
+    }
+
+    private void Update()
+    {
+        if (shouldFlashWithDamage)
+            FlashUnitRegularily();
+    }
+
+    // Controls the rate of flashing for an enemy
+    private void FlashUnitRegularily()
+    {
+        if (timeBetweenFlashes > 0.0f)
+        {
+            if (lastFlash <= 0.0f)
+            {
+                flashController.Flash();
+                lastFlash = timeBetweenFlashes;
+            }
+            else
+            {
+                lastFlash -= Time.deltaTime;
+            }
+        }
     }
 
     public void DamageUnit(int damage)
     {
-        health -= damage;
+        remainingHealth -= damage;
+
+        // Have we crossed a new threshold for health to flash?
+        float percentageHealthRemaining = (float)remainingHealth / (float)StartingHealth;
+        if (percentageHealthRemaining <= thirdFlashingThreshhold)
+        {
+            timeBetweenFlashes = thirdFlashingThreshholdTime;
+            lastFlash = timeBetweenFlashes;
+        }
+        else if (percentageHealthRemaining <= secondFlashingThreshhold)
+        {
+            timeBetweenFlashes = secondFlashingThreshholdTime;
+            lastFlash = timeBetweenFlashes;
+        }
+        else if (percentageHealthRemaining <= firstFlashingThreshold)
+        {
+            timeBetweenFlashes = firstFlashThresholdTime;
+            lastFlash = timeBetweenFlashes;
+        }
 
         flashController.Flash();
         // TODO sound
 
-        if (health <= 0 && !isDead)
+        if (remainingHealth <= 0 && !isDead)
             KillUnit();
     }
 
