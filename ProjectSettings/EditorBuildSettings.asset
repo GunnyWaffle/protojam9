@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AfterGame.unity
     guid: 1af79d8c52c8b7d4c9f1bd7ba0b67aba
+  - enabled: 1
+    path: Assets/Scenes/Leaderboards.unity
+    guid: 30721c0eac4472e46b189a7f4fb563d1
