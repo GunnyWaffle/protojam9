@@ -72,7 +72,7 @@ public class GameOverHandler : MonoBehaviour
         musicPlayer.PlayOneShot(bossExplosion);
         statusText.text = "VICTORY!";
         flavorText.text = "You Have Saved The Earth!";
-        statusText.gameObject.GetComponent<TextEffect>().SetRotationActive(false);
+        statusText.gameObject.GetComponent<TextEffect>().SetRotationActive(true);
     }
 
     //Setup the defeat display
