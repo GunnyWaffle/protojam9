@@ -719,6 +719,8 @@ MonoBehaviour:
   scoreValue: 2
   deathSound: {fileID: 0}
   type: 4
+  onDeathRemains: {fileID: 1255487929266854, guid: 20f47fc75cc197c4688d0836b8ded342,
+    type: 2}
   shouldFlashWithDamage: 1
   customCallback:
     m_PersistentCalls:
@@ -759,6 +761,8 @@ MonoBehaviour:
   scoreValue: 2
   deathSound: {fileID: 0}
   type: 4
+  onDeathRemains: {fileID: 1255487929266854, guid: 20f47fc75cc197c4688d0836b8ded342,
+    type: 2}
   shouldFlashWithDamage: 1
   customCallback:
     m_PersistentCalls:
@@ -830,6 +834,8 @@ MonoBehaviour:
   scoreValue: 1
   deathSound: {fileID: 0}
   type: 4
+  onDeathRemains: {fileID: 1762184931368458, guid: dc7fe8f4ce2941a46b46dc09ae186404,
+    type: 2}
   shouldFlashWithDamage: 1
   customCallback:
     m_PersistentCalls:
@@ -879,6 +885,8 @@ MonoBehaviour:
   scoreValue: 2
   deathSound: {fileID: 0}
   type: 4
+  onDeathRemains: {fileID: 1264431213956220, guid: 8f08ba027219c2042895c2152f50baab,
+    type: 2}
   shouldFlashWithDamage: 1
   customCallback:
     m_PersistentCalls:
@@ -1034,6 +1042,8 @@ MonoBehaviour:
   scoreValue: 1
   deathSound: {fileID: 0}
   type: 4
+  onDeathRemains: {fileID: 1762184931368458, guid: dc7fe8f4ce2941a46b46dc09ae186404,
+    type: 2}
   shouldFlashWithDamage: 1
   customCallback:
     m_PersistentCalls:
@@ -1066,6 +1076,8 @@ MonoBehaviour:
   scoreValue: 2
   deathSound: {fileID: 0}
   type: 4
+  onDeathRemains: {fileID: 1973419270024382, guid: 83a4039d425ce6e409c9a13f15857b07,
+    type: 2}
   shouldFlashWithDamage: 1
   customCallback:
     m_PersistentCalls:

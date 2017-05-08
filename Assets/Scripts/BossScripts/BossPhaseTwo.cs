@@ -39,14 +39,30 @@ public class BossPhaseTwo : MonoBehaviour {
 
     public void InitializePhase(bool missleOne, bool missleTwo, bool scatterOne, bool scatterTwo, int enemiesOnScreen)
     {
+        // Is the first missile turret present? If not leave remains on the ship where it should be.
         if (!missleOne)
             missleTurretOne.SetActive(false);
+        else
+            scatterTurretOne.GetComponent<HealthManager>().LeaveRemains();
+
+        // Is the second missle turret present? If not leave remains on the ship where it should be.
         if (!missleTwo)
             missleTurretTwo.SetActive(false);
+        else
+            scatterTurretOne.GetComponent<HealthManager>().LeaveRemains();
+
+        // Is the first scatter turret present? If not leave remains.
         if (!scatterOne)
             scatterTurretOne.SetActive(false);
+        else
+            scatterTurretOne.GetComponent<HealthManager>().LeaveRemains();
+
+        // Is the second scatter turret present? If nor leave remains.
         if (!scatterTwo)
             scatterTurretTwo.SetActive(false);
+        else
+            scatterTurretOne.GetComponent<HealthManager>().LeaveRemains();
+
 
         this.enemiesOnScreen = enemiesOnScreen;
     }

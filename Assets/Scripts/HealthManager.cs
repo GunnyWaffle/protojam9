@@ -11,6 +11,8 @@ public class HealthManager : MonoBehaviour {
     public AudioClip deathSound;
     public DamagedByType type;
 
+    public GameObject onDeathRemains;
+
     public bool shouldFlashWithDamage = false;
     private const float firstFlashingThreshold = 0.5f; // Begin flashing at 50 percent dead.
     private const float firstFlashThresholdTime = 2.0f; // Time between flashes at first threshold
@@ -120,6 +122,8 @@ public class HealthManager : MonoBehaviour {
 
         player.UpdateScore(scoreValue);
 
+        LeaveRemains();
+
         Destroy(gameObject, 3f);
     }
 
@@ -133,6 +137,12 @@ public class HealthManager : MonoBehaviour {
         }
 
         spr.enabled = false;
+    }
+
+    public void LeaveRemains()
+    {
+        if (onDeathRemains != null)
+            Instantiate(onDeathRemains, gameObject.transform.position, Quaternion.identity, gameObject.transform.parent);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -419,7 +419,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1084831696559064}
   m_LocalRotation: {x: -0, y: -0, z: -0.95047337, w: 0.31080598}
-  m_LocalPosition: {x: -0.157, y: 0.329, z: 0}
+  m_LocalPosition: {x: -0.171, y: 0.331, z: 0}
   m_LocalScale: {x: 0.6500394, y: 0.70220566, z: 1}
   m_Children:
   - {fileID: 4635896685445536}
@@ -658,9 +658,9 @@ Animation:
   m_GameObject: {fileID: 1764969326125976}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 13f3161e609f23c40923af9834c125ea, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 13f3161e609f23c40923af9834c125ea, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -839,6 +839,8 @@ MonoBehaviour:
   scoreValue: 2
   deathSound: {fileID: 0}
   type: 4
+  onDeathRemains: {fileID: 1255487929266854, guid: 20f47fc75cc197c4688d0836b8ded342,
+    type: 2}
   shouldFlashWithDamage: 1
   customCallback:
     m_PersistentCalls:
@@ -913,6 +915,8 @@ MonoBehaviour:
   scoreValue: 2
   deathSound: {fileID: 0}
   type: 4
+  onDeathRemains: {fileID: 1255487929266854, guid: 20f47fc75cc197c4688d0836b8ded342,
+    type: 2}
   shouldFlashWithDamage: 1
   customCallback:
     m_PersistentCalls:
@@ -960,6 +964,8 @@ MonoBehaviour:
   scoreValue: 2
   deathSound: {fileID: 0}
   type: 4
+  onDeathRemains: {fileID: 1973419270024382, guid: 83a4039d425ce6e409c9a13f15857b07,
+    type: 2}
   shouldFlashWithDamage: 1
   customCallback:
     m_PersistentCalls:
@@ -988,10 +994,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6b9496530140646975d73d52fad30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingHealth: 16
+  StartingHealth: 40
   scoreValue: 1
   deathSound: {fileID: 0}
   type: 4
+  onDeathRemains: {fileID: 1762184931368458, guid: dc7fe8f4ce2941a46b46dc09ae186404,
+    type: 2}
   shouldFlashWithDamage: 1
   customCallback:
     m_PersistentCalls:
@@ -1041,6 +1049,8 @@ MonoBehaviour:
   scoreValue: 2
   deathSound: {fileID: 0}
   type: 4
+  onDeathRemains: {fileID: 1264431213956220, guid: 8f08ba027219c2042895c2152f50baab,
+    type: 2}
   shouldFlashWithDamage: 1
   customCallback:
     m_PersistentCalls:
@@ -1069,10 +1079,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6b9496530140646975d73d52fad30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingHealth: 16
+  StartingHealth: 9
   scoreValue: 1
   deathSound: {fileID: 0}
   type: 4
+  onDeathRemains: {fileID: 1762184931368458, guid: dc7fe8f4ce2941a46b46dc09ae186404,
+    type: 2}
   shouldFlashWithDamage: 1
   customCallback:
     m_PersistentCalls:

@@ -728,19 +728,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 111199932702751604, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 13f3161e609f23c40923af9834c125ea, type: 2}
+    - target: {fileID: 111199932702751604, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: 13f3161e609f23c40923af9834c125ea, type: 2}
     - target: {fileID: 1778532493895136, guid: daa55cccafd10a94e8514e9d1bae6c4e, type: 2}
       propertyPath: m_Name
       value: BossPhase1 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114965445865040366, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: StartingHealth
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114716662292320636, guid: daa55cccafd10a94e8514e9d1bae6c4e,
-        type: 2}
-      propertyPath: StartingHealth
-      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: daa55cccafd10a94e8514e9d1bae6c4e, type: 2}
