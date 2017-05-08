@@ -8,6 +8,7 @@ public class MenuHandler : MonoBehaviour
 
     public float deadzoneTolerance = 0.5f; //The threshold to move the selection
     public TextEffect playButton; //The Play text on the menu
+    public TextEffect leaderboardsButton; //The leaderboard text on the menu
     public TextEffect creditsButton; //The credits text on the menu
     public TextEffect exitButton; //The exit text on the menu
 
@@ -21,10 +22,11 @@ public class MenuHandler : MonoBehaviour
     void Start()
     {
         //Put the buttons in the options array
-        options = new TextEffect[3];
+        options = new TextEffect[4];
         options[0] = playButton;
-        options[1] = creditsButton;
-        options[2] = exitButton;
+        options[1] = leaderboardsButton;
+        options[2] = creditsButton;
+        options[3] = exitButton;
 
         //Highlight the play button (default selection)
         playButton.HighlightMenuText(true);
@@ -82,10 +84,13 @@ public class MenuHandler : MonoBehaviour
                 case 0: //Play
                     SceneManager.LoadScene("Main");
                     break;
-                case 1: //Credits
+                case 1: //Leaderboards
+                    SceneManager.LoadScene("Leaderboards");
+                    break;
+                case 2: //Credits
                     SceneManager.LoadScene("Credits");
                     break;
-                case 2: //Quit
+                case 3: //Quit
                     Application.Quit();
                     break;
                 default: //Bugged

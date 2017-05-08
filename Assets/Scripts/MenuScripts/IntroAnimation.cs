@@ -170,10 +170,14 @@ public class IntroAnimation : MonoBehaviour
                 blockColor.a -= Time.deltaTime * 2.0f;
                 titleBlock.color = blockColor;
 
+                if(blockColor.r >= 1.0 && blockColor.g >= 1.0 && blockColor.b >= 1.0 && blockColor.a <= .3f)
+                {
+                    menuControl.SetPlayerControlAbility(true);
+                }
+
                 if (timer >= 2.0f)
                 {
                     transitionToMenu = false;
-                    menuControl.SetPlayerControlAbility(true);
                 }
             }
         }
