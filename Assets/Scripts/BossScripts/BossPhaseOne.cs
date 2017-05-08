@@ -31,7 +31,7 @@ public class BossPhaseOne : MonoBehaviour {
 
     private float lastSpawn = 0.0f;
     private int enemiesOnScreen;
-
+    private bool isDead;
     // Use this for initialization
     void Start() {
         if (instance == null)
@@ -45,6 +45,7 @@ public class BossPhaseOne : MonoBehaviour {
         myColorFlash = gameObject.GetComponent<ColorFlash>();
         lastSpawn = spawnTimer;
         lastFlash = timeBetweenFlashes;
+        isDead = false;
     }
 
     // Update is called once per frame
@@ -61,8 +62,10 @@ public class BossPhaseOne : MonoBehaviour {
         if (lastSpawn > 0.0f)
             lastSpawn -= Time.deltaTime;
 
-        if (criticalAreas == 0)
+        if (criticalAreas == 0 && !isDead)
             DestroyBoss();
+        else if (isDead)
+            FlashBoss();
     }
 
     public void DecrementCriticalAreas()
@@ -74,15 +77,13 @@ public class BossPhaseOne : MonoBehaviour {
     public void DestroyBoss()
     {
         player.UpdateScore(1000);
-
+        isDead = true;
         TransitionPhaseTwo();
     }
 
     private void TransitionPhaseTwo()
     {
         StartCoroutine(PlayDeathAnimation());
-
-        FlashBoss();
     }
 
     private void FlashBoss()

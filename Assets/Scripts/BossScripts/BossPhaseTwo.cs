@@ -16,6 +16,7 @@ public class BossPhaseTwo : MonoBehaviour {
     public GameObject scatterTurretOne;
     public GameObject scatterTurretTwo;
 
+    public ExplosionArea onDeathExplosion;
     private Collider2D hitBox;
     private HangerBaySpawn[] hangers;
     private Player player;
@@ -29,6 +30,7 @@ public class BossPhaseTwo : MonoBehaviour {
 
     private float lastSpawn = 0.0f;
     private int enemiesOnScreen;
+    private bool isDead;
 
     // Use this for initialization
     void Start()
@@ -46,9 +48,10 @@ public class BossPhaseTwo : MonoBehaviour {
         flashInTimePlayed = transitionInFlashAmount;
         lastFlashTime = timeBetweenFlashes;
         lastSpawn = spawnTimer;
-    }
+        isDead = false;
+}
 
-    public void InitializePhase(MissileTurret missileOne, MissileTurret missileTwo, ScatterTurret scatterOne, ScatterTurret scatterTwo, int enemiesOnScreen)
+public void InitializePhase(MissileTurret missileOne, MissileTurret missileTwo, ScatterTurret scatterOne, ScatterTurret scatterTwo, int enemiesOnScreen)
     {
         // Is the first missile turret present? If not leave remains on the ship where it should be.
         if (missileOne == null)
@@ -102,6 +105,20 @@ public class BossPhaseTwo : MonoBehaviour {
         this.enemiesOnScreen = enemiesOnScreen;
     }
 
+    private void TransitionPhaseThree()
+    {
+        StartCoroutine(PlayDeathAnimation());
+    }
+
+    private IEnumerator PlayDeathAnimation()
+    {
+        onDeathExplosion.TurnOnExplosions();
+        yield return new WaitForSeconds(transitionOutFlashAmount);
+        onDeathExplosion.TurnOffExplosions();
+        BossPhaseThree newBossPhase = Instantiate(bossPhaseThreePrefab, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
+
     private void FlashBoss()
     {
         if (lastFlashTime <= 0.0f)
@@ -136,8 +153,11 @@ public class BossPhaseTwo : MonoBehaviour {
         if (lastSpawn > 0.0f)
             lastSpawn -= Time.deltaTime;
 
-        if (criticalAreas == 0)
+        if (criticalAreas == 0 && !isDead)
             DestroyBoss();
+        else if (isDead)
+            FlashBoss();
+
     }
 
     public void DecrementCriticalAreas()
@@ -149,14 +169,9 @@ public class BossPhaseTwo : MonoBehaviour {
     public void DestroyBoss()
     {
         player.UpdateScore(1000);
+        isDead = true;
 
         TransitionPhaseThree();
-    }
-
-    private void TransitionPhaseThree()
-    {
-        BossPhaseThree newBossPhase = Instantiate(bossPhaseThreePrefab, bossPhaseThreeSpawnLoc.transform.position, gameObject.transform.rotation);
-        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

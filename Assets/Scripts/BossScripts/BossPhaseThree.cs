@@ -15,9 +15,19 @@ public class BossPhaseThree : MonoBehaviour {
     public float screenYBuffer;
     public float bossMoveSpeed;
 
+    public ExplosionArea onDeathExplosion;
+    private ColorFlash myColorFlash;
+    public float transitionInFlashAmount;
+    private float flashInTimePlayed;
+    public float transitionOutFlashAmount;
+    private float flashOutTimePlayed;
+    public float timeBetweenFlashes = 0.2f;
+    private float lastFlashTime;
+
     private Collider2D hitBox;
     private Rigidbody2D myRGB2D;
     private Player player;
+    private bool isDead;
 
     // Use this for initialization
     void Start()
@@ -32,15 +42,41 @@ public class BossPhaseThree : MonoBehaviour {
         player = FindObjectOfType<Player>();
         lastMoveTime = timeBetweenMoves;
         reachedDestination = true;
+        myColorFlash = gameObject.GetComponent<ColorFlash>();
+        flashInTimePlayed = transitionInFlashAmount;
+        flashOutTimePlayed = transitionOutFlashAmount;
+        lastFlashTime = timeBetweenFlashes;
+        isDead = false;
+    }
+
+    private void FlashBoss()
+    {
+        if (lastFlashTime <= 0.0f)
+        {
+            myColorFlash.Flash();
+            lastFlashTime = timeBetweenFlashes;
+        }
+        else
+        {
+            lastFlashTime -= Time.deltaTime;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (criticalAreas == 0)
-            DestroyBoss();
+        if (flashInTimePlayed > 0.0f)
+        {
+            FlashBoss();
+            flashInTimePlayed -= Time.deltaTime;
+        }
 
-        if (lastMoveTime <= 0.0f)
+        if (criticalAreas == 0 && !isDead)
+            DestroyBoss();
+        else if (isDead)
+            FlashBoss();
+
+        if (lastMoveTime <= 0.0f && !isDead)
         {
             if (reachedDestination)
                 SelectMoveLocation();
@@ -81,6 +117,16 @@ public class BossPhaseThree : MonoBehaviour {
     public void DestroyBoss()
     {
         player.UpdateScore(2000);
+        myRGB2D.velocity = new Vector2(0.0f, 0.0f);
+        isDead = true;
+        StartCoroutine(PlayDeathAnimation());
+    }
+
+    private IEnumerator PlayDeathAnimation()
+    {
+        onDeathExplosion.TurnOnExplosions();
+        yield return new WaitForSeconds(transitionOutFlashAmount);
+        onDeathExplosion.TurnOffExplosions();
         EndBossFight();
     }
 
