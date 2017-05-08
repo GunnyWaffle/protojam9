@@ -38,7 +38,7 @@ public class ProgressTracker : MonoBehaviour {
     void UpdatePercentageCompletion()
     {
         percentageCompletion = (Time.time - gameStartTime) / totalGameTime;
-        gui.UpdateProgressTracker(percentageCompletion);
+        gui.UpdateProgressTracker(1 - percentageCompletion);
 
         if (percentageCompletion >= 1)
         {
