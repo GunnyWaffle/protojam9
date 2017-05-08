@@ -104,28 +104,29 @@ public class Player : MonoBehaviour
         if (invincibilityCounter > 0)
         {
             invincibilityCounter -= Time.deltaTime;
-            if (invincibilityCounter > 0)
-            {
-                float t = invincibilityCounter / invincibilityTime;
-                t *= invincibilityPulseSpeed;
-                t *= 180 * Mathf.Deg2Rad;
-                t = Mathf.Sin(t);
-                t = (t + 1) / 2;
 
-                if (lerpIFrameAnim)
-                {
-                    Color lerpedColor = Color.Lerp(Color.white, isRespawning ? new Color(0, 0, 0, 0) : damageColor, t);
-                    sprite.color = lerpedColor;
-                }
-                else
-                    sprite.color = t > 0.5f ? (isRespawning ? new Color(0, 0, 0, 0) : damageColor) : Color.white;
+            float t = invincibilityCounter / invincibilityTime;
+            t *= invincibilityPulseSpeed;
+            t *= 180 * Mathf.Deg2Rad;
+            t = Mathf.Sin(t);
+            t = (t + 1) / 2;
+
+            if (lerpIFrameAnim)
+            {
+                Color lerpedColor = Color.Lerp(Color.white, isRespawning ? new Color(0, 0, 0, 0) : damageColor, t);
+                sprite.color = lerpedColor;
             }
             else
             {
-                invincibilityCounter = 0;
-                sprite.color = Color.white;
-                isRespawning = false;
+                sprite.color = t > 0.5f ? (isRespawning ? new Color(0, 0, 0, 0) : damageColor) : Color.white;
             }
+            
+        }
+        else
+        {
+            invincibilityCounter = 0;
+            sprite.color = Color.white;
+            isRespawning = false;
         }
 
         if (isDead)
@@ -189,18 +190,19 @@ public class Player : MonoBehaviour
 		invincibilityCounter = invincibilityTime;
 		flashController.Flash();
         UpdateScore(-200);
-		// play the sound for the player being hit
+        // play the sound for the player being hit
+
+        guiManager.UpdateHealthDisplay(health, maxHealth);
 
         if (health <= 0)
 			KillPlayer();
-		guiManager.UpdateHealthDisplay (health, maxHealth);
     }
 
     public void KillPlayer()
     {
         if (isDead || lives < 0)
             return;
-
+        
         --lives;
         isDead = true;
 
@@ -212,8 +214,8 @@ public class Player : MonoBehaviour
         Audio.PlayOneShot(playerExplosion);
         explosion.Play(true);
 
-        GetComponent<SpriteRenderer>().enabled = false;
-
+        sprite.enabled = false;
+        Debug.Log("Killed the player");
         if (lives >= 0)
             return;
 
@@ -236,7 +238,7 @@ public class Player : MonoBehaviour
         invincibilityCounter = invincibilityTime * 2.5f;
         health = maxHealth;
         guiManager.UpdateHealthDisplay(health, maxHealth);
-        GetComponent<SpriteRenderer>().enabled = true;
+        sprite.enabled = true;
         explosion.Stop(true);
 
         if (respawnTransform)
