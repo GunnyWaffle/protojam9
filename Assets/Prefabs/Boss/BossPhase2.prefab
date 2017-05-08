@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 114854977753554532}
   - component: {fileID: 114392725647797242}
   - component: {fileID: 70775779877574602}
+  - component: {fileID: 114590382167245838}
   m_Layer: 0
   m_Name: MissileTurret
   m_TagString: Untagged
@@ -87,6 +88,7 @@ GameObject:
   - component: {fileID: 114048401118409914}
   - component: {fileID: 114039270582859356}
   - component: {fileID: 70502841324458510}
+  - component: {fileID: 114948238754355606}
   m_Layer: 0
   m_Name: ScatterTurret
   m_TagString: Untagged
@@ -106,6 +108,7 @@ GameObject:
   - component: {fileID: 114234032789836276}
   - component: {fileID: 212356084859487528}
   - component: {fileID: 114357295172105412}
+  - component: {fileID: 114555494426278326}
   m_Layer: 0
   m_Name: CriticalAreaTurretTwo
   m_TagString: Untagged
@@ -209,6 +212,7 @@ GameObject:
   - component: {fileID: 114422446351070856}
   - component: {fileID: 114979113898197068}
   - component: {fileID: 70038049732838650}
+  - component: {fileID: 114022187447039450}
   m_Layer: 0
   m_Name: MissileTurretTwo
   m_TagString: Untagged
@@ -228,6 +232,7 @@ GameObject:
   - component: {fileID: 114573725014060008}
   - component: {fileID: 212753246940355958}
   - component: {fileID: 114703956130684702}
+  - component: {fileID: 114478810051262282}
   m_Layer: 0
   m_Name: CriticalAreaTurret
   m_TagString: Untagged
@@ -247,6 +252,7 @@ GameObject:
   - component: {fileID: 114270916548049298}
   - component: {fileID: 114186806691955462}
   - component: {fileID: 70479909274863888}
+  - component: {fileID: 114966287649242998}
   m_Layer: 0
   m_Name: ScatterTurretTwo
   m_TagString: Untagged
@@ -683,6 +689,21 @@ CapsuleCollider2D:
   m_Offset: {x: 0.002644987, y: 0.00021077447}
   m_Size: {x: 0.15384927, y: 0.16214277}
   m_Direction: 0
+--- !u!114 &114022187447039450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1511769713757656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!114 &114039270582859356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -697,7 +718,6 @@ MonoBehaviour:
   health: 50
   scoreValue: 2
   deathSound: {fileID: 0}
-  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
   timeForDamage: 0.1
   type: 4
   customCallback:
@@ -738,7 +758,6 @@ MonoBehaviour:
   health: 50
   scoreValue: 2
   deathSound: {fileID: 0}
-  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
   timeForDamage: 0.1
   type: 4
   customCallback:
@@ -810,7 +829,6 @@ MonoBehaviour:
   health: 16
   scoreValue: 1
   deathSound: {fileID: 0}
-  damageColor: {r: 0.978, g: 0, b: 0, a: 0.966}
   timeForDamage: 0.1
   type: 4
   customCallback:
@@ -860,7 +878,6 @@ MonoBehaviour:
   health: 50
   scoreValue: 2
   deathSound: {fileID: 0}
-  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
   timeForDamage: 0.1
   type: 4
   customCallback:
@@ -868,6 +885,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &114478810051262282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1530348284972202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!114 &114498844945860342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -909,6 +941,21 @@ MonoBehaviour:
   exitHangerBay: {fileID: 1335324582665860}
   speedExitHangerBay: 0.5
   spawnSortingLayer: Default
+--- !u!114 &114555494426278326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1332983529765330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!114 &114573725014060008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -928,6 +975,21 @@ MonoBehaviour:
   myDirection: 1
   enemyShoot: {fileID: 0}
   enemyExplosion: {fileID: 0}
+--- !u!114 &114590382167245838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111150816955170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!114 &114688416078014810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -971,7 +1033,6 @@ MonoBehaviour:
   health: 16
   scoreValue: 1
   deathSound: {fileID: 0}
-  damageColor: {r: 0.978, g: 0, b: 0, a: 0.966}
   timeForDamage: 0.1
   type: 4
   customCallback:
@@ -1004,7 +1065,6 @@ MonoBehaviour:
   health: 50
   scoreValue: 2
   deathSound: {fileID: 0}
-  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
   timeForDamage: 0.1
   type: 4
   customCallback:
@@ -1012,6 +1072,36 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &114948238754355606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1208560554879140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
+--- !u!114 &114966287649242998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1727681352282562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!114 &114979113898197068
 MonoBehaviour:
   m_ObjectHideFlags: 1

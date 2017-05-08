@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 212124206055827930}
   - component: {fileID: 50949501926214314}
   - component: {fileID: 82534128759903562}
+  - component: {fileID: 114322165411615240}
   m_Layer: 8
   m_Name: Blue Enemy (6)
   m_TagString: enemy
@@ -62,6 +63,7 @@ GameObject:
   - component: {fileID: 212475809278458672}
   - component: {fileID: 50818602246322216}
   - component: {fileID: 82167451720509250}
+  - component: {fileID: 114593526362442368}
   m_Layer: 8
   m_Name: Blue Enemy (7)
   m_TagString: enemy
@@ -83,6 +85,7 @@ GameObject:
   - component: {fileID: 212439157954230420}
   - component: {fileID: 50574031514485378}
   - component: {fileID: 82561164754560388}
+  - component: {fileID: 114287261817804768}
   m_Layer: 8
   m_Name: Blue Enemy (8)
   m_TagString: enemy
@@ -168,6 +171,7 @@ GameObject:
   - component: {fileID: 212266653720119034}
   - component: {fileID: 50047068844335892}
   - component: {fileID: 82549132136806154}
+  - component: {fileID: 114463416055334956}
   m_Layer: 8
   m_Name: Blue Enemy (5)
   m_TagString: enemy
@@ -189,6 +193,7 @@ GameObject:
   - component: {fileID: 212908972692533200}
   - component: {fileID: 50772420537431656}
   - component: {fileID: 82748039252996894}
+  - component: {fileID: 114175604259551806}
   m_Layer: 8
   m_Name: Blue Enemy (9)
   m_TagString: enemy
@@ -1134,7 +1139,6 @@ MonoBehaviour:
   health: 4
   scoreValue: 1
   deathSound: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
-  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
   timeForDamage: 0.1
   type: 0
   customCallback:
@@ -1153,6 +1157,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &114175604259551806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1912062566595134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!114 &114233696262053376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1183,7 +1202,6 @@ MonoBehaviour:
   health: 4
   scoreValue: 1
   deathSound: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
-  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
   timeForDamage: 0.1
   type: 0
   customCallback:
@@ -1202,6 +1220,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &114287261817804768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1113681698724752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!114 &114289063320340800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1218,6 +1251,21 @@ MonoBehaviour:
   bullet: {fileID: 114957375796777518, guid: 1552503b772daf948a92a5533a4e0839, type: 2}
   timeBetweenShots: 4
   myHealth: {fileID: 0}
+--- !u!114 &114322165411615240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1002435538507888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!114 &114412173079813000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1245,6 +1293,21 @@ MonoBehaviour:
   bullet: {fileID: 114957375796777518, guid: 1552503b772daf948a92a5533a4e0839, type: 2}
   timeBetweenShots: 4
   myHealth: {fileID: 0}
+--- !u!114 &114463416055334956
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1365134013405726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!114 &114496544194624380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1261,6 +1324,21 @@ MonoBehaviour:
   bullet: {fileID: 114957375796777518, guid: 1552503b772daf948a92a5533a4e0839, type: 2}
   timeBetweenShots: 4
   myHealth: {fileID: 0}
+--- !u!114 &114593526362442368
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1106296628542992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!114 &114597847132941308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1275,7 +1353,6 @@ MonoBehaviour:
   health: 4
   scoreValue: 1
   deathSound: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
-  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
   timeForDamage: 0.1
   type: 0
   customCallback:
@@ -1324,7 +1401,6 @@ MonoBehaviour:
   health: 4
   scoreValue: 1
   deathSound: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
-  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
   timeForDamage: 0.1
   type: 0
   customCallback:
@@ -1357,7 +1433,6 @@ MonoBehaviour:
   health: 4
   scoreValue: 1
   deathSound: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
-  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
   timeForDamage: 0.1
   type: 0
   customCallback:

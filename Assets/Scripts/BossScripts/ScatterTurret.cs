@@ -19,41 +19,46 @@ public class ScatterTurret : MonoBehaviour {
     public AudioClip enemyShoot;
     public AudioClip enemyExplosion;
     private AudioSource audioSource;
+    private HealthManager myHealth;
 
     private Player player;
 
     // Use this for initialization
     void Start () {
         player = FindObjectOfType<Player>();
+        myHealth = gameObject.GetComponent<HealthManager>();
         lastBarrageFired = timeBetweenBarrages;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        RotateTurret();
-
-        // Should we fire  a new barrage?
-        if (lastBarrageFired <= 0.0f)
+        if (!myHealth.isDead)
         {
-            //Have we completed firing a baragge?
-            if (shotsFired == shotsPerBarrage)
+            RotateTurret();
+
+            // Should we fire  a new barrage?
+            if (lastBarrageFired <= 0.0f)
             {
-                shotsFired = 0;
-                lastBarrageFired = timeBetweenBarrages;
+                //Have we completed firing a baragge?
+                if (shotsFired == shotsPerBarrage)
+                {
+                    shotsFired = 0;
+                    lastBarrageFired = timeBetweenBarrages;
+                }
+                else
+                {
+                    // Are we in the deley between shots?
+                    if (lastShotFired <= 0.0f)
+                        FireBullet();
+                    else
+                        lastShotFired -= Time.deltaTime;
+                }
             }
             else
             {
-                // Are we in the deley between shots?
-                if (lastShotFired <= 0.0f)
-                    FireBullet();
-                else
-                    lastShotFired -= Time.deltaTime;
+                lastBarrageFired -= Time.deltaTime;
             }
-        }
-        else
-        {
-            lastBarrageFired -= Time.deltaTime;
         }
     }
 

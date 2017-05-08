@@ -8,21 +8,21 @@ public class HealthManager : MonoBehaviour {
     public int health;
     public int scoreValue;
     public AudioClip deathSound;
-    public Color damageColor;
-    private Color defaultColor;
     public float timeForDamage;
     public DamagedByType type;
     private float currentTimeForDamage;
-    private bool isDamaged = false;
 
     public UnityEvent customCallback;
 
     [HideInInspector]
     public bool isDead { get; private set; }
     private Player player;
+    private ColorFlash flashController;
     private AudioSource audio;
     private SpriteRenderer spr;
     private Collider2D collider;
+    private Animator animator;
+
     public enum DamagedByType
     {
         Blue = 0,
@@ -38,33 +38,16 @@ public class HealthManager : MonoBehaviour {
         spr = gameObject.GetComponent<SpriteRenderer>();
         audio = gameObject.GetComponent<AudioSource>();
         collider = gameObject.GetComponent<Collider2D>();
-        defaultColor = spr.color;
+        animator = gameObject.GetComponent<Animator>();
+        flashController = gameObject.GetComponent<ColorFlash>();
         isDead = false;
-    }
-
-    private void Update()
-    {
-        if (isDamaged)
-        {
-            if (currentTimeForDamage <= 0.0f)
-            {
-                spr.color = defaultColor;
-                isDamaged = false;
-            }
-            else
-            {
-                spr.color = damageColor;
-                currentTimeForDamage -= Time.deltaTime;
-            }
-        }
     }
 
     public void DamageUnit(int damage)
     {
         health -= damage;
 
-        isDamaged = true;
-        currentTimeForDamage = timeForDamage;
+        flashController.Flash();
         // TODO sound
 
         if (health <= 0 && !isDead)
@@ -74,22 +57,31 @@ public class HealthManager : MonoBehaviour {
     public void KillUnit()
     {
         isDead = true;
-        spr.enabled = false;
         collider.enabled = false;
+        StartCoroutine(PlayDeathAnimation());
 
         if (audio != null && deathSound != null)
         {
             audio.PlayOneShot(deathSound);
-            Destroy(gameObject, deathSound.length);
-        }
-        else
-        {
-            Destroy(gameObject);
         }
 
         customCallback.Invoke();
 
         player.UpdateScore(scoreValue);
+
+        Destroy(gameObject, 3f);
+    }
+
+    private IEnumerator PlayDeathAnimation()
+    {
+        if (animator != null)
+        {
+            gameObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+            animator.SetTrigger("isDead");
+            yield return new WaitForSeconds(1f);
+        }
+
+        spr.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

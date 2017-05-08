@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 212292708990084292}
   - component: {fileID: 50789833495273286}
   - component: {fileID: 82654093408043918}
+  - component: {fileID: 114137520558093534}
   m_Layer: 8
   m_Name: Blue Enemy (9)
   m_TagString: enemy
@@ -46,6 +47,7 @@ GameObject:
   - component: {fileID: 212991163351481898}
   - component: {fileID: 50435059240254156}
   - component: {fileID: 82349045758017914}
+  - component: {fileID: 114972810865171280}
   m_Layer: 8
   m_Name: Blue Enemy (5)
   m_TagString: enemy
@@ -83,6 +85,7 @@ GameObject:
   - component: {fileID: 212596118742940688}
   - component: {fileID: 50475230905506236}
   - component: {fileID: 82650727027754534}
+  - component: {fileID: 114148672098122432}
   m_Layer: 8
   m_Name: Blue Enemy (6)
   m_TagString: enemy
@@ -168,6 +171,7 @@ GameObject:
   - component: {fileID: 212792636628478032}
   - component: {fileID: 50176110364995670}
   - component: {fileID: 82710020627167960}
+  - component: {fileID: 114410523372169476}
   m_Layer: 8
   m_Name: Blue Enemy (7)
   m_TagString: enemy
@@ -189,6 +193,7 @@ GameObject:
   - component: {fileID: 212053709556528236}
   - component: {fileID: 50779447442893624}
   - component: {fileID: 82838113939657220}
+  - component: {fileID: 114196203749759086}
   m_Layer: 8
   m_Name: Blue Enemy (8)
   m_TagString: enemy
@@ -1134,7 +1139,6 @@ MonoBehaviour:
   health: 4
   scoreValue: 1
   deathSound: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
-  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
   timeForDamage: 0.1
   type: 0
   customCallback:
@@ -1167,7 +1171,6 @@ MonoBehaviour:
   health: 4
   scoreValue: 1
   deathSound: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
-  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
   timeForDamage: 0.1
   type: 0
   customCallback:
@@ -1200,7 +1203,6 @@ MonoBehaviour:
   health: 4
   scoreValue: 1
   deathSound: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
-  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
   timeForDamage: 0.1
   type: 0
   customCallback:
@@ -1235,6 +1237,36 @@ MonoBehaviour:
   bullet: {fileID: 114957375796777518, guid: 1552503b772daf948a92a5533a4e0839, type: 2}
   timeBetweenShots: 4
   myHealth: {fileID: 0}
+--- !u!114 &114137520558093534
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1202543712789008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
+--- !u!114 &114148672098122432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1665419196145330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!114 &114160466555640902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1249,7 +1281,6 @@ MonoBehaviour:
   health: 4
   scoreValue: 1
   deathSound: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
-  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
   timeForDamage: 0.1
   type: 0
   customCallback:
@@ -1268,6 +1299,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &114196203749759086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1933594429888352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!114 &114344754971594614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1295,6 +1341,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a9f3c9061cb23942868b55a0b25c483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114410523372169476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1922284850979910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!114 &114627345614693310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1325,7 +1386,6 @@ MonoBehaviour:
   health: 4
   scoreValue: 1
   deathSound: {fileID: 8300000, guid: 9cf11e7c692f20b4d90d38b4832708b1, type: 3}
-  damageColor: {r: 1, g: 0.0076232776, b: 0.0076232776, a: 1}
   timeForDamage: 0.1
   type: 0
   customCallback:
@@ -1376,6 +1436,21 @@ MonoBehaviour:
   bullet: {fileID: 114957375796777518, guid: 1552503b772daf948a92a5533a4e0839, type: 2}
   timeBetweenShots: 4
   myHealth: {fileID: 0}
+--- !u!114 &114972810865171280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1325826158091380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cb1d7d0aedfd643b38faf3cd672159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Speed: 5
+  Duration: 0.1
+  FlashMaterial: {fileID: 2100000, guid: ecaf1671d11c5b946b9b7bb9e7e619c8, type: 2}
 --- !u!212 &212053709556528236
 SpriteRenderer:
   m_ObjectHideFlags: 1
