@@ -6,7 +6,6 @@ public class ScrollTransitionScript : MonoBehaviour {
 
     public float speed;
     public List<Texture> transitions;
-    public ScrollScript background;
     public bool WorldSwitchDone {
         get
         {
