@@ -50,3 +50,6 @@ TagManager:
   - name: Objects
     uniqueID: 3274750265
     locked: 0
+  - name: Forefront
+    uniqueID: 2146711171
+    locked: 0

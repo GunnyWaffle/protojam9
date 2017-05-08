@@ -42,14 +42,13 @@ public class EnemySpecial : MonoBehaviour {
         }
         else
         {
-            //if (enemyScript.type == EnemySpawner.EnemyType.Yellow)
-                TryDashing();
+            TryDashing();
         }
         
 
     }
 
-    void TryDashing()
+    public void TryDashing()
     {
         if (nextDashTime <= 0.0f)
         {
@@ -69,7 +68,7 @@ public class EnemySpecial : MonoBehaviour {
         }
     }
 
-    public void Dash(Vector3 dir)
+    void Dash(Vector3 dir)
     {
         isDashing = true;
         enemyScript.LockFlightPattern(true, GetComponent<SpriteRenderer>().sortingLayerName);

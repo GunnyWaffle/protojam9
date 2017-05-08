@@ -100,7 +100,6 @@ public class IntroAnimation : MonoBehaviour
     //Make the boss ship get smaller and move towards earth. Flash the scene red (an alarm in the ship)
     private void StageTwo()
     {
-        flashTimer += Time.deltaTime * 5;
         bossShip.transform.position = Vec3SmoothLerp(new Vector3(-11.58f, 5.31f, -7.33f),
             new Vector3(1.75f, -1.3f, -7.33f), timer + cameraPosAndLerpTimes[2].w, cameraPosAndLerpTimes[2].w + cameraPosAndLerpTimes[3].w);
 
@@ -108,13 +107,6 @@ public class IntroAnimation : MonoBehaviour
 
         bossShip.transform.localScale = Vec3SmoothLerp(bossShip.transform.localScale,
             new Vector3(0, 0, 0), timer * .5f, cameraPosAndLerpTimes[2].w + cameraPosAndLerpTimes[3].w);
-
-
-        blockColor.g = Mathf.Cos(flashTimer);
-        blockColor.b = Mathf.Cos(flashTimer);
-        titleBlock.color = blockColor;
-
-        bossShip.GetComponent<SpriteRenderer>().color = blockColor;
     }
 
     //Continue the red flashing. Pause for a second
@@ -170,10 +162,14 @@ public class IntroAnimation : MonoBehaviour
                 blockColor.a -= Time.deltaTime * 2.0f;
                 titleBlock.color = blockColor;
 
+                if(blockColor.r >= 1.0 && blockColor.g >= 1.0 && blockColor.b >= 1.0 && blockColor.a <= .3f)
+                {
+                    menuControl.SetPlayerControlAbility(true);
+                }
+
                 if (timer >= 2.0f)
                 {
                     transitionToMenu = false;
-                    menuControl.SetPlayerControlAbility(true);
                 }
             }
         }

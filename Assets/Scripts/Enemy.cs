@@ -101,13 +101,35 @@ public class Enemy : MonoBehaviour {
                 break;
             case HealthManager.DamagedByType.Red:
                 transform.rotation = Quaternion.Euler(0, 0, angle + 270);
-                moveDir = dir.normalized;
+                //moveDir = dir.normalized;
+
+
+                if (transform.position.y > -1.8f)
+                {
+
+                    Vector3 lerpPos = Vector3.Lerp(transform.position, new Vector3(0, -1.8f, 0.0f), 0.1f);
+                    moveDir = lerpPos - transform.position;
+                }
+                else
+                {
+                    //lerpPos = Vector3.Lerp(transform.position, new Vector3(Mathf.Sin(Time.time) + Mathf.PingPong(Time.time, 3), -1.8f, 0.0f), 0.1f);
+                    moveDir = new Vector3(Mathf.Sin(Time.time), 0, 0.0f);
+                }
+
                 break;
             case HealthManager.DamagedByType.Yellow:
                 transform.rotation = Quaternion.Euler(0, 0, angle + 270);
-                normal.Normalize();
-                moveDir = normal;
-                moveDir.Normalize();
+                if (dir.magnitude <= 0.75f)
+                {
+                    GetComponent<EnemySpecial>().TryDashing();
+                    return;
+                }
+                else
+                {
+                    normal.Normalize();
+                    moveDir = normal + dir.normalized;
+                    moveDir.Normalize();
+                }
                 break;
             default:
                 moveDir = dir.normalized;
@@ -159,7 +181,7 @@ public class Enemy : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Player>().DamagePlayer(8);
+            collision.gameObject.GetComponent<Player>().DamagePlayer(10);
             UpdateSpawners();
         }
     }

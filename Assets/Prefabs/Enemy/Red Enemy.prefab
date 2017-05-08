@@ -37,7 +37,6 @@ GameObject:
   - component: {fileID: 4822341916767642}
   - component: {fileID: 58259130817463544}
   - component: {fileID: 114336825812326232}
-  - component: {fileID: 114963661514879004}
   - component: {fileID: 114975627477493626}
   - component: {fileID: 212839972201628298}
   - component: {fileID: 50911313530574308}
@@ -259,20 +258,6 @@ MonoBehaviour:
   bullet: {fileID: 114957375796777518, guid: e225138ed7ec8344b992c79ef76b156b, type: 2}
   timeBetweenShots: 2
   myHealth: {fileID: 0}
---- !u!114 &114963661514879004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1837863278376824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44c11c158b53a85429fa70f04e27eaaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashSpeed: 5
-  dashActivationTime: 2
-  speedDriftLevel: 4.07
 --- !u!114 &114975627477493626
 MonoBehaviour:
   m_ObjectHideFlags: 1

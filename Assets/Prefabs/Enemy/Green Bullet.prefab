@@ -237,14 +237,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  damage: 4
+  damage: 5
   playerShot: 0
   type: 1
+  shouldDestroyOnImpact: 1
   angle: 0
   target: {fileID: 0}
+  weaveSpeed: 25
+  weaveAmplitude: 5
+  weaveGrowthRate: 0.5
+  speedGrowthRate: 1
+  spinSpeed: 0
+  releaseDirection: {x: 0, y: 0, z: 0}
   move: 1
   rotate: 0
   fire: 0
+  timeAlive: 0
 --- !u!212 &212403337296731918
 SpriteRenderer:
   m_ObjectHideFlags: 1
