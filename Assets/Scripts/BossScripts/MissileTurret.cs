@@ -15,12 +15,14 @@ public class MissileTurret : MonoBehaviour {
     public float rotationSpeed;
 
     private Player player;
+    private HealthManager myHealth;
     public GameObject fireLocation;
 
     // Use this for initialization
     void Start()
     {
         player = FindObjectOfType<Player>();
+        myHealth = gameObject.GetComponent<HealthManager>();
         lastShotFired = timeBetweenShot;
         audioSource = gameObject.GetComponent<AudioSource>();
     }
@@ -28,13 +30,16 @@ public class MissileTurret : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        RotateTurret();
+        if (!myHealth.isDead)
+        {
+            RotateTurret();
 
-        // Are we in the deley between shots?
-        if (lastShotFired <= 0.0f)
-            FireMissile();
-        else
-            lastShotFired -= Time.deltaTime;
+            // Are we in the deley between shots?
+            if (lastShotFired <= 0.0f)
+                FireMissile();
+            else
+                lastShotFired -= Time.deltaTime;
+        }
     }
 
     private void RotateTurret()

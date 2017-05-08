@@ -12,6 +12,7 @@ public class HealthManager : MonoBehaviour {
     public DamagedByType type;
 
     public GameObject onDeathRemains;
+    private float timeBeforeDestruction = 0.2f;
 
     public bool shouldFlashWithDamage = false;
     private const float firstFlashingThreshold = 0.5f; // Begin flashing at 50 percent dead.
@@ -57,7 +58,7 @@ public class HealthManager : MonoBehaviour {
 
     private void Update()
     {
-        if (shouldFlashWithDamage)
+        if (shouldFlashWithDamage && !isDead)
             FlashUnitRegularily();
     }
 
@@ -116,6 +117,7 @@ public class HealthManager : MonoBehaviour {
         if (audio != null && deathSound != null)
         {
             audio.PlayOneShot(deathSound);
+            timeBeforeDestruction += deathSound.length;
         }
 
         customCallback.Invoke();
@@ -124,15 +126,17 @@ public class HealthManager : MonoBehaviour {
 
         LeaveRemains();
 
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, timeBeforeDestruction);
     }
 
     private IEnumerator PlayDeathAnimation()
     {
         if (animator != null)
         {
-            gameObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-            animator.SetTrigger("isDead");
+            spr.sprite = null;
+            timeBeforeDestruction += .5f;
+            gameObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 180f);
+            animator.SetTrigger("IsDead");
             yield return new WaitForSeconds(1f);
         }
 
