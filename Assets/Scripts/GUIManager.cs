@@ -22,6 +22,10 @@ public class GUIManager : MonoBehaviour
     private Vector3 trackerStart; //The starting point for the boss tracker
     private Vector3 trackerEnd; //The end point for the boss tracker
     private GameObject progressTracker; //The skull sprite that shows boss progress
+    private SpriteRenderer screenFader; //A fader for the screen during pauses
+    private TextMesh pauseText; //Text that displays when the game is paused
+    private TextMesh pauseInstructions; //Text that instructs the player on how to unpause
+    private bool pauseState = false; //Current pause state
 
     // Use this for initialization
     void Start()
@@ -36,6 +40,12 @@ public class GUIManager : MonoBehaviour
         trackerStart = transform.Find("ProgressBar").transform.Find("StartPos").transform.position;
         trackerEnd = transform.Find("ProgressBar").transform.Find("EndPos").transform.position;
         progressTracker = transform.Find("ProgressBar").transform.Find("BossTracker").gameObject;
+        screenFader = transform.Find("PauseMenu").transform.Find("ScreenFade").gameObject.GetComponent<SpriteRenderer>();
+        pauseText = transform.Find("PauseMenu").transform.Find("PauseText").gameObject.GetComponent<TextMesh>();
+        pauseInstructions = transform.Find("PauseMenu").transform.Find("PauseInstructions").gameObject.GetComponent<TextMesh>();
+
+        pauseText.gameObject.GetComponent<MeshRenderer>().sortingLayerName = "Forefront";
+        pauseInstructions.gameObject.GetComponent<MeshRenderer>().sortingLayerName = "Forefront";
 
         ResetGui(); //Reset the look of everything, since it wont update until player updates it otherwise
     }
@@ -43,6 +53,11 @@ public class GUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonDown("Start"))
+        {
+            pauseState = !pauseState;
+            UpdatePauseState(pauseState);
+        }
     }
 
     //Update the GUI Score Display
@@ -116,6 +131,25 @@ public class GUIManager : MonoBehaviour
                 Mathf.Lerp(trackerEnd.y, trackerStart.y, percentageLeft),
                 Mathf.Lerp(trackerEnd.z, trackerStart.z, percentageLeft)
             );
+    }
+
+    public void UpdatePauseState(bool newState)
+    {
+        pauseState = newState;
+        if(pauseState == true)
+        {
+            Time.timeScale = 0;
+            screenFader.color = new Color(0, 0, 0, 0.8f);
+            pauseText.color = new Color(1, 1, 1, 1);
+            pauseInstructions.color = new Color(1, 1, 1, 1);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            screenFader.color = new Color(0, 0, 0, 0);
+            pauseText.color = new Color(1, 1, 1, 0);
+            pauseInstructions.color = new Color(1, 1, 1, 0);
+        }
     }
 
     //Resets the GUI to it's initial state at the start of the game
