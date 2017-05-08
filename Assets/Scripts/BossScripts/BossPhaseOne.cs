@@ -10,6 +10,10 @@ public class BossPhaseOne : MonoBehaviour {
     public int numEnemiesOnScreen;
     public int criticalAreas;
     public int score;
+    public Vector3 finalPosition;
+    [Range(1, 10)]
+    public float lerpSpeed = 2;
+    private Vector3 startPosition;
 
     public MissileTurret missileTurretOne;
     public void DeactivateMissleOne() { missileTurretOne.enabled = false; }
@@ -46,10 +50,17 @@ public class BossPhaseOne : MonoBehaviour {
         lastSpawn = spawnTimer;
         lastFlash = timeBetweenFlashes;
         isDead = false;
+        startPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update() {
+
+        if (transform.position != finalPosition)
+        {
+            transform.position = Vector3.Lerp(startPosition, finalPosition, Time.time * lerpSpeed / 100);
+        }
+
         if (enemiesOnScreen < numEnemiesOnScreen && lastSpawn <= 0.0f)
         {
             HangerBaySpawn currentHander = hangers[Random.Range(0, hangers.Length)];
