@@ -92,6 +92,9 @@ public class GUIManager : MonoBehaviour
     //Updates the GUI Lives Display
     public void UpdateLivesDisplay(int livesRemaining)
     {
+        // out of range fix
+        livesRemaining = livesRemaining < 0 ? 0 : livesRemaining;
+
         //If we haven't created the icons yet
         if (lifeIcons.Count <= 0)
         {

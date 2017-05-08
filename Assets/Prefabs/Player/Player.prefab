@@ -201,8 +201,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guiManager: {fileID: 0}
   shootThreshold: 0.2
-  maxHealth: 100
-  health: 100
+  maxHealth: 12
+  health: 12
   lives: 3
   invincibilityTime: 2.5
   invincibilityPulseSpeed: 12.5

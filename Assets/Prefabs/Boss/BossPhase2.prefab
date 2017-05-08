@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 114392725647797242}
   - component: {fileID: 70775779877574602}
   - component: {fileID: 114590382167245838}
+  - component: {fileID: 95328211123710600}
   m_Layer: 0
   m_Name: MissileTurret
   m_TagString: Untagged
@@ -89,6 +90,7 @@ GameObject:
   - component: {fileID: 114039270582859356}
   - component: {fileID: 70502841324458510}
   - component: {fileID: 114948238754355606}
+  - component: {fileID: 95227864526628728}
   m_Layer: 0
   m_Name: ScatterTurret
   m_TagString: Untagged
@@ -213,6 +215,7 @@ GameObject:
   - component: {fileID: 114979113898197068}
   - component: {fileID: 70038049732838650}
   - component: {fileID: 114022187447039450}
+  - component: {fileID: 95072000080729324}
   m_Layer: 0
   m_Name: MissileTurretTwo
   m_TagString: Untagged
@@ -253,6 +256,7 @@ GameObject:
   - component: {fileID: 114186806691955462}
   - component: {fileID: 70479909274863888}
   - component: {fileID: 114966287649242998}
+  - component: {fileID: 95796299036518648}
   m_Layer: 0
   m_Name: ScatterTurretTwo
   m_TagString: Untagged
@@ -689,6 +693,74 @@ CapsuleCollider2D:
   m_Offset: {x: 0.002644987, y: 0.00021077447}
   m_Size: {x: 0.15384927, y: 0.16214277}
   m_Direction: 0
+--- !u!95 &95072000080729324
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1511769713757656}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 641bca9e5a53ccf418e5115467234891, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95227864526628728
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1208560554879140}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb6734817c4cece4587e303e6bde2c65, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95328211123710600
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111150816955170}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 641bca9e5a53ccf418e5115467234891, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95796299036518648
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1727681352282562}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c375891ac42fef14d917c1e13179bee7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114022187447039450
 MonoBehaviour:
   m_ObjectHideFlags: 1
