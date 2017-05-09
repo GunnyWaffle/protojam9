@@ -19,6 +19,8 @@ public class IntroAnimation : MonoBehaviour
     private bool transitionToMenu; //A bool that tells us if the user has decided to skip the intro
     private bool doingIntro; //Are we currently animating the intro?
     private Vector3 cameraStartPos; //The starting position of the camera (used when making impromptu transition to menu)
+    private TextMesh skipText; //Text that tells the player to press start to skip the intro sequence
+    private bool displaySkip = false; //Do we display the skipText?
 
     // Use this for initialization
     void Start()
@@ -29,15 +31,22 @@ public class IntroAnimation : MonoBehaviour
         transitionToMenu = false;
         doingIntro = true;
 
+        skipText = gameObject.transform.FindChild("SkipText").GetComponent<TextMesh>();
+
+        if (PlayerPrefs.GetInt("WatchedIntro") == 1)
+        {
+            displaySkip = true;
+        }
+
         cameraPosAndLerpTimes = new List<Vector4>();
         //Define the movement of the camera     X       Y      Z     TIME
         //Camera moves from point[0].xyx to point[1].xyz in point[1].w seconds
-        cameraPosAndLerpTimes.Add(new Vector4(5.25f , -2.2f, -10.0f, 2.0f));
+        cameraPosAndLerpTimes.Add(new Vector4(5.25f, -2.2f, -10.0f, 2.0f));
         cameraPosAndLerpTimes.Add(new Vector4(-6.25f, 2.45f, -10.0f, 7.0f));
         cameraPosAndLerpTimes.Add(new Vector4(-6.25f, 2.45f, -10.0f, 0.2f));
-        cameraPosAndLerpTimes.Add(new Vector4(5.25f , -2.2f, -10.0f, 1.0f));
-        cameraPosAndLerpTimes.Add(new Vector4(5.25f , -2.2f, -10.0f, 2.0f));
-        cameraPosAndLerpTimes.Add(new Vector4(0     , 0    , -10.0f, 2.0f));
+        cameraPosAndLerpTimes.Add(new Vector4(5.25f, -2.2f, -10.0f, 1.0f));
+        cameraPosAndLerpTimes.Add(new Vector4(5.25f, -2.2f, -10.0f, 2.0f));
+        cameraPosAndLerpTimes.Add(new Vector4(0, 0, -10.0f, 2.0f));
     }
 
     // Update is called once per frame
@@ -62,8 +71,8 @@ public class IntroAnimation : MonoBehaviour
                 default: break;
             }
 
-            //If the user presses start (to skip the intro)
-            if (Input.GetButtonDown("Start"))
+            //If the user presses start (to skip the intro) and they have already seen it
+            if (Input.GetButtonDown("Start") && displaySkip)
             {
                 //Transition to the menu, move out of the current step loop, save the cameras position, reset timer
                 transitionToMenu = true;
@@ -73,7 +82,7 @@ public class IntroAnimation : MonoBehaviour
                 timer = 0;
             }
         }
-        
+
         //If the user has chosen to transition straight to the menu
         if (transitionToMenu)
         {
@@ -88,12 +97,22 @@ public class IntroAnimation : MonoBehaviour
         blockColor.g = timer * .5f;
         blockColor.b = timer * .5f;
         titleBlock.color = blockColor;
+
+        if (displaySkip == true && skipText.color.a <= .4f)
+        {
+            Color skipColor = skipText.color * .3f;
+            skipColor.r = 1;
+            skipColor.g = 1;
+            skipColor.b = 1;
+            skipColor.a += timer;
+            skipText.color = skipColor;
+        }
     }
 
     //Move the boss ship towards earth
     private void StageOne()
     {
-        bossShip.transform.position = Vec3SmoothLerp(new Vector3(-11.58f, 5.31f, -7.33f), 
+        bossShip.transform.position = Vec3SmoothLerp(new Vector3(-11.58f, 5.31f, -7.33f),
             new Vector3(1.75f, -1.3f, -7.33f), timer, cameraPosAndLerpTimes[2].w + cameraPosAndLerpTimes[3].w);
     }
 
@@ -125,31 +144,47 @@ public class IntroAnimation : MonoBehaviour
         blockColor.g = Mathf.Cos(flashTimer) / 2 + 0.5f;
         blockColor.b = Mathf.Cos(flashTimer) / 2 + 0.5f;
         titleBlock.color = blockColor;
-        mainCam.GetComponent<Camera>().orthographicSize = Mathf.Lerp(2, 5, Smootherstep(timer *.5f));
+        mainCam.GetComponent<Camera>().orthographicSize = Mathf.Lerp(2, 5, Smootherstep(timer * .5f));
+
+        if (displaySkip == true && skipText.color.a > 0.0f)
+        {
+            Color skipColor = skipText.color;
+            skipColor.a -= timer;
+            skipText.color = skipColor;
+        }
     }
 
     //Safely finish flashing the camera, fade out the menu blocker, give the user ability to select menu options
     private void StageFive()
     {
-        if(!(blockColor.g - .99f > 0))
+        if (!(blockColor.g - .99f > 0))
         {
             flashTimer += Time.deltaTime * 5;
             blockColor.g = Mathf.Cos(flashTimer) / 2 + 0.5f;
             blockColor.b = Mathf.Cos(flashTimer) / 2 + 0.5f;
         }
+
         blockColor.a = Mathf.Lerp(1, 0, timer * 2);
         titleBlock.color = blockColor;
         menuControl.SetPlayerControlAbility(true);
+        PlayerPrefs.SetInt("WatchedIntro", 1);
     }
 
     //For when the user wants to skip the intro. Safely transition to the main menu and give the user control.
     private void TransitionToMain()
     {
         timer += Time.deltaTime;
-     
+
         bossShip.GetComponent<SpriteRenderer>().color = blockColor;
-        
+
         mainCam.transform.position = Vec3SmoothLerp(cameraStartPos, new Vector3(0, 0, -10.0f), timer, 1);
+
+        if (displaySkip == true && skipText.color.a > 0.0f)
+        {
+            Color skipColor = skipText.color;
+            skipColor.a -= timer;
+            skipText.color = skipColor;
+        }
 
         if (timer >= 0.2f)
         {
@@ -162,7 +197,7 @@ public class IntroAnimation : MonoBehaviour
                 blockColor.a -= Time.deltaTime * 2.0f;
                 titleBlock.color = blockColor;
 
-                if(blockColor.r >= 1.0 && blockColor.g >= 1.0 && blockColor.b >= 1.0 && blockColor.a <= .3f)
+                if (blockColor.r >= 1.0 && blockColor.g >= 1.0 && blockColor.b >= 1.0 && blockColor.a <= .3f)
                 {
                     menuControl.SetPlayerControlAbility(true);
                 }

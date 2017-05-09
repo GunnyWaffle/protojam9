@@ -82,7 +82,7 @@ public class MenuHandler : MonoBehaviour
             switch (selectedIndex)
             {
                 case 0: //Play
-                    SceneManager.LoadScene("Main");
+                    SceneManager.LoadScene("ControlsDisplay");
                     break;
                 case 1: //Leaderboards
                     SceneManager.LoadScene("Leaderboards");
