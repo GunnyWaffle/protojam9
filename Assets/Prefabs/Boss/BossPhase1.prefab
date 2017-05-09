@@ -2245,7 +2245,7 @@ MonoBehaviour:
   StartingHealth: 30
   scoreValue: 1000
   deathSound: {fileID: 8300000, guid: 24cd4270b980bc941908075a5330689e, type: 3}
-  type: 4
+  type: 0
   onDeathRemains: {fileID: 1762184931368458, guid: dc7fe8f4ce2941a46b46dc09ae186404,
     type: 2}
   shouldFlashWithDamage: 1
@@ -2282,6 +2282,8 @@ MonoBehaviour:
   numEnemiesOnScreen: 5
   criticalAreas: 2
   score: 20
+  finalPosition: {x: 0, y: 0, z: 0}
+  lerpSpeed: 2
   missileTurretOne: {fileID: 114342469171692142}
   missileTurretTwo: {fileID: 114117751369086288}
   scatterTurretOne: {fileID: 114468133822415470}
@@ -2353,7 +2355,7 @@ MonoBehaviour:
   StartingHealth: 30
   scoreValue: 1000
   deathSound: {fileID: 8300000, guid: 24cd4270b980bc941908075a5330689e, type: 3}
-  type: 4
+  type: 0
   onDeathRemains: {fileID: 1762184931368458, guid: dc7fe8f4ce2941a46b46dc09ae186404,
     type: 2}
   shouldFlashWithDamage: 1
