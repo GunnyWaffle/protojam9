@@ -89,7 +89,6 @@ public class GameOverHandler : MonoBehaviour
     //Display the text
     private void SetupScoreText()
     {
-        print(PlayerPrefs.GetInt("Score"));
         string score = PlayerPrefs.GetInt("Score").ToString();
         scoreText.text = "Score: " + score;
     }
@@ -177,7 +176,7 @@ public class GameOverHandler : MonoBehaviour
         //update previous text displays
         statusText.text = "Leaderboards";
         statusText.gameObject.GetComponent<TextEffect>().UpdateText("Leaderboards");
-        statusText.gameObject.GetComponent<TextEffect>().currentlyRotating = true;
+        statusText.gameObject.GetComponent<TextEffect>().SetRotationActive(true);
 
         flavorText.gameObject.SetActive(false);
         scoreText.gameObject.SetActive(false);

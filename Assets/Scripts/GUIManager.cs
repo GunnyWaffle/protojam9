@@ -63,6 +63,7 @@ public class GUIManager : MonoBehaviour
     //Update the GUI Score Display
     public void UpdateScoreDisplay(int score)
     {
+        PlayerPrefs.SetInt("Score", score);
         scoreText.text = "Score: " + score;
     }
 
