@@ -60,7 +60,8 @@ public class Enemy : MonoBehaviour {
         // Try to fire at the player
         Attack();
 
-        lastShotTime -= Time.deltaTime;
+        if (!player.GetComponent<Player>().IsDead)
+            lastShotTime -= Time.deltaTime;
     }
 
     void Move()
@@ -153,6 +154,9 @@ public class Enemy : MonoBehaviour {
 
     void Attack()
     {
+        if (player.GetComponent<Player>().IsDead)
+            return;
+
         FireBullet();
     }
 

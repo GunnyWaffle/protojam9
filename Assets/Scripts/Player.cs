@@ -158,7 +158,7 @@ public class Player : MonoBehaviour
 
         Vector3 pos = Globals.ClampToScreen(transform.position);
 
-        float speedLimiter = 1 - Input.GetAxis("LeftTrigger") * focusPercentage;
+        float speedLimiter = 1 - Input.GetAxis("LeftTrigger") * focusPercentage + Input.GetAxis("RightTrigger") * focusPercentage * 0.65f;
 
         if (transform.position == pos)
             transform.position += offset * speed * speedLimiter * Time.deltaTime;
