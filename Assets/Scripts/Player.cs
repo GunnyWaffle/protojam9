@@ -258,6 +258,7 @@ public class Player : MonoBehaviour
         guiManager.UpdateHealthDisplay(health, maxHealth);
         sprite.enabled = true;
         explosion.Stop(true);
+        explosion.Clear(true);
 
         if (respawnTransform)
         {
