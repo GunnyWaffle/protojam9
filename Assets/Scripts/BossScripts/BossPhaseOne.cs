@@ -58,7 +58,7 @@ public class BossPhaseOne : MonoBehaviour {
 
         if (transform.position != finalPosition)
         {
-            transform.position = Vector3.Lerp(startPosition, finalPosition, Time.time * lerpSpeed / 100);
+            transform.position = Vector3.Lerp(startPosition, finalPosition, Time.timeSinceLevelLoad * lerpSpeed / 100);
         }
 
         if (enemiesOnScreen < numEnemiesOnScreen && lastSpawn <= 0.0f)
