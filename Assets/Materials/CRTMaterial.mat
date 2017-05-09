@@ -80,7 +80,7 @@ Material:
     - _curvature: 1
     - _distance: 1.234
     - _dotmask: 1
-    - _frameCount: 4
+    - _frameCount: 1
     - _gaussian: 1
     - _interlace: 0
     - _linearProcessing: 1
