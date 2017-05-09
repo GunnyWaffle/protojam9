@@ -72,7 +72,8 @@ MonoBehaviour:
   StartingHealth: 16
   scoreValue: 1
   deathSound: {fileID: 0}
-  type: 4
+  type: 0
+  onDeathRemains: {fileID: 0}
   shouldFlashWithDamage: 0
   customCallback:
     m_PersistentCalls:

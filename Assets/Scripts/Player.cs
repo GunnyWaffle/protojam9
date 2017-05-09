@@ -139,7 +139,22 @@ public class Player : MonoBehaviour
 
         if (switchMask > 0)
             activeWeapon = (WeaponType)Globals.BitScanForward(switchMask);
+        else if (Input.GetButtonDown("RightBumper"))
+        {
+            int current = (int)activeWeapon;
+            current = (current + 1) % 4;
 
+            activeWeapon = (WeaponType)current;
+        }
+        else if (Input.GetButtonDown("LeftBumper"))
+        {
+            int current = (int)activeWeapon;
+            current = (current - 1);
+            if (current == -1)
+                current = 3;
+
+            activeWeapon = (WeaponType)current;
+        }
         Vector3 offset = new Vector3(Input.GetAxis("LeftJoyX"), -Input.GetAxis("LeftJoyY"), 0);
         Vector3 turn = new Vector3(Input.GetAxis("RightJoyX"), -Input.GetAxis("RightJoyY"), 0);
 
