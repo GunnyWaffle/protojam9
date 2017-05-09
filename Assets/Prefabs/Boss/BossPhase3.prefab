@@ -828,7 +828,7 @@ MonoBehaviour:
   StartingHealth: 100
   scoreValue: 5000
   deathSound: {fileID: 0}
-  type: 0
+  type: 4
   onDeathRemains: {fileID: 0}
   shouldFlashWithDamage: 1
   customCallback:
