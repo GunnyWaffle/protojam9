@@ -288,7 +288,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61858857770432934
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -828,7 +828,7 @@ MonoBehaviour:
   StartingHealth: 100
   scoreValue: 5000
   deathSound: {fileID: 0}
-  type: 4
+  type: 0
   onDeathRemains: {fileID: 0}
   shouldFlashWithDamage: 1
   customCallback:

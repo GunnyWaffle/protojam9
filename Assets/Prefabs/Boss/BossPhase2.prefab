@@ -1931,7 +1931,7 @@ MonoBehaviour:
   StartingHealth: 50
   scoreValue: 2000
   deathSound: {fileID: 0}
-  type: 4
+  type: 0
   onDeathRemains: {fileID: 1762184931368458, guid: dc7fe8f4ce2941a46b46dc09ae186404,
     type: 2}
   shouldFlashWithDamage: 1
@@ -2160,7 +2160,7 @@ MonoBehaviour:
   StartingHealth: 50
   scoreValue: 2000
   deathSound: {fileID: 0}
-  type: 4
+  type: 0
   onDeathRemains: {fileID: 1762184931368458, guid: dc7fe8f4ce2941a46b46dc09ae186404,
     type: 2}
   shouldFlashWithDamage: 1
