@@ -523,6 +523,16 @@ Prefab:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114720509471571310, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: numEnemiesOnScreen
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114720509471571310, guid: daa55cccafd10a94e8514e9d1bae6c4e,
+        type: 2}
+      propertyPath: spawnTimer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: daa55cccafd10a94e8514e9d1bae6c4e, type: 2}
   m_IsPrefabParent: 0
@@ -636,8 +646,8 @@ MonoBehaviour:
   typesOfFormations:
   - {fileID: 1329779252875274, guid: 9fa0ab252679f5847990af17476e7043, type: 2}
   - {fileID: 1901756498387166, guid: 5b0df144fecba7f4cbbae8a7a5f6ff34, type: 2}
-  numSquadsOnScreen: 2
-  spawnTimer: 2
+  numSquadsOnScreen: 1
+  spawnTimer: 5
   spawnDir: 3
 --- !u!114 &1682610946
 MonoBehaviour:
@@ -713,6 +723,18 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1729832517}
+    - target: {fileID: 4910541563518506, guid: 2c5a13f4f32f81b4b851e046174bf3db, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691812117666164, guid: 2c5a13f4f32f81b4b851e046174bf3db, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326165626840750, guid: 2c5a13f4f32f81b4b851e046174bf3db, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.56
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c5a13f4f32f81b4b851e046174bf3db, type: 2}
   m_IsPrefabParent: 0
